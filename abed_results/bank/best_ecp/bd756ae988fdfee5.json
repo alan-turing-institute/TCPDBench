@@ -1,0 +1,39 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bank.json -a e.divisive --siglvl 0.05 --minsize 30 --alpha 0.5",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "gertjan-arch",
+	"dataset" : "bank",
+	"dataset_md5" : "5207135ea53fc6fa2a8119908da73abf",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"k" : "null",
+		"algorithm" : "e.divisive",
+		"alpha" : 0.5,
+		"cost" : 1,
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			49,
+			104,
+			145,
+			175,
+			232,
+			271,
+			316,
+			369,
+			404,
+			443,
+			478,
+			508,
+			548,
+			581
+		],
+		"runtime" : 25.5081
+	}
+} 

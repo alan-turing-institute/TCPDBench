@@ -1,0 +1,38 @@
+{
+	"error" : null,
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/deploy/cpdbench/datasets/gdp_argentina.json -a kcpa --maxcp max --cost 1000.0",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "gdp_argentina",
+	"dataset_md5" : "694212b5682ebd808d740ffd83d4bc16",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 59,
+		"algorithm" : "kcpa",
+		"cost" : 1000,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			5,
+			9,
+			13,
+			19,
+			32,
+			33,
+			37,
+			42,
+			44,
+			45,
+			47,
+			50,
+			51,
+			59
+		],
+		"runtime" : 0.03818607
+	}
+} 

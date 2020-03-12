@@ -1,0 +1,46 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/us_population.json -a e.divisive --siglvl 0.05 --minsize 30 --alpha 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "gertjan-arch",
+	"dataset" : "us_population",
+	"dataset_md5" : "77037fc5ff0338516a56ae686aa4dcba",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"k" : "null",
+		"algorithm" : "e.divisive",
+		"alpha" : 1,
+		"cost" : 1,
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			55,
+			101,
+			156,
+			186,
+			222,
+			252,
+			284,
+			332,
+			368,
+			404,
+			435,
+			465,
+			505,
+			545,
+			585,
+			625,
+			667,
+			709,
+			754,
+			786,
+			816
+		],
+		"runtime" : 42.04248
+	}
+} 

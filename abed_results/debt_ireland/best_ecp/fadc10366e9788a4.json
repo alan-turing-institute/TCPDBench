@@ -1,0 +1,25 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/debt_ireland.json -a e.agglo --siglvl 0.01 --minsize 2 --alpha 1.5",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "archlinux",
+	"dataset" : "debt_ireland",
+	"dataset_md5" : "a5a9e752c338d2ffcceb614bb2064cc9",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"algorithm" : "e.agglo",
+		"alpha" : 1.5,
+		"cost" : 1,
+		"minsize" : 2,
+		"runs" : 199,
+		"siglvl" : 0.01
+	},
+	"result" : {
+		"cplocations" : [
+			11,
+			15
+		],
+		"runtime" : 0.01168585
+	}
+} 

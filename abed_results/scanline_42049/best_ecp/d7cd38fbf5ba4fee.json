@@ -1,0 +1,33 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/scanline_42049.json -a e.agglo --siglvl 0.01 --minsize 2 --alpha 0.5",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "archlinux",
+	"dataset" : "scanline_42049",
+	"dataset_md5" : "39921dfa959576bd0b3d6c95558f17f4",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"algorithm" : "e.agglo",
+		"alpha" : 0.5,
+		"cost" : 1,
+		"minsize" : 2,
+		"runs" : 199,
+		"siglvl" : 0.01
+	},
+	"result" : {
+		"cplocations" : [
+			27,
+			55,
+			77,
+			185,
+			274,
+			349,
+			362,
+			413,
+			468,
+			478
+		],
+		"runtime" : 5.210083
+	}
+} 

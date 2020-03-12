@@ -1,0 +1,31 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/jfk_passengers.json -a e.divisive --siglvl 0.01 --minsize 2 --alpha 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "archlinux",
+	"dataset" : "jfk_passengers",
+	"dataset_md5" : "9655295214078f2a45a4c18e6c4e6d0d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"k" : "null",
+		"algorithm" : "e.divisive",
+		"alpha" : 1,
+		"cost" : 1,
+		"minsize" : 2,
+		"runs" : 199,
+		"siglvl" : 0.01
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			28,
+			208,
+			328,
+			362,
+			448,
+			468
+		],
+		"runtime" : 4.504638
+	}
+} 

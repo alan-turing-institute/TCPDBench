@@ -1,0 +1,49 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/children_per_woman.json -a e.divisive --siglvl 0.05 --minsize 2 --alpha 0.5",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "archlinux",
+	"dataset" : "children_per_woman",
+	"dataset_md5" : "826e0a2328b8a8a085050115768eef98",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"k" : "null",
+		"algorithm" : "e.divisive",
+		"alpha" : 0.5,
+		"cost" : 1,
+		"minsize" : 2,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			29,
+			53,
+			77,
+			85,
+			99,
+			110,
+			115,
+			132,
+			142,
+			152,
+			159,
+			162,
+			172,
+			176,
+			189,
+			195,
+			204,
+			210,
+			222,
+			238,
+			254,
+			272,
+			284,
+			301
+		],
+		"runtime" : 5.572243
+	}
+} 

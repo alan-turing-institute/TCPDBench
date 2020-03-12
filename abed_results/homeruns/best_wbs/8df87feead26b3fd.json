@@ -1,0 +1,32 @@
+{
+	"error" : null,
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_wbs.R --args -i /home/deploy/cpdbench/datasets/homeruns.json -K default --penalty MBIC -g true",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_wbs.R",
+	"script_md5" : "588c2d49021cd08dd01943afb53e1328",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "homeruns",
+	"dataset_md5" : "987bbab63e2c72acba1c07325303720c",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"M" : 5000,
+		"rand.intervals" : true,
+		"Kmax" : 50,
+		"integrated" : true,
+		"penalty" : "MBIC"
+	},
+	"result" : {
+		"cplocations" : [
+			18,
+			27,
+			48,
+			59,
+			75,
+			79,
+			80,
+			86,
+			93,
+			114
+		],
+		"runtime" : 0.9341788
+	}
+} 

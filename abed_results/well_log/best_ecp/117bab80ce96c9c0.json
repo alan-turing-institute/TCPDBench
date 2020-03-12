@@ -1,0 +1,34 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/well_log.json -a e.divisive --siglvl 0.01 --minsize 30 --alpha 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "gertjan-arch",
+	"dataset" : "well_log",
+	"dataset_md5" : "7c80d2cbd5864b923e6a653aad115de6",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"k" : "null",
+		"algorithm" : "e.divisive",
+		"alpha" : 1,
+		"cost" : 1,
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : 0.01
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			179,
+			251,
+			281,
+			311,
+			341,
+			402,
+			432,
+			462,
+			675
+		],
+		"runtime" : 23.65042
+	}
+} 

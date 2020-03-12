@@ -1,0 +1,22 @@
+{
+	"error" : "missing value where TRUE/FALSE needed",
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/deploy/cpdbench/datasets/uk_coal_employ.json -a e.agglo --siglvl 0.05 --minsize 2 --alpha 0.5",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "uk_coal_employ",
+	"dataset_md5" : "a7c72746e46d6e09f516bd87e0e68bef",
+	"status" : "FAIL",
+	"parameters" : {
+		"algorithm" : "e.agglo",
+		"alpha" : 0.5,
+		"cost" : 1,
+		"minsize" : 2,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

@@ -1,0 +1,27 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/businv.json -a e.agglo --siglvl 0.05 --minsize 2 --alpha 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "archlinux",
+	"dataset" : "businv",
+	"dataset_md5" : "d2ab178da17b2e659a10a102a4b9f332",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"algorithm" : "e.agglo",
+		"alpha" : 1,
+		"cost" : 1,
+		"minsize" : 2,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			86,
+			260,
+			330
+		],
+		"runtime" : 2.513226
+	}
+} 

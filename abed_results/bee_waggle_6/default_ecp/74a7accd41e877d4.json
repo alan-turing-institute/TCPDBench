@@ -1,0 +1,40 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bee_waggle_6.json -a e.divisive --alpha 1.0 --minsize 30 --runs 199 --siglvl 0.05",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "gertjan-arch",
+	"dataset" : "bee_waggle_6",
+	"dataset_md5" : "4f03feafecb3be0b069b3cb0d6b17d4f",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"k" : "null",
+		"algorithm" : "e.divisive",
+		"alpha" : 1,
+		"cost" : 1,
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			41,
+			95,
+			125,
+			176,
+			217,
+			260,
+			291,
+			336,
+			368,
+			415,
+			445,
+			490,
+			520,
+			572,
+			609
+		],
+		"runtime" : 27.37155
+	}
+} 

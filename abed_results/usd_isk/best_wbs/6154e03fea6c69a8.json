@@ -1,0 +1,48 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_wbs.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json -K default --penalty MBIC -g true",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_wbs.R",
+	"script_md5" : "588c2d49021cd08dd01943afb53e1328",
+	"hostname" : "gertjan-arch",
+	"dataset" : "usd_isk",
+	"dataset_md5" : "5cac2807a0e280c8ffd7321662e339ac",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"M" : 5000,
+		"rand.intervals" : true,
+		"Kmax" : 50,
+		"integrated" : true,
+		"penalty" : "MBIC"
+	},
+	"result" : {
+		"cplocations" : [
+			15,
+			19,
+			27,
+			39,
+			46,
+			48,
+			58,
+			69,
+			85,
+			90,
+			98,
+			107,
+			109,
+			112,
+			115,
+			116,
+			119,
+			122,
+			138,
+			154,
+			178,
+			190,
+			206,
+			211,
+			219,
+			236
+		],
+		"runtime" : 0.1519971
+	}
+} 

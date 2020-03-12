@@ -1,0 +1,45 @@
+{
+	"error" : null,
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/deploy/cpdbench/datasets/bitcoin.json -a kcpa --maxcp max --cost 1000.0",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "bitcoin",
+	"dataset_md5" : "f90ff14ed1fc0c3d47d4394d25cbce93",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 774,
+		"algorithm" : "kcpa",
+		"cost" : 1000,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			92,
+			194,
+			401,
+			484,
+			519,
+			546,
+			568,
+			575,
+			583,
+			587,
+			600,
+			606,
+			610,
+			619,
+			632,
+			640,
+			649,
+			703,
+			747,
+			760,
+			774
+		],
+		"runtime" : 479.7769
+	}
+} 

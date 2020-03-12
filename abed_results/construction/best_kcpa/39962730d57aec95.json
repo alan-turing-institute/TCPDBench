@@ -1,0 +1,37 @@
+{
+	"error" : null,
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/deploy/cpdbench/datasets/construction.json -a kcpa --maxcp max --cost 1000.0",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "construction",
+	"dataset_md5" : "fb0347dc9fd353b11b35e99f7d531f13",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 319,
+		"algorithm" : "kcpa",
+		"cost" : 1000,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			40,
+			64,
+			88,
+			135,
+			148,
+			178,
+			191,
+			202,
+			231,
+			245,
+			267,
+			280,
+			319
+		],
+		"runtime" : 8.788183
+	}
+} 

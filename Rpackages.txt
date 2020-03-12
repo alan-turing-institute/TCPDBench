@@ -1,0 +1,10 @@
+argparse
+changepoint==2.2.2
+changepoint.np==0.0.2
+ecp==3.1.1
+lubridate
+ocp==0.1.1
+prophet==0.4
+RJSONIO
+wbs==1.4
+github:guillemr/robust-fpop@ce49c26

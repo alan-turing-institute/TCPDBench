@@ -1,0 +1,48 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_wbs.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/scanline_42049.json -K max --penalty BIC -g false",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_wbs.R",
+	"script_md5" : "588c2d49021cd08dd01943afb53e1328",
+	"hostname" : "gertjan-arch",
+	"dataset" : "scanline_42049",
+	"dataset_md5" : "39921dfa959576bd0b3d6c95558f17f4",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"M" : 5000,
+		"rand.intervals" : true,
+		"Kmax" : 481,
+		"integrated" : false,
+		"penalty" : "BIC"
+	},
+	"result" : {
+		"cplocations" : [
+			20,
+			54,
+			60,
+			76,
+			183,
+			184,
+			192,
+			210,
+			215,
+			222,
+			233,
+			241,
+			246,
+			273,
+			274,
+			348,
+			352,
+			357,
+			361,
+			391,
+			465,
+			466,
+			470,
+			473,
+			476,
+			477
+		],
+		"runtime" : 0.3477957
+	}
+} 

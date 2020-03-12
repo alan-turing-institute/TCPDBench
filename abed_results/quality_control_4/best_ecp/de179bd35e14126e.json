@@ -1,0 +1,27 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_4.json -a e.agglo --siglvl 0.05 --minsize 2 --alpha 1.5",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "archlinux",
+	"dataset" : "quality_control_4",
+	"dataset_md5" : "1efedb9a52cd0b9a9250cf9781c5f7ef",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"algorithm" : "e.agglo",
+		"alpha" : 1.5,
+		"cost" : 1,
+		"minsize" : 2,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : [
+			176,
+			289,
+			342,
+			450
+		],
+		"runtime" : 5.90202
+	}
+} 

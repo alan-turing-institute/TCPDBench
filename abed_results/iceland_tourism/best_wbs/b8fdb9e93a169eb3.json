@@ -1,0 +1,39 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_wbs.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/iceland_tourism.json -K default --penalty BIC -g true",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_wbs.R",
+	"script_md5" : "588c2d49021cd08dd01943afb53e1328",
+	"hostname" : "gertjan-arch",
+	"dataset" : "iceland_tourism",
+	"dataset_md5" : "8bbac4ca95319a865f2d58ff564f063d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"M" : 5000,
+		"rand.intervals" : true,
+		"Kmax" : 50,
+		"integrated" : true,
+		"penalty" : "BIC"
+	},
+	"result" : {
+		"cplocations" : [
+			100,
+			103,
+			112,
+			115,
+			124,
+			127,
+			136,
+			139,
+			148,
+			151,
+			160,
+			163,
+			172,
+			175,
+			184,
+			189,
+			196
+		],
+		"runtime" : 0.154938
+	}
+} 

@@ -1,0 +1,21 @@
+{
+	"error" : "x vector cannot contain NA's",
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_wbs.R --args -i /home/deploy/cpdbench/datasets/uk_coal_employ.json -K max --penalty MBIC -g false",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_wbs.R",
+	"script_md5" : "588c2d49021cd08dd01943afb53e1328",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "uk_coal_employ",
+	"dataset_md5" : "a7c72746e46d6e09f516bd87e0e68bef",
+	"status" : "FAIL",
+	"parameters" : {
+		"M" : 5000,
+		"rand.intervals" : true,
+		"Kmax" : 105,
+		"integrated" : false,
+		"penalty" : "MBIC"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

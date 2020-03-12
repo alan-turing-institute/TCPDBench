@@ -1,0 +1,6 @@
+tabulate>=0.8.6
+scipy
+numpy
+labella>=0.9.6
+termcolor
+colorama

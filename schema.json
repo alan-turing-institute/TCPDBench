@@ -1,0 +1,114 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://example.com/root.json",
+	"type": "object",
+	"title": "Result Schema",
+	"default": null,
+	"required": [
+		"script",
+		"hostname",
+		"dataset",
+		"command",
+		"status",
+		"error",
+		"parameters",
+		"result"
+	],
+	"properties": {
+		"script": {
+			"$id": "#/properties/script",
+			"type": "string",
+			"title": "The Script Schema",
+			"description": "Absolute path to the script that created the result.",
+			"pattern": "^(.*)$"
+		},
+		"script_md5": {
+			"$id": "#/properties/script_md5",
+			"type": "string",
+			"title": "The Script_md5 Schema",
+			"description": "MD5 checksum of the script file",
+			"pattern": "^[a-z0-9]{32}$"
+		},
+		"hostname": {
+			"$id": "#/properties/hostname",
+			"type": "string",
+			"title": "The Hostname Schema",
+			"description": "Hostname of the machine that ran the task",
+			"pattern": "^(.*)$"
+		},
+		"dataset": {
+			"$id": "#/properties/dataset",
+			"type": "string",
+			"title": "The Dataset Schema",
+			"description": "Name of the dataset",
+			"pattern": "^[a-z_0-9]+$"
+		},
+		"dataset_md5": {
+			"$id": "#/properties/dataset_md5",
+			"type": "string",
+			"title": "The Dataset_md5 Schema",
+			"description": "MD5 checksum of the dataset file",
+			"pattern": "^[a-z0-9]{32}$"
+		},
+		"command": {
+			"$id": "#/properties/command",
+			"type": "string",
+			"title": "The Command Schema",
+			"description": "The exact command that was executed",
+			"pattern": "^(.*)$"
+		},
+		"status": {
+			"$id": "#/properties/status",
+			"type": "string",
+			"enum": [
+				"FAIL",
+				"SKIP",
+				"SUCCESS",
+				"TIMEOUT"
+			],
+			"title": "The Status Schema",
+			"description": "Return status of the task"
+		},
+		"error": {
+			"$id": "#/properties/error",
+			"type": ["string", "null"],
+			"title": "The Error Schema",
+			"description": "An error message, if one occurred",
+			"default": null,
+			"pattern": "^(.*)$"
+		},
+		"parameters": {
+			"$id": "#/properties/parameters",
+			"type": "object",
+			"title": "The Parameters Schema",
+			"description": "Parameters to the algorithm",
+			"default": null
+		},
+		"result": {
+			"$id": "#/properties/result",
+			"type": "object",
+			"title": "The Result Schema",
+			"required": [
+				"cplocations",
+				"runtime"
+			],
+			"properties": {
+				"cplocations": {
+					"$id": "#/properties/result/properties/cplocations",
+					"type": ["array", "null"],
+					"title": "The Cplocations Schema",
+					"description": "Array of change point locations as 0-based integers",
+					"default": null
+				},
+				"runtime": {
+					"$id": "#/properties/result/properties/runtime",
+					"type": ["number", "null"],
+					"title": "The Runtime Schema",
+					"description": "The runtime of the task, in seconds.",
+					"default": null
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"error" : null,
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/deploy/cpdbench/datasets/shanghai_license.json -a kcpa --maxcp max --cost 1000.0",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "shanghai_license",
+	"dataset_md5" : "b4ac173eb6c0a1a4d10268abc109eda1",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 205,
+		"algorithm" : "kcpa",
+		"cost" : 1000,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			12,
+			58,
+			59,
+			74,
+			75,
+			77,
+			108,
+			140,
+			146,
+			147,
+			148,
+			153,
+			158,
+			159,
+			161,
+			168,
+			170,
+			171,
+			172,
+			174,
+			176,
+			181,
+			190,
+			195,
+			199,
+			202,
+			205
+		],
+		"runtime" : 1.774261
+	}
+} 

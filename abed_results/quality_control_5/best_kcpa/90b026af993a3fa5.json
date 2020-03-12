@@ -1,0 +1,25 @@
+{
+	"error" : null,
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/deploy/cpdbench/datasets/quality_control_5.json -a kcpa --maxcp max --cost 1000.0",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "quality_control_5",
+	"dataset_md5" : "2ebb10acafae18ebabf0217218717970",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 325,
+		"algorithm" : "kcpa",
+		"cost" : 1000,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			325
+		],
+		"runtime" : 11.76554
+	}
+} 

@@ -1,0 +1,52 @@
+{
+	"error" : null,
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/deploy/cpdbench/datasets/measles.json -a e.agglo --siglvl 0.05 --minsize 30 --alpha 1.0",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "measles",
+	"dataset_md5" : "e42afd03be893fc7deb98514c94fa4c7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"algorithm" : "e.agglo",
+		"alpha" : 1,
+		"cost" : 1,
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			4,
+			32,
+			40,
+			57,
+			61,
+			84,
+			104,
+			149,
+			179,
+			260,
+			276,
+			370,
+			390,
+			475,
+			502,
+			577,
+			606,
+			683,
+			704,
+			782,
+			813,
+			891,
+			898,
+			920,
+			962,
+			972,
+			981,
+			991
+		],
+		"runtime" : 255.1
+	}
+} 

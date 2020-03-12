@@ -1,0 +1,11 @@
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t alan-turing-institute/tcpdbench .
+
+script:
+  - mkdir -p /home/travis/build/alan-turing-institute/analysis/output
+  - docker run -v /home/travis/build/alan-turing-institute/analysis/output:/TCPDBench/analysis/output alan-turing-institute/tcpdbench /bin/bash -c "make results && git diff"

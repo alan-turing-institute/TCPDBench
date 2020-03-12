@@ -1,0 +1,51 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_wbs.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ratner_stock.json -K default --penalty SSIC -g false",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_wbs.R",
+	"script_md5" : "588c2d49021cd08dd01943afb53e1328",
+	"hostname" : "gertjan-arch",
+	"dataset" : "ratner_stock",
+	"dataset_md5" : "f7086ff916f35b88463bf8fd1857815e",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"M" : 5000,
+		"rand.intervals" : true,
+		"Kmax" : 50,
+		"integrated" : false,
+		"penalty" : "SSIC"
+	},
+	"result" : {
+		"cplocations" : [
+			10,
+			34,
+			44,
+			68,
+			81,
+			90,
+			109,
+			117,
+			122,
+			134,
+			155,
+			157,
+			165,
+			176,
+			192,
+			204,
+			218,
+			235,
+			244,
+			258,
+			271,
+			280,
+			285,
+			298,
+			328,
+			403,
+			465,
+			526,
+			559
+		],
+		"runtime" : 0.160085
+	}
+} 

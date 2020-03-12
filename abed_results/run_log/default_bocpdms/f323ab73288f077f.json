@@ -1,0 +1,31 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/run_log.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
+	"dataset": "run_log",
+	"dataset_md5": "2c78a8fa0b4a2f8e2d22ba3ad4dfd49f",
+	"error": null,
+	"hostname": "gertjan-arch",
+	"parameters": {
+		"S1": 2,
+		"S2": 1,
+		"intensity": 100.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 1.0,
+		"prior_b": 1.0,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 0,
+		"upper_AR": 3,
+		"use_timeout": false
+	},
+	"result": {
+		"cplocations": [
+			3,
+			4
+		],
+		"runtime": 122.36364459991455
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "e6a84daedb85993dbe95448b4a5018e7",
+	"status": "SUCCESS"
+}

@@ -1,0 +1,38 @@
+{
+	"error" : null,
+	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/deploy/cpdbench/datasets/apple.json -a e.divisive --siglvl 0.05 --minsize 30 --alpha 1.0",
+	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "scw-blissful-wiles",
+	"dataset" : "apple",
+	"dataset_md5" : "22edb48471bd3711f7a6e15de6413643",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"k" : "null",
+		"algorithm" : "e.divisive",
+		"alpha" : 1,
+		"cost" : 1,
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : 0.05
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			88,
+			131,
+			197,
+			227,
+			257,
+			287,
+			320,
+			366,
+			428,
+			471,
+			546,
+			592,
+			622
+		],
+		"runtime" : 71.30104
+	}
+} 

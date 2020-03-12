@@ -1,0 +1,8 @@
+[submodule "execs/python/bocpdms"]
+	path = execs/python/bocpdms
+	url = ssh://git@github.com/GjjvdBurg/bocpdms.git
+	branch = fixes
+[submodule "execs/python/rbocpdms"]
+	path = execs/python/rbocpdms
+	url = ssh://git@github.com/GjjvdBurg/rbocpdms.git
+	branch = fixes
