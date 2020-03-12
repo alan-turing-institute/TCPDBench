@@ -7,7 +7,9 @@ RUN apt-get update && \
 		git \
 		build-essential \
 		r-base \
-		latexmk
+		latexmk \
+		libopenmpi-dev \
+		liblzma-dev
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
@@ -27,7 +29,7 @@ RUN git clone https://github.com/alan-turing-institute/TCPD
 RUN cd TCPD && make export
 
 # Clone the repo
-RUN git clone https://github.com/alan-turing-institute/TCPDBench
+RUN git clone --recurse-submodules https://github.com/alan-turing-institute/TCPDBench
 
 # Copy the datasets into the benchmark dir
 RUN mkdir -p TCPDBench/datasets && cp TCPD/export/*.json TCPDBench/dataset/
