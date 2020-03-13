@@ -6,14 +6,38 @@ Alan Turing Institute](https://turing.ac.uk). This benchmark uses the time
 series from the [Turing Change Point 
 Dataset](https://github.com/alan-turing-institute/TCPD) (TCPD).
 
+**Useful links:**
+- [Turing Change Point Detection 
+  Benchmark](https://github.com/alan-turing-institute/TCPDBench)
+- [Turing Change Point Dataset](https://github.com/alan-turing-institute/TCPD)
+- [An Evaluation of Change Point Detection Algorithms](URL_TO_PAPER) by 
+  [Gertjan van den Burg](https://gertjan.dev) and [Chris 
+  Williams](https://homepages.inf.ed.ac.uk/ckiw/).
+
+## Introduction
+
+Change point detection focuses on accurately detecting moments of abrupt 
+change in the behavior of a time series. While many methods for change point 
+detection exists, past research has paid little attention to the evaluation of 
+existing algorithms on real-world data. This work introduces a benchmark study 
+and a dataset ([TCPD](https://github.com/alan-turing-institute/TCPD)) that are 
+explicitly designed for the evaluation of change point detection algorithms. 
+We hope that our work becomes a proving ground for the evaluation and 
+development of change point detection algorithms that work well in practice.
+
 This repository contains the code necessary to evaluate and analyze a 
 significant number of change point detection algorithms on the TCPD, and 
 serves to reproduce the work in [Van den Burg and Williams 
-(2020)](/url/to/paper).
-
-Note that work based on either TCPD or this repository should cite the paper:
+(2020)](URL_TO_PAPER). Note that work based on either the dataset or this 
+benchmark should cite that paper:
 
 ```bib
+@article{vandenburg2020evaluation,
+        title={An Evaluation of Change Point Detection Algorithms},
+        author={{Van den Burg}, G. J. J. and Williams, C. K. I.},
+        journal={arXiv preprint},
+        year={2020}
+}
 ```
 
 ## Getting Started
@@ -21,7 +45,12 @@ Note that work based on either TCPD or this repository should cite the paper:
 This repository contains all the code to generate the results 
 (tables/figures/constants) from the paper, as well as to reproduce the 
 experiments entirely. You can either install the dependencies directly on your 
-machine or use the provided Dockerfile (see below).
+machine or use the provided Dockerfile (see below). If you don't use Docker, 
+first clone this repository using:
+
+```
+$ git clone --recurse-submodules https://github.com/alan-turing-institute/TCPDBench
+```
 
 ### Generating Tables/Figures
 
@@ -41,17 +70,15 @@ $ make results
 ```
 
 The results will be placed in ``./analysis/output``. Note that to generate the 
-figures a working LaTeX and ``latexmk`` installation is needed (see the 
-[labella.py](https://github.com/GjjvdBurg/labella.py) repository for more 
-info).
+figures a working LaTeX and ``latexmk`` installation is needed.
 
 ### Reproducing the experiments
 
-To fully reproduce the experiments, some more steps are needed. Note that the 
-Docker procedure outlined below automates this process somewhat.
+To fully reproduce the experiments, some additional steps are needed. Note 
+that the Docker procedure outlined below automates this process substantially.
 
-First, obtain the TCPD from [this 
-URL](https://github.com/alan-turing-institute/TCPD) and follow the 
+First, obtain the [Turing Change Point 
+Dataset](https://github.com/alan-turing-institute/TCPD) and follow the 
 instructions provided there. Copy the dataset files to a ``datasets`` 
 directory in this repository.
 
@@ -79,6 +106,7 @@ instructions are as follows:
    ```
 
 3. Tell abed to rediscover all the tasks that need to be done:
+
    ```
    $ abed reload_tasks
    ```
@@ -117,9 +145,9 @@ instructions are as follows:
 
 ### Running the experiments with Docker
 
-If you like to use [Docker](https://www.docker.com/) to manage the 
-dependencies, you can do so easily with the provided Dockerfile. You can build 
-the Docker image using:
+If you like to use [Docker](https://www.docker.com/) to manage the environment 
+and dependencies, you can do so easily with the provided Dockerfile. You can 
+build the Docker image using:
 
 ```
 $ docker build -t alan-turing-institute/tcpdbench github.com/alan-turing-institute/TCPDBench
@@ -133,7 +161,7 @@ commands to run them in the container.
 The code in this repository is licensed under the MIT license, unless 
 otherwise specified. See the [LICENSE file](LICENSE) for further details. 
 Reuse of the code in this repository is allowed, but should cite [our 
-paper](/url/to/paper).
+paper](URL_TO_PAPER).
 
 ## Notes
 
