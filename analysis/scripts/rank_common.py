@@ -8,11 +8,15 @@ License: See the LICENSE file.
 
 """
 
+import colorama
 import json
 import numpy as np
 import sys
+import termcolor
 
 from scipy.stats import rankdata
+
+colorama.init()
 
 
 def load_data(filename):
@@ -78,13 +82,16 @@ def compute_ranks(results, keep_methods=None, higher_better=True):
     return avg_ranks, all_ranks
 
 
+def warning(msg):
+    termcolor.cprint(msg, "yellow", file=sys.stderr)
+
+
 def preprocess_data(data, _type):
     methods = set([m for dset in data.keys() for m in data[dset].keys()])
     methods = sorted(methods)
     if _type == "best":
-        print(
-            "\nWarning: Filtering out RBOCPDMS due to insufficient results.\n",
-            file=sys.stderr,
+        warning(
+            "\nWarning: Filtering out RBOCPDMS due to insufficient results.\n"
         )
         methods = [m for m in methods if not m == "rbocpdms"]
 

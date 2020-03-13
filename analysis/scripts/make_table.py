@@ -310,7 +310,8 @@ def average_results(results):
     # remove RBOCPDMS for 'best', because it fails too often
     if experiment == Experiment.best:
         warning(
-            "\nWarning: Removing RBOCPDMS (experiment = %s)\n" % experiment
+            "\nWarning: Removing RBOCPDMS (experiment = %s) due to insufficient results\n"
+            % experiment
         )
         results = list(filter(lambda r: r.method != Method.rbocpdms, results))
         expected_methods.remove(Method.rbocpdms)
@@ -322,7 +323,7 @@ def average_results(results):
         if any(r.score is None for r in dset_results):
             to_remove.append(dataset)
     if to_remove:
-        warning("\nWarning: Filtering out datasets: %r\n" % to_remove)
+        warning("\nWarning: Filtering out datasets: %r due to incomplete results for some detectors.\n" % to_remove)
     results = list(filter(lambda r: not r.dataset in to_remove, results))
 
     # check that we are now complete: for all datasets and all methods in the
