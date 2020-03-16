@@ -18,11 +18,11 @@ Dataset](https://github.com/alan-turing-institute/TCPD) (TCPD).
 
 Change point detection focuses on accurately detecting moments of abrupt 
 change in the behavior of a time series. While many methods for change point 
-detection exists, past research has paid little attention to the evaluation of 
+detection exist, past research has paid little attention to the evaluation of 
 existing algorithms on real-world data. This work introduces a benchmark study 
 and a dataset ([TCPD](https://github.com/alan-turing-institute/TCPD)) that are 
 explicitly designed for the evaluation of change point detection algorithms. 
-We hope that our work becomes a proving ground for the evaluation and 
+We hope that our work becomes a proving ground for the comparison and 
 development of change point detection algorithms that work well in practice.
 
 This repository contains the code necessary to evaluate and analyze a 
