@@ -1,7 +1,7 @@
 # Turing Change Point Detection Benchmark
 
-Welcome to the host repository of the Turing Change Point Detection Benchmark, 
-a benchmark evaluation of change point detection algorithms developed at [The 
+Welcome to the repository for the Turing Change Point Detection Benchmark, a 
+benchmark evaluation of change point detection algorithms developed at [The 
 Alan Turing Institute](https://turing.ac.uk). This benchmark uses the time 
 series from the [Turing Change Point 
 Dataset](https://github.com/alan-turing-institute/TCPD) (TCPD).
@@ -10,7 +10,7 @@ Dataset](https://github.com/alan-turing-institute/TCPD) (TCPD).
 - [Turing Change Point Detection 
   Benchmark](https://github.com/alan-turing-institute/TCPDBench)
 - [Turing Change Point Dataset](https://github.com/alan-turing-institute/TCPD)
-- [An Evaluation of Change Point Detection Algorithms](URL_TO_PAPER) by 
+- [An Evaluation of Change Point Detection Algorithms](https://arxiv.org/abs/2003.06222) by 
   [Gertjan van den Burg](https://gertjan.dev) and [Chris 
   Williams](https://homepages.inf.ed.ac.uk/ckiw/).
 
@@ -28,14 +28,14 @@ development of change point detection algorithms that work well in practice.
 This repository contains the code necessary to evaluate and analyze a 
 significant number of change point detection algorithms on the TCPD, and 
 serves to reproduce the work in [Van den Burg and Williams 
-(2020)](URL_TO_PAPER). Note that work based on either the dataset or this 
-benchmark should cite that paper:
+(2020)](https://arxiv.org/abs/2003.06222). Note that work based on either the 
+dataset or this benchmark should cite that paper:
 
 ```bib
 @article{vandenburg2020evaluation,
         title={An Evaluation of Change Point Detection Algorithms},
         author={{Van den Burg}, G. J. J. and Williams, C. K. I.},
-        journal={arXiv preprint},
+        journal={arXiv preprint arXiv:2003.06222},
         year={2020}
 }
 ```
@@ -161,7 +161,7 @@ commands to run them in the container.
 The code in this repository is licensed under the MIT license, unless 
 otherwise specified. See the [LICENSE file](LICENSE) for further details. 
 Reuse of the code in this repository is allowed, but should cite [our 
-paper](URL_TO_PAPER).
+paper](https://arxiv.org/abs/2003.06222).
 
 ## Notes
 
