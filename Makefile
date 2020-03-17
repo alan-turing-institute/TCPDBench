@@ -65,6 +65,9 @@ clean_summaries:
 
 .PHONY: tables default_tables best_tables aggregate_wide
 
+table-dir:
+	mkdir -p $(TABLE_DIR)
+
 tables: default_tables best_tables aggregate_wide
 
 best_tables: \
@@ -77,28 +80,28 @@ best_tables: \
 	$(TABLE_DIR)/best_f1_uni_full.json \
 	$(TABLE_DIR)/best_cover_uni_full.json
 
-$(TABLE_DIR)/best_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/best_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m f1 -d combined -f tex -t full > $@
 
-$(TABLE_DIR)/best_cover_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/best_cover_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m cover -d combined -f tex -t full > $@
 
-$(TABLE_DIR)/best_f1_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/best_f1_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m f1 -d uni -f json -t avg > $@
 
-$(TABLE_DIR)/best_f1_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/best_f1_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m f1 -d multi -f json -t avg > $@
 
-$(TABLE_DIR)/best_cover_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/best_cover_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m cover -d uni -f json -t avg > $@
 
-$(TABLE_DIR)/best_cover_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/best_cover_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m cover -d multi -f json -t avg > $@
 
-$(TABLE_DIR)/best_cover_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/best_cover_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m cover -d uni -f json -t full > $@
 
-$(TABLE_DIR)/best_f1_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/best_f1_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m f1 -d uni -f json -t full > $@
 
 default_tables: \
@@ -111,28 +114,28 @@ default_tables: \
 	$(TABLE_DIR)/default_cover_uni_full.json \
 	$(TABLE_DIR)/default_f1_uni_full.json
 
-$(TABLE_DIR)/default_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/default_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m f1 -d combined -f tex -t full > $@
 
-$(TABLE_DIR)/default_cover_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/default_cover_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m cover -d combined -f tex -t full > $@
 
-$(TABLE_DIR)/default_f1_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/default_f1_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m f1 -d uni -f json -t avg > $@
 
-$(TABLE_DIR)/default_f1_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/default_f1_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m f1 -d multi -f json -t avg > $@
 
-$(TABLE_DIR)/default_cover_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/default_cover_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m cover -d uni -f json -t avg > $@
 
-$(TABLE_DIR)/default_cover_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/default_cover_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m cover -d multi -f json -t avg > $@
 
-$(TABLE_DIR)/default_cover_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/default_cover_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m cover -d uni -f json -t full > $@
 
-$(TABLE_DIR)/default_f1_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries
+$(TABLE_DIR)/default_f1_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m f1 -d uni -f json -t full > $@
 
 
@@ -146,7 +149,7 @@ $(TABLE_DIR)/aggregate_table_wide.tex: $(SCRIPT_DIR)/aggregate_table_wide.py \
 	$(TABLE_DIR)/default_cover_uni_avg.json \
 	$(TABLE_DIR)/default_cover_multi_avg.json \
 	$(TABLE_DIR)/default_f1_uni_avg.json \
-	$(TABLE_DIR)/default_f1_uni_avg.json
+	$(TABLE_DIR)/default_f1_uni_avg.json | table-dir
 	python $< \
 		--bcu $(TABLE_DIR)/best_cover_uni_avg.json \
 		--bcm $(TABLE_DIR)/best_cover_multi_avg.json \
@@ -159,7 +162,7 @@ $(TABLE_DIR)/aggregate_table_wide.tex: $(SCRIPT_DIR)/aggregate_table_wide.py \
 
 
 clean_tables:
-	rm -f $(TABLE_DIR)/aggregate_table.tex
+	rm -f $(TABLE_DIR)/aggregate_table_wide.tex
 	rm -f $(TABLE_DIR)/best_cover_combined_full.tex
 	rm -f $(TABLE_DIR)/best_cover_multi_avg.json
 	rm -f $(TABLE_DIR)/best_cover_uni_avg.json
@@ -186,6 +189,9 @@ clean_tables:
 
 .PHONY: rankplots
 
+rank-dir:
+	mkdir -p $(RANK_DIR)
+
 rankplots: \
 	$(RANK_DIR)/rankplot_best_cover_uni.tex \
 	$(RANK_DIR)/rankplot_best_f1_uni.tex \
@@ -196,19 +202,19 @@ rankplots: \
 	$(RANK_DIR)/rankplot_default_cover_uni.pdf \
 	$(RANK_DIR)/rankplot_default_f1_uni.pdf
 
-$(RANK_DIR)/rankplot_best_cover_uni.tex: $(TABLE_DIR)/best_cover_uni_full.json $(SCRIPT_DIR)/rank_plots.py
+$(RANK_DIR)/rankplot_best_cover_uni.tex: $(TABLE_DIR)/best_cover_uni_full.json $(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
 
-$(RANK_DIR)/rankplot_best_f1_uni.tex: $(TABLE_DIR)/best_f1_uni_full.json $(SCRIPT_DIR)/rank_plots.py
+$(RANK_DIR)/rankplot_best_f1_uni.tex: $(TABLE_DIR)/best_f1_uni_full.json $(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
 
-$(RANK_DIR)/rankplot_default_cover_uni.tex: $(TABLE_DIR)/default_cover_uni_full.json $(SCRIPT_DIR)/rank_plots.py
+$(RANK_DIR)/rankplot_default_cover_uni.tex: $(TABLE_DIR)/default_cover_uni_full.json $(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
 
-$(RANK_DIR)/rankplot_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json $(SCRIPT_DIR)/rank_plots.py
+$(RANK_DIR)/rankplot_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json $(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
 
-$(RANK_DIR)/rankplot_%.pdf: $(RANK_DIR)/rankplot_%.tex
+$(RANK_DIR)/rankplot_%.pdf: $(RANK_DIR)/rankplot_%.tex | rank-dir
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode --shell-escape" \
 		-outdir=$(RANK_DIR) $<
 	cd $(RANK_DIR) && latexmk -c
@@ -228,28 +234,30 @@ clean_rankplots:
 
 .PHONY: constants
 
-CONSTANT_TARGETS = \
-		   $(CONST_DIR)/sigtest_global_best_cover_uni.tex \
+CONSTANT_TARGETS = $(CONST_DIR)/sigtest_global_best_cover_uni.tex \
 		   $(CONST_DIR)/sigtest_global_best_f1_uni.tex \
 		   $(CONST_DIR)/sigtest_global_default_cover_uni.tex \
 		   $(CONST_DIR)/sigtest_global_default_f1_uni.tex
 
+const-dir:
+	mkdir -p $(CONST_DIR)
+
 constants: $(CONSTANT_TARGETS)
 
 $(CONST_DIR)/sigtest_global_best_cover_uni.tex: $(TABLE_DIR)/best_cover_uni_full.json \
-	$(SCRIPT_DIR)/significance.py
+	$(SCRIPT_DIR)/significance.py | const-dir
 	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
 
 $(CONST_DIR)/sigtest_global_best_f1_uni.tex: $(TABLE_DIR)/best_f1_uni_full.json \
-	$(SCRIPT_DIR)/significance.py
+	$(SCRIPT_DIR)/significance.py | const-dir
 	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
 
 $(CONST_DIR)/sigtest_global_default_cover_uni.tex: $(TABLE_DIR)/default_cover_uni_full.json \
-	$(SCRIPT_DIR)/significance.py
+	$(SCRIPT_DIR)/significance.py | const-dir
 	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
 
 $(CONST_DIR)/sigtest_global_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json \
-	$(SCRIPT_DIR)/significance.py
+	$(SCRIPT_DIR)/significance.py | const-dir
 	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
 
 clean_constants:

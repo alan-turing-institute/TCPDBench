@@ -8,6 +8,7 @@ RUN apt-get update && \
 		build-essential \
 		r-base \
 		latexmk \
+		texlive-latex-extra \
 		libopenmpi-dev \
 		liblzma-dev
 
@@ -22,6 +23,9 @@ RUN apt-get install -y --no-install-recommends \
 	cd /usr/local/bin && ln -s /usr/bin/python3 python && \
     pip install virtualenv abed
 
+# Set the default shell to bash
+RUN mv /bin/sh /bin/sh.old && cp /bin/bash /bin/sh
+
 # Clone the dataset repo
 RUN git clone https://github.com/alan-turing-institute/TCPD
 
@@ -32,7 +36,10 @@ RUN cd TCPD && make export
 RUN git clone --recurse-submodules https://github.com/alan-turing-institute/TCPDBench
 
 # Copy the datasets into the benchmark dir
-RUN mkdir -p TCPDBench/datasets && cp TCPD/export/*.json TCPDBench/dataset/
+RUN mkdir -p /TCPDBench/datasets && cp TCPD/export/*.json /TCPDBench/datasets/
+
+# Install Python dependencies
+RUN pip install -r /TCPDBench/analysis/requirements.txt
 
 # Set the working directory
 WORKDIR TCPDBench
