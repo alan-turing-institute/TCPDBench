@@ -1,8 +1,8 @@
 [submodule "execs/python/bocpdms"]
 	path = execs/python/bocpdms
-	url = https://github.com/GjjvdBurg/bocpdms.git
+	url = https://github.com/GjjvdBurg/bocpdms
 	branch = fixes
 [submodule "execs/python/rbocpdms"]
 	path = execs/python/rbocpdms
-	url = https://github.com/GjjvdBurg/rbocpdms.git
+	url = https://github.com/GjjvdBurg/rbocpdms
 	branch = fixes
