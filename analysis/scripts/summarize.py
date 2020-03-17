@@ -130,9 +130,9 @@ def main():
 
     dataset_dir = os.path.join(args.result_dir, data_results)
 
-    for method in os.listdir(dataset_dir):
+    for method in sorted(os.listdir(dataset_dir)):
         method_dir = os.path.join(dataset_dir, method)
-        for result_file in os.listdir(method_dir):
+        for result_file in sorted(os.listdir(method_dir)):
             # print("Processing result file: %s" % result_file)
             fname = os.path.join(method_dir, result_file)
             result = load_json(fname)
