@@ -127,8 +127,8 @@ instructions are as follows:
    ```
 
    Note that this will also create an R virtual environment (using 
-   [RSimpleVenv](https://github.com/GjjvdBurg/RSimpleVenv), which ensures that 
-   the exact versions of the packages used in the experiments will be 
+   [RSimpleVenv](https://github.com/GjjvdBurg/RSimpleVenv)), which ensures 
+   that the exact versions of the packages used in the experiments will be 
    installed.
 
 5. Run abed through ``mpiexec``, as follows:
