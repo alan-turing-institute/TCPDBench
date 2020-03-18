@@ -1,5 +1,7 @@
 # Turing Change Point Detection Benchmark
 
+[![Build Status](https://travis-ci.org/alan-turing-institute/TCPDBench.svg?branch=master)](https://travis-ci.org/alan-turing-institute/TCPDBench)
+
 Welcome to the repository for the Turing Change Point Detection Benchmark, a 
 benchmark evaluation of change point detection algorithms developed at [The 
 Alan Turing Institute](https://turing.ac.uk). This benchmark uses the time 
@@ -154,7 +156,22 @@ $ docker build -t alan-turing-institute/tcpdbench github.com/alan-turing-institu
 ```
 
 You can then follow the same procedure as above but using the relevant docker 
-commands to run them in the container.
+commands to run them in the container:
+
+* For reproducing just the tables and figures, use:
+  ```
+  $ docker run -v /absolute/path/to/TCPDBench:/TCPDBench alan-turing-institute/tcpdbench /bin/bash -c "make results"
+  ```
+
+* For reproducing all the experiments:
+  ```
+  $ docker run -v /absolute/path/to/TCPDBench:/TCPDBench alan-turing-institute/tcpdbench /bin/bash -c "mv abed_results old_abed_results && mkdir abed_results && abed reload_tasks && abed status && make venvs && mpiexec --allow-run-as-root -np 4 abed local && make results"
+  ```
+
+where in both cases ``/absolute/path/to/TCPDBench`` is replaced with the path 
+on your machine where you want to store the files (so that results are not 
+lost when the docker container closes, see [docker 
+volumes](https://docs.docker.com/storage/volumes/)).
 
 ## License
 

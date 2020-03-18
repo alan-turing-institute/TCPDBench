@@ -7,15 +7,22 @@ RUN apt-get update && \
 		git \
 		build-essential \
 		r-base \
+		r-base-dev \
 		latexmk \
 		texlive-latex-extra \
 		libopenmpi-dev \
-		liblzma-dev
+		liblzma-dev \
+		libgit2-dev \
+		libxml2-dev \
+		libcurl4-openssl-dev \
+		libssl-dev \
+		libopenblas-dev
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
 	python3 \
 	python3-dev \
+	python3-tk \
 	python3-pip && \
     pip3 install --no-cache-dir --upgrade pip setuptools && \
 	echo "alias python='python3'" >> /root/.bash_aliases && \
