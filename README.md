@@ -1,6 +1,7 @@
 # Turing Change Point Detection Benchmark
 
 [![Build Status](https://travis-ci.org/alan-turing-institute/TCPDBench.svg?branch=master)](https://travis-ci.org/alan-turing-institute/TCPDBench)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3740582.svg)](https://doi.org/10.5281/zenodo.3740582)
 
 Welcome to the repository for the Turing Change Point Detection Benchmark, a 
 benchmark evaluation of change point detection algorithms developed at [The 
