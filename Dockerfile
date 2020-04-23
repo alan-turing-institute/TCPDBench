@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata && \
-	apt-get remove -y python libcurl4 && \
+	apt-get remove -y python && \
 	apt-get install -y --no-install-recommends \
 		git \
 		build-essential \
@@ -14,10 +14,12 @@ RUN apt-get update && \
 		liblzma-dev \
 		libgit2-dev \
 		libxml2-dev \
+		libcurl4=7.58.0-2ubuntu3.8 \
 		libcurl4-openssl-dev \
 		libcurl4-gnutls-dev \
 		libssl-dev \
 		libopenblas-dev
+
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
