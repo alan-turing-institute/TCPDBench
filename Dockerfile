@@ -15,6 +15,7 @@ RUN apt-get update && \
 		libgit2-dev \
 		libxml2-dev \
 		libcurl4-openssl-dev \
+		libcurl4-gnutls-dev \
 		libssl-dev \
 		libopenblas-dev
 
