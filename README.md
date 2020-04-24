@@ -43,6 +43,20 @@ dataset or this benchmark should cite that paper:
 }
 ```
 
+For the experiments we've used the [abed](https://github.com/GjjvdBurg/abed) 
+command line program, which makes it easy to organize and run the experiments. 
+This means that all experiments are defined through the 
+[abed_conf.py](abed_conf.py) file. In particular, the hyperparameters and the 
+command line arguments to all methods are defined in that file. Next, all 
+methods are called as command line scripts and they are defined in the 
+[execs](execs) directory. The raw results from the experiments are collected 
+in JSON files and placed in the [abed_results](abed_results) directory, 
+organized by dataset and method. Finally, we use 
+[Make](https://www.gnu.org/software/make/) to coordinate our analysis scripts: 
+first we generate [summary files](analysis/output/summaries) using 
+[summarize.py](analysis/scripts/summarize.py), and then use these to generate 
+all the tables and figures in the paper.
+
 ## Getting Started
 
 This repository contains all the code to generate the results 
