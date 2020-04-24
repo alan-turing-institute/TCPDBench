@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:20.04
 
 RUN apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata && \
@@ -18,6 +18,7 @@ RUN apt-get update && \
 		libssl-dev \
 		libopenblas-dev
 
+
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
 	python3 \
@@ -28,6 +29,7 @@ RUN apt-get install -y --no-install-recommends \
 	echo "alias python='python3'" >> /root/.bash_aliases && \
 	echo "alias pip='pip3'" >> /root/.bash_aliases && \
 	cd /usr/local/bin && ln -s /usr/bin/python3 python && \
+	cd /usr/local/bin && ln -s /usr/bin/pip3 pip && \
     pip install virtualenv abed
 
 # Set the default shell to bash
