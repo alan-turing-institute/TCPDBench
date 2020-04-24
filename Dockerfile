@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata && \
@@ -14,9 +14,7 @@ RUN apt-get update && \
 		liblzma-dev \
 		libgit2-dev \
 		libxml2-dev \
-		libcurl4=7.58.0-2ubuntu3.8 \
 		libcurl4-openssl-dev \
-		libcurl4-gnutls-dev \
 		libssl-dev \
 		libopenblas-dev
 
@@ -31,6 +29,7 @@ RUN apt-get install -y --no-install-recommends \
 	echo "alias python='python3'" >> /root/.bash_aliases && \
 	echo "alias pip='pip3'" >> /root/.bash_aliases && \
 	cd /usr/local/bin && ln -s /usr/bin/python3 python && \
+	cd /usr/local/bin && ln -s /usr/bin/pip3 pip && \
     pip install virtualenv abed
 
 # Set the default shell to bash
