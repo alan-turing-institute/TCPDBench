@@ -25,7 +25,7 @@ RUN apt-get install -y --no-install-recommends \
 	python3-dev \
 	python3-tk \
 	python3-pip && \
-    pip3 install --no-cache-dir --upgrade pip setuptools && \
+    pip3 install --no-cache-dir --upgrade setuptools && \
 	echo "alias python='python3'" >> /root/.bash_aliases && \
 	echo "alias pip='pip3'" >> /root/.bash_aliases && \
 	cd /usr/local/bin && ln -s /usr/bin/python3 python && \
