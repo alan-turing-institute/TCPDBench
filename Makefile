@@ -257,6 +257,7 @@ $(RANK_DIR)/rankplot_default_f1_multi.tex: $(TABLE_DIR)/default_f1_multi_full.js
 	$(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
 
+
 $(RANK_DIR)/rankplot_%.pdf: $(RANK_DIR)/rankplot_%.tex | rank-dir
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode --shell-escape" \
 		-outdir=$(RANK_DIR) $<
@@ -390,4 +391,6 @@ validate: ./utils/validate_schema.py ./schema.json
 #         #
 ###########
 
-clean: clean_summaries clean_tables clean_rankplots clean_venvs
+clean: clean_results clean_venvs
+
+clean_results: clean_summaries clean_tables clean_rankplots clean_constants
