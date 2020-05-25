@@ -12,6 +12,17 @@ License: See the LICENSE file.
 
 def true_positives(T, X, margin=5):
     """Compute true positives without double counting
+
+    >>> true_positives({1, 10, 20, 23}, {3, 8, 20})
+    {1, 10, 20}
+    >>> true_positives({1, 10, 20, 23}, {1, 3, 8, 20})
+    {1, 10, 20}
+    >>> true_positives({1, 10, 20, 23}, {1, 3, 5, 8, 20})
+    {1, 10, 20}
+    >>> true_positives(set(), {1, 2, 3})
+    set()
+    >>> true_positives({1, 2, 3}, set())
+    set()
     """
     # make a copy so we don't affect the caller
     X = set(list(X))
@@ -37,6 +48,12 @@ def f_measure(annotations, predictions, margin=5, alpha=0.5, return_PR=False):
 
     Remember that all CP locations are 0-based!
 
+    >>> f_measure({1: [10, 20], 2: [11, 20], 3: [10], 4: [0, 5]}, [10, 20])
+    1.0
+    >>> f_measure({1: [], 2: [10], 3: [50]}, [10])
+    0.9090909090909091
+    >>> f_measure({1: [], 2: [10], 3: [50]}, [])
+    0.8
     """
     # ensure 0 is in all the sets
     Tks = {k + 1: set(annotations[uid]) for k, uid in enumerate(annotations)}
@@ -46,8 +63,10 @@ def f_measure(annotations, predictions, margin=5, alpha=0.5, return_PR=False):
     X = set(predictions)
     X.add(0)
 
-    Tstar = [tau for tau in Tk for Tk in Tks.values()]
-    Tstar = set(Tstar)
+    Tstar = set()
+    for Tk in Tks.values():
+        for tau in Tk:
+            Tstar.add(tau)
 
     K = len(Tks)
 
@@ -63,7 +82,17 @@ def f_measure(annotations, predictions, margin=5, alpha=0.5, return_PR=False):
 
 
 def overlap(A, B):
-    """ Return the overlap (i.e. Jaccard index) of two sets """
+    """ Return the overlap (i.e. Jaccard index) of two sets
+
+    >>> overlap({1, 2, 3}, set())
+    0.0
+    >>> overlap({1, 2, 3}, {2, 5})
+    0.25
+    >>> overlap(set(), {1, 2, 3})
+    0.0
+    >>> overlap({1, 2, 3}, {1, 2, 3})
+    1.0
+    """
     return len(A.intersection(B)) / len(A.union(B))
 
 
@@ -101,6 +130,15 @@ def cover_single(Sprime, S):
     """Compute the covering of a segmentation S by a segmentation Sprime.
 
     This follows equation (8) in Arbaleaz, 2010.
+
+    >>> cover_single([{1, 2, 3}, {4, 5}, {6}], [{1, 2, 3}, {4, 5, 6}])
+    0.8333333333333334
+    >>> cover_single([{1, 2, 3, 4}, {5, 6}], [{1, 2, 3, 4, 5, 6}])
+    0.6666666666666666
+    >>> cover_single([{1, 2}, {3, 4}, {5, 6}], [{1, 2, 3}, {4, 5, 6}])
+    0.6666666666666666
+    >>> cover_single([{1, 2, 3, 4, 5, 6}], [{1}, {2}, {3}, {4, 5, 6}])
+    0.3333333333333333
     """
     T = sum(map(len, Sprime))
     assert T == sum(map(len, S))
@@ -117,6 +155,13 @@ def covering(annotations, predictions, n_obs):
     annotations : dict from user_id to iterable of CP locations
     predictions : iterable of predicted Cp locations
     n_obs : number of observations in the series
+
+    >>> covering({1: [10, 20], 2: [10], 3: [0, 5]}, [10, 20], 45)
+    0.7962962962962963
+    >>> covering({1: [], 2: [10], 3: [40]}, [10], 45)
+    0.7954144620811286
+    >>> covering({1: [], 2: [10], 3: [40]}, [], 45)
+    0.8189300411522634
 
     """
     Ak = {
