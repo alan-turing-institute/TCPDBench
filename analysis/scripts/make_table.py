@@ -103,6 +103,7 @@ class Method(Enum):
     rfpop = "rfpop"
     segneigh = "segneigh"
     wbs = "wbs"
+    zero = "zero"
 
 
 # Methods that support multidimensional datasets
@@ -112,6 +113,7 @@ MULTIMETHODS = [
     Method.ecp,
     Method.kcpa,
     Method.rbocpdms,
+    Method.zero
 ]
 
 # Multidimensional datasets
@@ -126,7 +128,8 @@ MULTIDATASETS = [
 MISSING_DATASETS = [Dataset.uk_coal_employ]
 
 # Methods that handle missing values
-MISSING_METHODS = [Method.bocpdms, Method.ecp, Method.kcpa, Method.prophet]
+MISSING_METHODS = [Method.bocpdms, Method.ecp, Method.kcpa, Method.prophet, 
+        Method.zero]
 
 
 @dataclass

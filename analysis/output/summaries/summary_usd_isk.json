@@ -23770,6 +23770,20 @@
 				"status": "SUCCESS"
 			}
 		],
+		"best_zero": [
+			{
+				"parameters": {},
+				"task_file": "4297e7583cae38de.json",
+				"cplocations": [],
+				"scores": {
+					"f1": 0.48866498740554154,
+					"precision": 1.0,
+					"recall": 0.3233333333333333,
+					"cover": 0.43629300594994175
+				},
+				"status": "SUCCESS"
+			}
+		],
 		"default_amoc": [
 			{
 				"parameters": {
@@ -24411,6 +24425,20 @@
 					"precision": 0.10344827586206896,
 					"recall": 1.0,
 					"cover": 0.19410063620589937
+				},
+				"status": "SUCCESS"
+			}
+		],
+		"default_zero": [
+			{
+				"parameters": {},
+				"task_file": "9ae253416c054321.json",
+				"cplocations": [],
+				"scores": {
+					"f1": 0.48866498740554154,
+					"precision": 1.0,
+					"recall": 0.3233333333333333,
+					"cover": 0.43629300594994175
 				},
 				"status": "SUCCESS"
 			}

@@ -1,0 +1,15 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/unemployment_nl.json",
+	"dataset": "unemployment_nl",
+	"dataset_md5": "26d8c0359de7f733a6fb51d4d60b5af6",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {},
+	"result": {
+		"cplocations": [],
+		"runtime": 2.384185791015625e-07
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py",
+	"script_md5": "95b65ddd5669b41385966a4aad387118",
+	"status": "SUCCESS"
+}
