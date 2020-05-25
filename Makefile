@@ -237,7 +237,14 @@ clean_rankplots:
 CONSTANT_TARGETS = $(CONST_DIR)/sigtest_global_best_cover_uni.tex \
 		   $(CONST_DIR)/sigtest_global_best_f1_uni.tex \
 		   $(CONST_DIR)/sigtest_global_default_cover_uni.tex \
-		   $(CONST_DIR)/sigtest_global_default_f1_uni.tex
+		   $(CONST_DIR)/sigtest_global_default_f1_uni.tex \
+		   $(CONST_DIR)/SeriesLengthMin.tex \
+		   $(CONST_DIR)/SeriesLengthMax.tex \
+		   $(CONST_DIR)/SeriesLengthMean.tex \
+		   $(CONST_DIR)/UniqueAnnotationsMin.tex \
+		   $(CONST_DIR)/UniqueAnnotationsMax.tex \
+		   $(CONST_DIR)/UniqueAnnotationsMean.tex \
+		   $(CONST_DIR)/UniqueAnnotationsStd.tex
 
 const-dir:
 	mkdir -p $(CONST_DIR)
@@ -259,6 +266,34 @@ $(CONST_DIR)/sigtest_global_default_cover_uni.tex: $(TABLE_DIR)/default_cover_un
 $(CONST_DIR)/sigtest_global_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json \
 	$(SCRIPT_DIR)/significance.py | const-dir
 	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
+
+$(CONST_DIR)/SeriesLengthMin.tex: $(SCRIPT_DIR)/descriptive_length.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t min > $@
+
+$(CONST_DIR)/SeriesLengthMax.tex: $(SCRIPT_DIR)/descriptive_length.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t max > $@
+
+$(CONST_DIR)/SeriesLengthMean.tex: $(SCRIPT_DIR)/descriptive_length.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t mean > $@
+
+$(CONST_DIR)/UniqueAnnotationsMin.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t min > $@
+
+$(CONST_DIR)/UniqueAnnotationsMax.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t max > $@
+
+$(CONST_DIR)/UniqueAnnotationsMean.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t mean > $@
+
+$(CONST_DIR)/UniqueAnnotationsStd.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t std > $@
 
 clean_constants:
 	rm -f $(CONSTANT_TARGETS)
