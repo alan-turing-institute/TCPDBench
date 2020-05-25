@@ -89,11 +89,26 @@ def warning(msg):
 def preprocess_data(data, _type):
     methods = set([m for dset in data.keys() for m in data[dset].keys()])
     methods = sorted(methods)
+
+    # filter out rbocpdms on "best" (uni or multi)
     if _type == "best":
         warning(
             "\nWarning: Filtering out RBOCPDMS due to insufficient results.\n"
         )
         methods = [m for m in methods if not m == "rbocpdms"]
+
+    # filter out methods that have no results on any dataset
+    methods_no_result = set()
+    for m in methods:
+        if all(data[d][m] is None for d in data):
+            methods_no_result.add(m)
+    if methods_no_result:
+        print(
+            "\nWarning: Filtering out %r due to no results on any series\n"
+            % methods_no_result,
+            file=sys.stderr,
+        )
+        methods = [m for m in methods if not m in methods_no_result]
 
     data_w_methods = {}
     for dset in data:
