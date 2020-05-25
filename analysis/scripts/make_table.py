@@ -113,7 +113,7 @@ MULTIMETHODS = [
     Method.ecp,
     Method.kcpa,
     Method.rbocpdms,
-    Method.zero
+    Method.zero,
 ]
 
 # Multidimensional datasets
@@ -128,8 +128,13 @@ MULTIDATASETS = [
 MISSING_DATASETS = [Dataset.uk_coal_employ]
 
 # Methods that handle missing values
-MISSING_METHODS = [Method.bocpdms, Method.ecp, Method.kcpa, Method.prophet, 
-        Method.zero]
+MISSING_METHODS = [
+    Method.bocpdms,
+    Method.ecp,
+    Method.kcpa,
+    Method.prophet,
+    Method.zero,
+]
 
 
 @dataclass
@@ -326,7 +331,10 @@ def average_results(results):
         if any(r.score is None for r in dset_results):
             to_remove.append(dataset)
     if to_remove:
-        warning("\nWarning: Filtering out datasets: %r due to incomplete results for some detectors.\n" % to_remove)
+        warning(
+            "\nWarning: Filtering out datasets: %r due to incomplete results for some detectors.\n"
+            % to_remove
+        )
     results = list(filter(lambda r: not r.dataset in to_remove, results))
 
     # check that we are now complete: for all datasets and all methods in the
