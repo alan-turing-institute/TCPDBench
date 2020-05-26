@@ -125,6 +125,7 @@ METHODS = [
     "best_kcpa",
     "best_wbs",
     "best_prophet",
+    "best_zero",
     "default_bocpd",
     "default_bocpdms",
     "default_rbocpdms",
@@ -138,6 +139,7 @@ METHODS = [
     "default_kcpa",
     "default_wbs",
     "default_prophet",
+    "default_zero",
 ]
 
 # many of these combinations will be invalid for the changepoint package, but
@@ -210,6 +212,7 @@ PARAMS = {
         "integrated": ["true", "false"],
     },
     "best_prophet": {"Nmax": ["max", "default"]},
+    "best_zero": {"no_param": [0]},
     "default_bocpd": {"no_param": [0]},
     "default_bocpdms": {"no_param": [0]},
     "default_rbocpdms": {"no_param": [0]},
@@ -223,6 +226,7 @@ PARAMS = {
     "default_kcpa": {"no_param": [0]},
     "default_wbs": {"no_param": [0]},
     "default_prophet": {"no_param": [0]},
+    "default_zero": {"no_param": [0]}
 }
 
 COMMANDS = {
@@ -243,6 +247,7 @@ COMMANDS = {
     "best_rbocpdms": (
         "source {execdir}/python/rbocpdms/venv/bin/activate && python {execdir}/python/cpdbench_rbocpdms.py -i {datadir}/{dataset}.json --intensity {intensity} --prior-a {prior_a} --prior-b {prior_b} --threshold 100 --alpha-param {alpha_param} --alpha-rld {alpha_rld} --use-timeout"
     ),
+    "best_zero": "python {execdir}/python/cpdbench_zero.py -i {datadir}/{dataset}.json",
     "default_amoc": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p MBIC -f mean -t Normal -m AMOC",
     "default_binseg": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p MBIC -f mean -t Normal -m BinSeg -Q default",
     "default_cpnp": "Rscript --no-save --slave {execdir}/R/cpdbench_changepointnp.R -i {datadir}/{dataset}.json -p MBIC -q 10",
@@ -256,6 +261,7 @@ COMMANDS = {
     "default_bocpd": "Rscript --no-save --slave {execdir}/R/cpdbench_ocp.R -i {datadir}/{dataset}.json -l 100 --prior-a 1.0 --prior-b 1.0 --prior-k 1.0",
     "default_bocpdms": "source {execdir}/python/bocpdms/venv/bin/activate && python {execdir}/python/cpdbench_bocpdms.py -i {datadir}/{dataset}.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
     "default_rbocpdms": "source {execdir}/python/rbocpdms/venv/bin/activate && python {execdir}/python/cpdbench_rbocpdms.py -i {datadir}/{dataset}.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
+    "default_zero": "python {execdir}/python/cpdbench_zero.py -i {datadir}/{dataset}.json",
 }
 
 METRICS = {}

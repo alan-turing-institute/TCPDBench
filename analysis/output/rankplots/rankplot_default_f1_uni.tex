@@ -22,6 +22,7 @@
 \definecolor{dotColorK}{HTML}{000000}
 \definecolor{dotColorL}{HTML}{000000}
 \definecolor{dotColorM}{HTML}{000000}
+\definecolor{dotColorN}{HTML}{000000}
 
 \definecolor{labelBgColorA}{HTML}{FFFFFF}
 \definecolor{labelBgColorB}{HTML}{FFFFFF}
@@ -36,6 +37,7 @@
 \definecolor{labelBgColorK}{HTML}{FFFFFF}
 \definecolor{labelBgColorL}{HTML}{FFFFFF}
 \definecolor{labelBgColorM}{HTML}{FFFFFF}
+\definecolor{labelBgColorN}{HTML}{FFFFFF}
 
 \definecolor{labelTextColorA}{HTML}{000000}
 \definecolor{labelTextColorB}{HTML}{000000}
@@ -50,6 +52,7 @@
 \definecolor{labelTextColorK}{HTML}{000000}
 \definecolor{labelTextColorL}{HTML}{000000}
 \definecolor{labelTextColorM}{HTML}{000000}
+\definecolor{labelTextColorN}{HTML}{000000}
 
 \definecolor{linkColorA}{HTML}{000000}
 \definecolor{linkColorB}{HTML}{000000}
@@ -64,6 +67,7 @@
 \definecolor{linkColorK}{HTML}{000000}
 \definecolor{linkColorL}{HTML}{000000}
 \definecolor{linkColorM}{HTML}{000000}
+\definecolor{linkColorN}{HTML}{000000}
 
 \def\textA{\textsc{amoc}}
 \def\textB{\textsc{binseg}}
@@ -78,6 +82,7 @@
 \def\textK{\textsc{rfpop}}
 \def\textL{\textsc{segneigh}}
 \def\textM{\textsc{wbs}}
+\def\textN{\textsc{zero}}
 
 \begin{document}
 \begin{tikzpicture}[x=1bp,y=-1bp]
@@ -97,175 +102,187 @@
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {1};
 \end{scope}
-\begin{scope}[shift={(50, 0)}]
+\begin{scope}[shift={(46, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {2};
 \end{scope}
-\begin{scope}[shift={(100, 0)}]
+\begin{scope}[shift={(92, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {3};
 \end{scope}
-\begin{scope}[shift={(150, 0)}]
+\begin{scope}[shift={(138, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {4};
 \end{scope}
-\begin{scope}[shift={(200, 0)}]
+\begin{scope}[shift={(184, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {5};
 \end{scope}
-\begin{scope}[shift={(250, 0)}]
+\begin{scope}[shift={(230, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {6};
 \end{scope}
-\begin{scope}[shift={(300, 0)}]
+\begin{scope}[shift={(276, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {7};
 \end{scope}
-\begin{scope}[shift={(350, 0)}]
+\begin{scope}[shift={(323, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {8};
 \end{scope}
-\begin{scope}[shift={(400, 0)}]
+\begin{scope}[shift={(369, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {9};
 \end{scope}
-\begin{scope}[shift={(450, 0)}]
+\begin{scope}[shift={(415, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {10};
 \end{scope}
-\begin{scope}[shift={(500, 0)}]
+\begin{scope}[shift={(461, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {11};
 \end{scope}
-\begin{scope}[shift={(550, 0)}]
+\begin{scope}[shift={(507, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {12};
 \end{scope}
-\begin{scope}[shift={(600, 0)}]
+\begin{scope}[shift={(553, 0)}]
 \draw[thick] (0, 0) -- (0, -6pt)
 node[anchor=north] {13};
+\end{scope}
+\begin{scope}[shift={(600, 0)}]
+\draw[thick] (0, 0) -- (0, -6pt)
+node[anchor=north] {14};
 \end{scope}
 \end{scope}
 
 % link layer
 \begin{scope}
-\draw[color=linkColorA, thin] (164.28571428571428, 0) .. controls
-(164.28571428571428, -10.0) and (109.0, -10.0) .. (109.0, -20.0);
-\draw[color=linkColorB, thin] (133.57142857142856, 0) .. controls
-(133.57142857142856, -10.0) and (31.0, -10.0) .. (31.0, -20.0);
-\draw[color=linkColorC, thin] (202.1428571428571, 0) .. controls
-(202.1428571428571, -10.0) and (211.0, -10.0) .. (211.0, -20.0);
-\draw[color=linkColorD, thin] (325.0, 0) .. controls
-(325.0, -10.0) and (328.0, -10.0) .. (328.0, -20.0);
-\draw[color=linkColorE, thin] (280.71428571428567, 0) .. controls
-(280.71428571428567, -10.0) and (281.0, -10.0) .. (281.0, -20.0);
-\draw[color=linkColorF, thin] (250.71428571428572, 0) .. controls
-(250.71428571428572, -10.0) and (248.0, -10.0) .. (248.0, -20.0);
-\draw[color=linkColorG, thin] (598.5714285714286, 0) .. controls
-(598.5714285714286, -10.0) and (599.0, -10.0) .. (599.0, -20.0);
-\draw[color=linkColorH, thin] (144.28571428571428, 0) .. controls
-(144.28571428571428, -10.0) and (71.0, -10.0) .. (71.0, -20.0);
-\draw[color=linkColorI, thin] (337.85714285714283, 0) .. controls
-(337.85714285714283, -10.0) and (385.0, -10.0) .. (385.0, -20.0);
-\draw[color=linkColorJ, thin] (370.7142857142857, 0) .. controls
-(370.7142857142857, -10.0) and (445.0, -10.0) .. (445.0, -20.0);
-\draw[color=linkColorK, thin] (441.42857142857144, 0) .. controls
-(441.42857142857144, -10.0) and (498.0, -10.0) .. (498.0, -20.0);
-\draw[color=linkColorL, thin] (186.42857142857144, 0) .. controls
-(186.42857142857144, -10.0) and (159.0, -10.0) .. (159.0, -20.0);
-\draw[color=linkColorM, thin] (464.2857142857143, 0) .. controls
-(464.2857142857143, -10.0) and (536.0, -10.0) .. (536.0, -20.0);
+\draw[color=linkColorA, thin] (211.64835164835162, 0) .. controls
+(211.64835164835162, -10.0) and (203.0, -10.0) .. (203.0, -20.0);
+\draw[color=linkColorB, thin] (141.75824175824175, 0) .. controls
+(141.75824175824175, -10.0) and (21.0, -10.0) .. (21.0, -20.0);
+\draw[color=linkColorC, thin] (180.65934065934067, 0) .. controls
+(180.65934065934067, -10.0) and (101.0, -10.0) .. (101.0, -20.0);
+\draw[color=linkColorD, thin] (356.043956043956, 0) .. controls
+(356.043956043956, -10.0) and (355.0, -10.0) .. (355.0, -20.0);
+\draw[color=linkColorE, thin] (253.84615384615384, 0) .. controls
+(253.84615384615384, -10.0) and (278.0, -10.0) .. (278.0, -20.0);
+\draw[color=linkColorF, thin] (275.6043956043956, 0) .. controls
+(275.6043956043956, -10.0) and (311.0, -10.0) .. (311.0, -20.0);
+\draw[color=linkColorG, thin] (593.4065934065934, 0) .. controls
+(593.4065934065934, -10.0) and (597.0, -10.0) .. (597.0, -20.0);
+\draw[color=linkColorH, thin] (158.9010989010989, 0) .. controls
+(158.9010989010989, -10.0) and (62.0, -10.0) .. (62.0, -20.0);
+\draw[color=linkColorI, thin] (383.0769230769231, 0) .. controls
+(383.0769230769231, -10.0) and (454.0, -10.0) .. (454.0, -20.0);
+\draw[color=linkColorJ, thin] (410.7692307692308, 0) .. controls
+(410.7692307692308, -10.0) and (514.0, -10.0) .. (514.0, -20.0);
+\draw[color=linkColorK, thin] (365.934065934066, 0) .. controls
+(365.934065934066, -10.0) and (405.0, -10.0) .. (405.0, -20.0);
+\draw[color=linkColorL, thin] (200.43956043956044, 0) .. controls
+(200.43956043956044, -10.0) and (153.0, -10.0) .. (153.0, -20.0);
+\draw[color=linkColorM, thin] (417.3626373626374, 0) .. controls
+(417.3626373626374, -10.0) and (562.0, -10.0) .. (562.0, -20.0);
+\draw[color=linkColorN, thin] (250.54945054945057, 0) .. controls
+(250.54945054945057, -10.0) and (241.0, -10.0) .. (241.0, -20.0);
 \end{scope}
 
 % label layer
 \begin{scope}
-\begin{scope}[shift={(90, -34)}]
+\begin{scope}[shift={(184, -34)}]
 \fill[color=labelBgColorA, rounded corners=2pt]
 (0, 0) rectangle (37, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorA] {\strut \textA};
 \end{scope}
-\begin{scope}[shift={(9, -34)}]
+\begin{scope}[shift={(0, -34)}]
 \fill[color=labelBgColorB, rounded corners=2pt]
 (0, 0) rectangle (43, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorB] {\strut \textB};
 \end{scope}
-\begin{scope}[shift={(190, -34)}]
+\begin{scope}[shift={(80, -34)}]
 \fill[color=labelBgColorC, rounded corners=2pt]
 (0, 0) rectangle (41, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorC] {\strut \textC};
 \end{scope}
-\begin{scope}[shift={(301, -34)}]
+\begin{scope}[shift={(328, -34)}]
 \fill[color=labelBgColorD, rounded corners=2pt]
 (0, 0) rectangle (54, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorD] {\strut \textD};
 \end{scope}
-\begin{scope}[shift={(264, -34)}]
+\begin{scope}[shift={(261, -34)}]
 \fill[color=labelBgColorE, rounded corners=2pt]
 (0, 0) rectangle (34, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorE] {\strut \textE};
 \end{scope}
-\begin{scope}[shift={(234, -34)}]
+\begin{scope}[shift={(297, -34)}]
 \fill[color=labelBgColorF, rounded corners=2pt]
 (0, 0) rectangle (27, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorF] {\strut \textF};
 \end{scope}
-\begin{scope}[shift={(582, -34)}]
+\begin{scope}[shift={(580, -34)}]
 \fill[color=labelBgColorG, rounded corners=2pt]
 (0, 0) rectangle (34, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorG] {\strut \textG};
 \end{scope}
-\begin{scope}[shift={(55, -34)}]
+\begin{scope}[shift={(46, -34)}]
 \fill[color=labelBgColorH, rounded corners=2pt]
 (0, 0) rectangle (32, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorH] {\strut \textH};
 \end{scope}
-\begin{scope}[shift={(358, -34)}]
+\begin{scope}[shift={(427, -34)}]
 \fill[color=labelBgColorI, rounded corners=2pt]
 (0, 0) rectangle (53, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorI] {\strut \textI};
 \end{scope}
-\begin{scope}[shift={(414, -34)}]
+\begin{scope}[shift={(483, -34)}]
 \fill[color=labelBgColorJ, rounded corners=2pt]
 (0, 0) rectangle (61, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorJ] {\strut \textJ};
 \end{scope}
-\begin{scope}[shift={(478, -34)}]
+\begin{scope}[shift={(385, -34)}]
 \fill[color=labelBgColorK, rounded corners=2pt]
 (0, 0) rectangle (40, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorK] {\strut \textK};
 \end{scope}
-\begin{scope}[shift={(130, -34)}]
+\begin{scope}[shift={(124, -34)}]
 \fill[color=labelBgColorL, rounded corners=2pt]
 (0, 0) rectangle (57, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorL] {\strut \textL};
 \end{scope}
-\begin{scope}[shift={(521, -34)}]
+\begin{scope}[shift={(547, -34)}]
 \fill[color=labelBgColorM, rounded corners=2pt]
 (0, 0) rectangle (29, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorM] {\strut \textM};
+\end{scope}
+\begin{scope}[shift={(224, -34)}]
+\fill[color=labelBgColorN, rounded corners=2pt]
+(0, 0) rectangle (33, 14.62708) node[midway, yshift=-.75bp, anchor=center, text=labelTextColorN] {\strut \textN};
 \end{scope}
 \end{scope}
 
 % dots
 \begin{scope}
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorA] at (164.285714, 0) {};
+fill=dotColorA] at (211.648352, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorB] at (133.571429, 0) {};
+fill=dotColorB] at (141.758242, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorC] at (202.142857, 0) {};
+fill=dotColorC] at (180.659341, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorD] at (325.000000, 0) {};
+fill=dotColorD] at (356.043956, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorE] at (280.714286, 0) {};
+fill=dotColorE] at (253.846154, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorF] at (250.714286, 0) {};
+fill=dotColorF] at (275.604396, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorG] at (598.571429, 0) {};
+fill=dotColorG] at (593.406593, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorH] at (144.285714, 0) {};
+fill=dotColorH] at (158.901099, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorI] at (337.857143, 0) {};
+fill=dotColorI] at (383.076923, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorJ] at (370.714286, 0) {};
+fill=dotColorJ] at (410.769231, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorK] at (441.428571, 0) {};
+fill=dotColorK] at (365.934066, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorL] at (186.428571, 0) {};
+fill=dotColorL] at (200.439560, 0) {};
 \draw node [circle, inner sep=0pt, minimum size=4bp, 
-fill=dotColorM] at (464.285714, 0) {};
+fill=dotColorM] at (417.362637, 0) {};
+\draw node [circle, inner sep=0pt, minimum size=4bp, 
+fill=dotColorN] at (250.549451, 0) {};
 \end{scope}
 
 % Critical difference
-\def\posBest{133.5714285714285552}
-\def\posCD{237.9030476482082577}
+\def\posBest{141.7582417582417520}
+\def\posCD{245.2075984169315177}
 \begin{scope}
 \draw (\posBest, 30) -- (\posBest, 20);
 \draw (\posBest, 25) --node[below] {CD} (\posCD, 25);

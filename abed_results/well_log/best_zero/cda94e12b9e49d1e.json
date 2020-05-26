@@ -1,0 +1,15 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/well_log.json",
+	"dataset": "well_log",
+	"dataset_md5": "7c80d2cbd5864b923e6a653aad115de6",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {},
+	"result": {
+		"cplocations": [],
+		"runtime": 2.384185791015625e-07
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py",
+	"script_md5": "95b65ddd5669b41385966a4aad387118",
+	"status": "SUCCESS"
+}

@@ -30,6 +30,7 @@ class Method(Enum):
     rfpop = "rfpop"
     segneigh = "segneigh"
     wbs = "wbs"
+    zero = "zero"
 
 
 # Methods that support multidimensional datasets
@@ -39,6 +40,7 @@ MULTIMETHODS = [
     Method.ecp,
     Method.kcpa,
     Method.rbocpdms,
+    Method.zero
 ]
 
 

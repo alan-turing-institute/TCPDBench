@@ -1,0 +1,15 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/jfk_passengers.json",
+	"dataset": "jfk_passengers",
+	"dataset_md5": "9655295214078f2a45a4c18e6c4e6d0d",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {},
+	"result": {
+		"cplocations": [],
+		"runtime": 2.384185791015625e-07
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py",
+	"script_md5": "95b65ddd5669b41385966a4aad387118",
+	"status": "SUCCESS"
+}

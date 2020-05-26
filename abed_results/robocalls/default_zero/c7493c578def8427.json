@@ -1,0 +1,15 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/robocalls.json",
+	"dataset": "robocalls",
+	"dataset_md5": "f67ec0ccb50f2a835912e5c51932c083",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {},
+	"result": {
+		"cplocations": [],
+		"runtime": 2.384185791015625e-07
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py",
+	"script_md5": "95b65ddd5669b41385966a4aad387118",
+	"status": "SUCCESS"
+}

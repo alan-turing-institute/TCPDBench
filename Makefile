@@ -78,7 +78,9 @@ best_tables: \
 	$(TABLE_DIR)/best_cover_uni_avg.json \
 	$(TABLE_DIR)/best_cover_multi_avg.json \
 	$(TABLE_DIR)/best_f1_uni_full.json \
-	$(TABLE_DIR)/best_cover_uni_full.json
+	$(TABLE_DIR)/best_cover_uni_full.json \
+	$(TABLE_DIR)/best_f1_multi_full.json \
+	$(TABLE_DIR)/best_cover_multi_full.json
 
 $(TABLE_DIR)/best_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m f1 -d combined -f tex -t full > $@
@@ -104,6 +106,12 @@ $(TABLE_DIR)/best_cover_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | t
 $(TABLE_DIR)/best_f1_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e best -m f1 -d uni -f json -t full > $@
 
+$(TABLE_DIR)/best_f1_multi_full.json: $(SCRIPT_DIR)/make_table.py summaries
+	python $< -s $(SUMMARY_DIR) -e best -m f1 -d multi -f json -t full > $@
+
+$(TABLE_DIR)/best_cover_multi_full.json: $(SCRIPT_DIR)/make_table.py summaries
+	python $< -s $(SUMMARY_DIR) -e best -m cover -d multi -f json -t full > $@
+
 default_tables: \
 	$(TABLE_DIR)/default_f1_combined_full.tex \
 	$(TABLE_DIR)/default_cover_combined_full.tex \
@@ -112,7 +120,9 @@ default_tables: \
 	$(TABLE_DIR)/default_cover_uni_avg.json \
 	$(TABLE_DIR)/default_cover_multi_avg.json \
 	$(TABLE_DIR)/default_cover_uni_full.json \
-	$(TABLE_DIR)/default_f1_uni_full.json
+	$(TABLE_DIR)/default_f1_uni_full.json \
+	$(TABLE_DIR)/default_cover_multi_full.json \
+	$(TABLE_DIR)/default_f1_multi_full.json
 
 $(TABLE_DIR)/default_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m f1 -d combined -f tex -t full > $@
@@ -138,6 +148,11 @@ $(TABLE_DIR)/default_cover_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries 
 $(TABLE_DIR)/default_f1_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
 	python $< -s $(SUMMARY_DIR) -e default -m f1 -d uni -f json -t full > $@
 
+$(TABLE_DIR)/default_cover_multi_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
+	python $< -s $(SUMMARY_DIR) -e default -m cover -d multi -f json -t full > $@
+
+$(TABLE_DIR)/default_f1_multi_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
+	python $< -s $(SUMMARY_DIR) -e default -m f1 -d multi -f json -t full > $@
 
 aggregate_wide: $(TABLE_DIR)/aggregate_table_wide.tex
 
@@ -193,26 +208,55 @@ rank-dir:
 	mkdir -p $(RANK_DIR)
 
 rankplots: \
-	$(RANK_DIR)/rankplot_best_cover_uni.tex \
-	$(RANK_DIR)/rankplot_best_f1_uni.tex \
-	$(RANK_DIR)/rankplot_default_cover_uni.tex \
-	$(RANK_DIR)/rankplot_default_f1_uni.tex \
 	$(RANK_DIR)/rankplot_best_cover_uni.pdf \
 	$(RANK_DIR)/rankplot_best_f1_uni.pdf \
 	$(RANK_DIR)/rankplot_default_cover_uni.pdf \
-	$(RANK_DIR)/rankplot_default_f1_uni.pdf
+	$(RANK_DIR)/rankplot_default_f1_uni.pdf \
+	$(RANK_DIR)/rankplot_best_cover_multi.pdf \
+	$(RANK_DIR)/rankplot_best_f1_multi.pdf \
+	$(RANK_DIR)/rankplot_default_cover_multi.pdf \
+	$(RANK_DIR)/rankplot_default_f1_multi.pdf
 
-$(RANK_DIR)/rankplot_best_cover_uni.tex: $(TABLE_DIR)/best_cover_uni_full.json $(SCRIPT_DIR)/rank_plots.py | rank-dir
+#######
+# UNI #
+#######
+
+$(RANK_DIR)/rankplot_best_cover_uni.tex: $(TABLE_DIR)/best_cover_uni_full.json \
+	$(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
 
-$(RANK_DIR)/rankplot_best_f1_uni.tex: $(TABLE_DIR)/best_f1_uni_full.json $(SCRIPT_DIR)/rank_plots.py | rank-dir
+$(RANK_DIR)/rankplot_best_f1_uni.tex: $(TABLE_DIR)/best_f1_uni_full.json \
+	$(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
 
-$(RANK_DIR)/rankplot_default_cover_uni.tex: $(TABLE_DIR)/default_cover_uni_full.json $(SCRIPT_DIR)/rank_plots.py | rank-dir
+$(RANK_DIR)/rankplot_default_cover_uni.tex: $(TABLE_DIR)/default_cover_uni_full.json \
+	$(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
 
-$(RANK_DIR)/rankplot_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json $(SCRIPT_DIR)/rank_plots.py | rank-dir
+$(RANK_DIR)/rankplot_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json \
+	$(SCRIPT_DIR)/rank_plots.py | rank-dir
 	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
+
+#########
+# MULTI #
+#########
+
+$(RANK_DIR)/rankplot_best_cover_multi.tex: $(TABLE_DIR)/best_cover_multi_full.json \
+	$(SCRIPT_DIR)/rank_plots.py | rank-dir
+	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
+
+$(RANK_DIR)/rankplot_best_f1_multi.tex: $(TABLE_DIR)/best_f1_multi_full.json \
+	$(SCRIPT_DIR)/rank_plots.py | rank-dir
+	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
+
+$(RANK_DIR)/rankplot_default_cover_multi.tex: $(TABLE_DIR)/default_cover_multi_full.json \
+	$(SCRIPT_DIR)/rank_plots.py | rank-dir
+	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
+
+$(RANK_DIR)/rankplot_default_f1_multi.tex: $(TABLE_DIR)/default_f1_multi_full.json \
+	$(SCRIPT_DIR)/rank_plots.py | rank-dir
+	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
+
 
 $(RANK_DIR)/rankplot_%.pdf: $(RANK_DIR)/rankplot_%.tex | rank-dir
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode --shell-escape" \
@@ -237,7 +281,14 @@ clean_rankplots:
 CONSTANT_TARGETS = $(CONST_DIR)/sigtest_global_best_cover_uni.tex \
 		   $(CONST_DIR)/sigtest_global_best_f1_uni.tex \
 		   $(CONST_DIR)/sigtest_global_default_cover_uni.tex \
-		   $(CONST_DIR)/sigtest_global_default_f1_uni.tex
+		   $(CONST_DIR)/sigtest_global_default_f1_uni.tex \
+		   $(CONST_DIR)/SeriesLengthMin.tex \
+		   $(CONST_DIR)/SeriesLengthMax.tex \
+		   $(CONST_DIR)/SeriesLengthMean.tex \
+		   $(CONST_DIR)/UniqueAnnotationsMin.tex \
+		   $(CONST_DIR)/UniqueAnnotationsMax.tex \
+		   $(CONST_DIR)/UniqueAnnotationsMean.tex \
+		   $(CONST_DIR)/UniqueAnnotationsStd.tex
 
 const-dir:
 	mkdir -p $(CONST_DIR)
@@ -259,6 +310,34 @@ $(CONST_DIR)/sigtest_global_default_cover_uni.tex: $(TABLE_DIR)/default_cover_un
 $(CONST_DIR)/sigtest_global_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json \
 	$(SCRIPT_DIR)/significance.py | const-dir
 	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
+
+$(CONST_DIR)/SeriesLengthMin.tex: $(SCRIPT_DIR)/descriptive_length.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t min > $@
+
+$(CONST_DIR)/SeriesLengthMax.tex: $(SCRIPT_DIR)/descriptive_length.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t max > $@
+
+$(CONST_DIR)/SeriesLengthMean.tex: $(SCRIPT_DIR)/descriptive_length.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t mean > $@
+
+$(CONST_DIR)/UniqueAnnotationsMin.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t min > $@
+
+$(CONST_DIR)/UniqueAnnotationsMax.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t max > $@
+
+$(CONST_DIR)/UniqueAnnotationsMean.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t mean > $@
+
+$(CONST_DIR)/UniqueAnnotationsStd.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
+	$(DATASET_SUMMARIES) | const-dir
+	python $< -s $(SUMMARY_DIR) -t std > $@
 
 clean_constants:
 	rm -f $(CONSTANT_TARGETS)
@@ -312,4 +391,6 @@ validate: ./utils/validate_schema.py ./schema.json
 #         #
 ###########
 
-clean: clean_summaries clean_tables clean_rankplots clean_venvs
+clean: clean_results clean_venvs
+
+clean_results: clean_summaries clean_tables clean_rankplots clean_constants
