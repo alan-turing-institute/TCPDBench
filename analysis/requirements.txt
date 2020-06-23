@@ -1,6 +1,6 @@
 tabulate>=0.8.6
 scipy
 numpy
-labella>=0.9.6
+labella>=0.9.7
 termcolor
 colorama
