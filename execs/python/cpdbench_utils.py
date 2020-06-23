@@ -19,6 +19,7 @@ import sys
 
 
 def md5sum(filename):
+    """Compute the MD5 checksum of a given file"""
     blocksize = 65536
     hasher = hashlib.md5()
     with open(filename, "rb") as fp:
@@ -30,6 +31,7 @@ def md5sum(filename):
 
 
 def load_dataset(filename):
+    """ Load a CPDBench dataset """
     with open(filename, "r") as fp:
         data = json.load(fp)
 
@@ -58,6 +60,45 @@ def prepare_result(
     runtime,
     script_filename,
 ):
+    """Prepare the experiment output as a dictionary
+
+    Parameters
+    ----------
+    data : dict
+        The CPDBench dataset object
+
+    data_filename : str
+        Absolute path to the dataset file
+
+    status : str
+        Status of the experiments. Commonly used status codes are: SUCCESS if 
+        the experiment was succesful, SKIP is the method was provided improper 
+        parameters, FAIL if the method failed for whatever reason, and TIMEOUT 
+        if the method ran too long.
+
+    error : str
+        If an error occurred, this field can be used to describe what it is. 
+
+    params : dict
+        Dictionary of parameters provided to the method. It is good to be as 
+        complete as possible, so even default methods should be added to this 
+        field. This enhances reproducibility.
+
+    locations : list
+        Detected change point locations. Remember that change locations are 
+        indices of time points and are 0-based (start counting at zero, thus 
+        change locations are integers on the interval [0, T-1], including both 
+        endpoints).
+
+    runtime : float
+        Runtime of the method. This should be computed as accurately as 
+        possible, excluding any method-specific setup code.
+
+    script_filename :
+        Path to the script of the method. This is hashed to enable rough 
+        versioning.
+
+    """
     out = {}
 
     # record the command that was used
@@ -88,7 +129,7 @@ def prepare_result(
 
 
 def dump_output(output, filename=None):
-    """Save result to output file or write to stdout """
+    """Save result to output file or write to stdout (json format)"""
     if filename is None:
         print(json.dumps(output, sort_keys=True, indent="\t"))
     else:
@@ -97,6 +138,7 @@ def dump_output(output, filename=None):
 
 
 def make_param_dict(args, defaults):
+    """Create the parameter dict combining CLI arguments and defaults"""
     params = copy.deepcopy(vars(args))
     del params["input"]
     if "output" in params:
@@ -106,6 +148,7 @@ def make_param_dict(args, defaults):
 
 
 def exit_with_error(data, args, parameters, error, script_filename):
+    """Exit and save result using the 'FAIL' exit status"""
     status = "FAIL"
     out = prepare_result(
         data,
@@ -120,7 +163,9 @@ def exit_with_error(data, args, parameters, error, script_filename):
     dump_output(out, args.output)
     raise SystemExit
 
+
 def exit_with_timeout(data, args, parameters, runtime, script_filename):
+    """Exit and save result using the 'TIMEOUT' exit status"""
     status = "TIMEOUT"
     out = prepare_result(
         data,
@@ -137,6 +182,7 @@ def exit_with_timeout(data, args, parameters, runtime, script_filename):
 
 
 def exit_success(data, args, parameters, locations, runtime, script_filename):
+    """Exit and save result using the 'SUCCESS' exit status"""
     status = "SUCCESS"
     error = None
     out = prepare_result(
