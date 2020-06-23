@@ -191,7 +191,8 @@ volumes](https://docs.docker.com/storage/volumes/)).
 ## Extending the Benchmark
 
 It should be relatively straightforward to extend the benchmark with your own 
-methods and datasets.
+methods and datasets. Remember to [cite our 
+paper](https://arxiv.org/abs/2003.06222) if you do end up using this work.
 
 ### Adding a new method
 
