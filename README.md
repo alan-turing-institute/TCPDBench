@@ -16,6 +16,7 @@ Dataset](https://github.com/alan-turing-institute/TCPD) (TCPD).
 - [An Evaluation of Change Point Detection Algorithms](https://arxiv.org/abs/2003.06222) by 
   [Gertjan van den Burg](https://gertjan.dev) and [Chris 
   Williams](https://homepages.inf.ed.ac.uk/ckiw/).
+- [Annotation Tool](https://github.com/alan-turing-institute/annotatechange)
 
 ## Introduction
 
@@ -322,6 +323,7 @@ main <- function()
   # convert result$locations to 0-based if needed
 
   exit.success(data$original, args, params, locations, runtime)
+}
 ```
 
 Remember to add the following to the bottom of the script so it can be run 
