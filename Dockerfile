@@ -17,7 +17,8 @@ RUN apt-get update && \
 		libcurl4-openssl-dev \
 		libssl-dev \
 		libopenblas-dev \
-		libfreetype6-dev
+		libfreetype6-dev \
+		libv8-dev
 
 
 # Make sure python means python3
