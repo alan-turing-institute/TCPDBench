@@ -18,6 +18,11 @@ Dataset](https://github.com/alan-turing-institute/TCPD) (TCPD).
   Williams](https://homepages.inf.ed.ac.uk/ckiw/).
 - [Annotation Tool](https://github.com/alan-turing-institute/annotatechange)
 
+If you encounter a problem when using this repository or simply want to ask a 
+question, please don't hesitate to [open an issue on 
+GitHub](https://github.com/alan-turing-institute/TCPDBench/issues) or send an 
+email to ``gvandenburg at turing dot ac dot uk``.
+
 ## Introduction
 
 Change point detection focuses on accurately detecting moments of abrupt 
@@ -93,7 +98,7 @@ figures a working LaTeX and ``latexmk`` installation is needed.
 ### Reproducing the experiments
 
 To fully reproduce the experiments, some additional steps are needed. Note 
-that the Docker procedure outlined below automates this process substantially.
+that the Docker procedure outlined below automates this process somewhat.
 
 First, obtain the [Turing Change Point 
 Dataset](https://github.com/alan-turing-institute/TCPD) and follow the 
@@ -147,7 +152,8 @@ instructions are as follows:
    Note that this will also create an R virtual environment (using 
    [RSimpleVenv](https://github.com/GjjvdBurg/RSimpleVenv)), which ensures 
    that the exact versions of the packages used in the experiments will be 
-   installed.
+   installed. This step can take a little while (:coffee:), but is important 
+   to ensure reproducibility.
 
 5. Run abed through ``mpiexec``, as follows:
 
@@ -155,11 +161,12 @@ instructions are as follows:
    $ mpiexec -np 4 abed local
    ```
 
-   This will run abed using 4 cores, which can of course be increased if 
-   desired. Note that a minimum of two cores is needed for abed to operate. 
-   Furthermore, you may want to run these experiments in parallel on a large 
+   This will run abed using 4 cores, which can of course be increased or 
+   decreased if desired. Note that a minimum of two cores is needed for abed 
+   to operate. You may want to run these experiments in parallel on a large 
    number of cores, as the expected runtime is on the order of 21 days on a 
-   single core.
+   single core. Once this command starts running the experiments you will see 
+   result files appear in the ``staging`` directory.
 
 ### Running the experiments with Docker
 
