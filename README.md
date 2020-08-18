@@ -178,23 +178,34 @@ build the Docker image using:
 $ docker build -t alan-turing-institute/tcpdbench github.com/alan-turing-institute/TCPDBench
 ```
 
-You can then follow the same procedure as above but using the relevant docker 
-commands to run them in the container:
+To ensure that the results created in the docker container persist to the 
+host, we need to create a volume first (following [these 
+instructions](https://stackoverflow.com/a/47528568/1154005)):
+
+```
+$ mkdir /path/to/tcpdbench/results     # *absolute* path where you want the results
+$ docker volume create --driver local \
+                       --opt type=none \
+                       --opt device=/path/to/tcpdbench/results \
+                       --opt o=bind tcpdbench_vol
+```
+
+You can then follow the same procedure as described above to reproduce the 
+experiments, but using the relevant docker commands to run them in the 
+container:
 
 * For reproducing just the tables and figures, use:
   ```
-  $ docker run -v /absolute/path/to/TCPDBench:/TCPDBench alan-turing-institute/tcpdbench /bin/bash -c "make results"
+  $ docker run -i -t -v tcpdbench_vol:/TCPDBench alan-turing-institute/tcpdbench /bin/bash -c "make results"
   ```
 
-* For reproducing all the experiments:
+* For reproducing all the experiments, use:
   ```
-  $ docker run -v /absolute/path/to/TCPDBench:/TCPDBench alan-turing-institute/tcpdbench /bin/bash -c "mv abed_results old_abed_results && mkdir abed_results && abed reload_tasks && abed status && make venvs && mpiexec --allow-run-as-root -np 4 abed local && make results"
+  $ docker run -i -t -v tcpdbench_vol:/TCPDBench alan-turing-institute/tcpdbench /bin/bash -c "mv abed_results old_abed_results && mkdir abed_results && abed reload_tasks && abed status && make venvs && mpiexec --allow-run-as-root -np 4 abed local && make results"
   ```
+  where ``-np 4`` sets the number of cores used for the experiments to four. 
+  This can be changed as desired to increase efficiency.
 
-where in both cases ``/absolute/path/to/TCPDBench`` is replaced with the path 
-on your machine where you want to store the files (so that results are not 
-lost when the docker container closes, see [docker 
-volumes](https://docs.docker.com/storage/volumes/)).
 
 ## Extending the Benchmark
 
