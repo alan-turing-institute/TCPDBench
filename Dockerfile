@@ -8,6 +8,7 @@ RUN apt-get update && \
 		build-essential \
 		r-base \
 		r-base-dev \
+		r-cran-rcppeigen \
 		latexmk \
 		texlive-latex-extra \
 		libopenmpi-dev \
@@ -19,7 +20,6 @@ RUN apt-get update && \
 		libopenblas-dev \
 		libfreetype6-dev \
 		libv8-dev
-
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
