@@ -8,7 +8,6 @@ RUN apt-get update && \
 		build-essential \
 		r-base \
 		r-base-dev \
-		r-cran-rcppeigen \
 		latexmk \
 		texlive-latex-extra \
 		libopenmpi-dev \
@@ -20,6 +19,35 @@ RUN apt-get update && \
 		libopenblas-dev \
 		libfreetype6-dev \
 		libv8-dev
+
+RUN apt-get install -y --no-install-recommends \
+	r-cran-askpass r-cran-assertthat r-cran-backports r-cran-base64enc \
+	r-cran-bh r-cran-brew r-cran-callr r-cran-checkmate r-cran-cli \
+	r-cran-cliapp r-cran-clipr r-cran-clisymbols r-cran-colorspace \
+	r-cran-commonmark r-cran-covr r-cran-crayon r-cran-crosstalk \
+	r-cran-curl r-cran-desc r-cran-digest r-cran-dplyr r-cran-dt \
+	r-cran-dygraphs r-cran-ellipsis r-cran-evaluate r-cran-extradistr \
+	r-cran-fansi r-cran-farver r-cran-fs r-cran-ggplot2 r-cran-gh \
+	r-cran-git2r r-cran-glue r-cran-gridextra r-cran-gtable r-cran-highr \
+	r-cran-htmltools r-cran-htmlwidgets r-cran-httr r-cran-ini \
+	r-cran-inline r-cran-jsonlite r-cran-knitr r-cran-labeling \
+	r-cran-later r-cran-lazyeval r-cran-lifecycle r-cran-loo \
+	r-cran-magrittr r-cran-markdown r-cran-matrixstats r-cran-memoise \
+	r-cran-mime r-cran-munsell r-cran-openssl r-cran-pillar \
+	r-cran-pkgbuild r-cran-pkgconfig r-cran-pkgload r-cran-praise \
+	r-cran-prettyunits r-cran-processx r-cran-promises r-cran-ps \
+	r-cran-pscbs r-cran-pscl r-cran-psy r-cran-psych r-cran-psychometric \
+	r-cran-psychotools r-cran-psychotree r-cran-psychtools r-cran-psyphy \
+	r-cran-purrr r-cran-purrrlyr r-cran-r6 r-cran-rcmdcheck \
+	r-cran-rcolorbrewer r-cran-rcppparallel r-cran-remotes r-cran-rex \
+	r-cran-rlang r-cran-roxygen2 r-cran-rprojroot r-cran-rstan \
+	r-cran-rstanarm r-cran-rstantools r-cran-rstudioapi r-cran-rversions \
+	r-cran-scales r-cran-sessioninfo r-cran-stanheaders r-cran-stringi \
+	r-cran-stringr r-cran-sys r-cran-systemfit r-cran-systemfonts \
+	r-cran-testthat r-cran-tibble r-cran-tidyr r-cran-tidyselect \
+	r-cran-usethis r-cran-utf8 r-cran-v8 r-cran-vctrs r-cran-viridislite \
+	r-cran-whisker r-cran-withr r-cran-xfun r-cran-xml2 r-cran-xopen \
+	r-cran-xts r-cran-yaml r-cran-rcppeigen
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
