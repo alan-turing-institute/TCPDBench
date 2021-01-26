@@ -23,3 +23,6 @@ jobs:
 
       - name: Recreate output and test for differences
         run: docker -v docker_output:/TCPDBench/analysis/output alan-turing-institute/tcpdbench /bin/bash -c "make clean && make results && git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code"
+
+      - name: Show output
+        run: ls -R docker_output
