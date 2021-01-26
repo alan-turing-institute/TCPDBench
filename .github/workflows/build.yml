@@ -22,4 +22,4 @@ jobs:
         run: mkdir -p docker_output
 
       - name: Recreate output and test for differences
-        run: -v docker_output:/TCPDBench/analysis/output alan-turing-institute/tcpdbench /bin/bash -c "make clean && make results && git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code"
+        run: docker -v docker_output:/TCPDBench/analysis/output alan-turing-institute/tcpdbench /bin/bash -c "make clean && make results && git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code"
