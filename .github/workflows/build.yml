@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install build-essential latexmk
+        run: sudo apt-get update && sudo apt-get install build-essential latexmk texlive-latex-extra
         shell: bash
 
       - name: Install Python 3.8
