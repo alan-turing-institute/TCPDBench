@@ -34,6 +34,10 @@ jobs:
         run: make results
         shell: bash
 
+      - name: Check results
+        run: git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code
+        shell: bash
+
   #  tcpdbench-docker:
   #    name: Check TCPDBench (docker)
   #    runs-on: ubuntu-latest
