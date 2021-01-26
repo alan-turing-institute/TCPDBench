@@ -41,10 +41,6 @@ jobs:
   tcpdbench-docker:
     name: Check TCPDBench (docker)
     runs-on: ubuntu-latest
-    container:
-      volumes:
-        - ./analysis/output:/TCPDBench/analysis/output
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
