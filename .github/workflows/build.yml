@@ -1,0 +1,25 @@
+name: Build TCPDBench
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: 42 8 * * */21
+
+jobs:
+  tcpdbench-docker:
+    name: Check TCPDBench (docker)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build TCPDBench docker image
+        run: docker build -t alan-turing-institute/tcpdbench .
+
+      - name: Create output directory
+        run: mkdir -p docker_output
+
+      - name: Recreate output and test for differences
+        run: -v docker_output:/TCPDBench/analysis/output alan-turing-institute/tcpdbench /bin/bash -c "make clean && make results && git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code"
