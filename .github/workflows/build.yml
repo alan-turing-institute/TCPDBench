@@ -1,0 +1,50 @@
+name: Reproducible Research
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: 42 8 * * */21
+
+jobs:
+  tcpdbench-ubuntu:
+    name: Check TCPDBench (direct)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install build-essential latexmk texlive-latex-extra
+        shell: bash
+
+      - name: Install Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Install Python dependencies
+        run: pip install -r ./analysis/requirements.txt
+        shell: bash
+
+      - name: Make results
+        run: make results
+        shell: bash
+
+      - name: Check results
+        run: git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code
+        shell: bash
+
+  tcpdbench-docker:
+    name: Check TCPDBench (docker)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: TCPDBench docker check
+        run: ./.github/scripts/test_docker.sh
+        shell: bash

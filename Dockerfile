@@ -26,13 +26,14 @@ RUN apt-get install -y --no-install-recommends \
 	python3 \
 	python3-dev \
 	python3-tk \
+	python3-venv \
 	python3-pip && \
     pip3 install --no-cache-dir --upgrade setuptools && \
 	echo "alias python='python3'" >> /root/.bash_aliases && \
 	echo "alias pip='pip3'" >> /root/.bash_aliases && \
 	cd /usr/local/bin && ln -s /usr/bin/python3 python && \
 	cd /usr/local/bin && ln -s /usr/bin/pip3 pip && \
-    pip install virtualenv abed
+    pip install virtualenv abed wheel
 
 # Set the default shell to bash
 RUN mv /bin/sh /bin/sh.old && cp /bin/bash /bin/sh
