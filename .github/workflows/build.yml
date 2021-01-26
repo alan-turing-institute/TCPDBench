@@ -10,19 +10,15 @@ jobs:
   tcpdbench-docker:
     name: Check TCPDBench (docker)
     runs-on: ubuntu-latest
+    container:
+      volumes:
+        - ./analysis/output:/TCPDBench/analysis/output
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build TCPDBench docker image
-        run: docker build -t alan-turing-institute/tcpdbench .
-
-      - name: Create output directory
-        run: mkdir -p docker_output
-
-      - name: Recreate output and test for differences
-        run: docker -v docker_output:/TCPDBench/analysis/output alan-turing-institute/tcpdbench /bin/bash -c "make clean && make results && git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code"
-
-      - name: Show output
-        run: ls -R docker_output
+      - name: TCPDBench docker check
+        uses: ./.github/workflows/
+        with:
+          entrypoint: "make clean && make results && git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code"
