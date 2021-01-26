@@ -1,4 +1,4 @@
-name: Build TCPDBench
+name: Reproducible Research
 
 on:
   push:
