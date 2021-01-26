@@ -38,18 +38,17 @@ jobs:
         run: git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code
         shell: bash
 
-  #  tcpdbench-docker:
-  #    name: Check TCPDBench (docker)
-  #    runs-on: ubuntu-latest
-  #    container:
-  #      volumes:
-  #        - ./analysis/output:/TCPDBench/analysis/output
-  #
-  #    steps:
-  #      - name: Checkout
-  #        uses: actions/checkout@v2
-  #
-  #      - name: TCPDBench docker check
-  #        uses: ./.github/workflows/
-  #        with:
-  #          entrypoint: "make clean && make results && git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code"
+  tcpdbench-docker:
+    name: Check TCPDBench (docker)
+    runs-on: ubuntu-latest
+    container:
+      volumes:
+        - ./analysis/output:/TCPDBench/analysis/output
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: TCPDBench docker check
+        run: ./.github/scripts/test_docker.sh
+        shell: bash

@@ -1,5 +1,0 @@
-name: TCPDBench Docker
-description: Runs the TCPDBench checks using Docker
-runs:
-  using: docker
-  image: ../../Dockerfile
