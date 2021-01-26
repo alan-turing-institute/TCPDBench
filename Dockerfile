@@ -26,6 +26,7 @@ RUN apt-get install -y --no-install-recommends \
 	python3 \
 	python3-dev \
 	python3-tk \
+	python3-venv \
 	python3-pip && \
     pip3 install --no-cache-dir --upgrade setuptools && \
 	echo "alias python='python3'" >> /root/.bash_aliases && \
