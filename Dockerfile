@@ -33,7 +33,7 @@ RUN apt-get install -y --no-install-recommends \
 	echo "alias pip='pip3'" >> /root/.bash_aliases && \
 	cd /usr/local/bin && ln -s /usr/bin/python3 python && \
 	cd /usr/local/bin && ln -s /usr/bin/pip3 pip && \
-    pip install virtualenv abed
+    pip install virtualenv abed wheel
 
 # Set the default shell to bash
 RUN mv /bin/sh /bin/sh.old && cp /bin/bash /bin/sh
