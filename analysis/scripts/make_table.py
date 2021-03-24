@@ -37,6 +37,8 @@ colorama.init()
 class Metric(Enum):
     f1 = "f1"
     cover = "cover"
+    precision = "precision"
+    recall = "recall"
 
 
 class Experiment(Enum):
@@ -161,7 +163,7 @@ def parse_args():
         "-m",
         "--metric",
         help="Metric to use for the table",
-        choices=["f1", "cover"],
+        choices=["f1", "cover", "precision", "recall"],
         required=True,
     )
     parser.add_argument(
@@ -206,10 +208,9 @@ def load_summary(filename):
 
 
 def extract_score(method_results, metric=None, experiment=None):
-    """Extract a single numeric score from a list of dictionaries
-    """
+    """Extract a single numeric score from a list of dictionaries"""
 
-    if not metric in [Metric.f1, Metric.cover]:
+    if not isinstance(metric, Metric):
         raise ValueError("Unknown metric: %s" % metric)
     if not experiment in ["default", "best"]:
         raise ValueError("Unknown experiment: %s" % experiment)
@@ -237,7 +238,7 @@ def collect_results(summary_dir=None, metric=None, experiment=None):
 
     Returns a list of Result objects.
     """
-    if not metric in [Metric.f1, Metric.cover]:
+    if not isinstance(metric, Metric):
         raise ValueError("Unknown metric: %s" % metric)
     if not experiment in ["default", "best"]:
         raise ValueError("Unknown experiment: %s" % experiment)
@@ -303,7 +304,7 @@ def collect_results(summary_dir=None, metric=None, experiment=None):
 def average_results(results):
     """Average the results
 
-    NOTE: This function filters out some methods/datasets for which we have 
+    NOTE: This function filters out some methods/datasets for which we have
     insufficient results.
     """
     experiment = list(set(r.experiment for r in results))[0]
