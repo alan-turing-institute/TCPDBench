@@ -21,7 +21,7 @@ Dataset](https://github.com/alan-turing-institute/TCPD) (TCPD).
 If you encounter a problem when using this repository or simply want to ask a 
 question, please don't hesitate to [open an issue on 
 GitHub](https://github.com/alan-turing-institute/TCPDBench/issues) or send an 
-email to ``gvandenburg at turing dot ac dot uk``.
+email to ``gertjanvandenburg at gmail dot com``.
 
 ## Introduction
 
@@ -475,4 +475,4 @@ If you find any problems or have a suggestion for improvement of this
 repository, please let us know as it will help us make this resource better 
 for everyone. You can open an issue on 
 [GitHub](https://github.com/alan-turing-institute/TCPDBench) or send an email 
-to ``gvandenburg at turing dot ac dot uk``.
+to ``gertjanvandenburg at gmail dot com``.
