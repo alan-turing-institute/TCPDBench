@@ -439,7 +439,7 @@ includes a schema file. A high-level overview is as follows:
 * The time axis is defined in the ``time`` field. This has at least an 
   ``index`` field to mark the indices of each data point. At the moment, these 
   indices need to be consecutive integers. This entry mainly exist for a 
-  future scenario where we may want to consider non-consecutive time axes. If 
+  future scenario where we may want to consider non-consecutive timesteps. If 
   the time axis can be mapped to a date or time, then a type and format of 
   this field can be specified (see e.g. the [nile 
   dataset](https://github.com/alan-turing-institute/TCPD/blob/master/datasets/nile/nile.json#L8), 
@@ -450,6 +450,15 @@ includes a schema file. A high-level overview is as follows:
   Missing values in the time series can be marked with ``null`` (see e.g. 
   [uk_coal_employ](https://github.com/alan-turing-institute/TCPD/blob/master/datasets/uk_coal_employ/uk_coal_employ.json#L236) 
   for an example).
+* The wrapper around [Prophet](https://facebook.github.io/prophet/) uses the 
+  formatted time (for instance YYYY-MM-DD) where available, since Prophet can 
+  use this to determine seasonality components. Thus it is recommended to add 
+  formatted timesteps to the ``raw`` field in the ``time`` object if possible 
+  (see, e.g., the [brent_spot 
+  dataset](https://github.com/alan-turing-institute/TCPD/blob/master/datasets/brent_spot/brent_spot.json#L511)). 
+  If this is not available, the time series name should be added to the 
+  ``NO.DATETIME`` variable in the Prophet wrapper 
+  [here](https://github.com/alan-turing-institute/TCPDBench/blob/master/execs/R/cpdbench_prophet.R#L13).
 
 If you want to evaluate the methods in the benchmark on a new dataset, you may 
 want to collect annotations for the dataset. These annotations can be 
