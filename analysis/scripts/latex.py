@@ -59,48 +59,64 @@ def build_latex_table(
     headers,
     floatfmt="g",
     missingval="",
-    bests="default",
+    highlight="default",
     table_spec=None,
-):
+    booktabs=False,
+) -> str:
     """Construct the LaTeX code for a table
 
-    This function creates the LaTeX code for a data table while taking number 
-    formatting, headers, missing values, and "best value formatting" into 
+    This function creates the LaTeX code for a data table while taking number
+    formatting, headers, missing values, and "best value formatting" into
     account.
 
-    The numbers in the table are formatted following the provided float format 
-    and the missing value indicator using the ``_format`` function from the 
-    ``tabulate`` package. To indicate a missing value the data row should mark 
+    The numbers in the table are formatted following the provided float format
+    and the missing value indicator using the ``_format`` function from the
+    ``tabulate`` package. To indicate a missing value the data row should mark
     this value as ``None``.
 
-    The ``bests`` parameter is used to decide how to highlight the best values 
-    in each row. It can be either ``'default'``, ``None``, a list of length 1 
-    where the element is either ``min`` or ``max``, or a list of length ``K`` 
-    with similar elements where ``K`` is the length of the data table. If it is 
-    ``'default'`` then ``max`` will be considered best for each row. If a list 
-    of length 1 is supplied then the provided function will be used for each 
-    row. If ``None``, no highlighting will be done.
+    The ``highlight`` parameter is used to decide how to highlight certain
+    values in each row. It can take the following values:
+        * ``None``: no highlighting
+        * ``default``, ``"max"``, ``max``: highlight the largest value(s)
+        * ``"min"``, ``min``: highlight the smallest value(s)
+        * A callable that given a list returns the _indices_ of the values to
+        highlight. NOTE: The callable is responsible for skipping non-float
+        values and returning the proper indices.
+        * A list of length equal to the number of rows in the table where each
+        element is one of the above. This enables using different highlighting
+        for different rows.
 
-    The ``table_spec`` parameter allows the user to specify the table 
-    specification. This value is not checked. If it is None, the first column 
+    The ``table_spec`` parameter allows the user to specify the table
+    specification. This value is not checked. If it is None, the first column
     will get 'l' spec and the remaining columns will get the 'r' spec.
 
     """
-    if bests == "default":
-        bests = [max]
-    elif bests is None:
-        bests = []
+    noop = lambda vs: []
 
-    if len(bests) > 1:
-        assert len(bests) == len(table)
-    assert all((x in [min, max] for x in bests))
+    def is_max(vs):
+        max_val = max([v for v in vs if isinstance(v, float)])
+        return [i for i, v in enumerate(vs) if v == max_val]
 
-    if len(bests) == 0:
-        best_funcs = [None for x in range(len(table))]
-    elif len(bests) == 1:
-        best_funcs = [bests[0] for x in range(len(table))]
+    def is_min(vs):
+        min_val = min([v for v in vs if isinstance(v, float)])
+        return [i for i, v in enumerate(vs) if v == min_val]
+
+    def make_hl_func(x):
+        if x is None:
+            return noop
+        elif x in ["default", "max", max]:
+            return is_max
+        elif x in ["min", min]:
+            return is_min
+        elif callable(x):
+            return x
+        raise ValueError(f"Unknown highlight function: {x}")
+
+    if isinstance(highlight, list):
+        assert len(highlight) == len(table)
+        highlight_funcs = [make_hl_func(x) for x in highlight]
     else:
-        best_funcs = bests[:]
+        highlight_funcs = [make_hl_func(highlight)] * len(table)
 
     _typ = lambda v: tabulate._type(v)
     _fmt = lambda v: tabulate._format(v, _typ(v), floatfmt, missingval)
@@ -109,10 +125,7 @@ def build_latex_table(
     cols = list(zip(*list_of_lists))
     coltypes = list(map(tabulate._column_type, cols))
 
-    cols = [
-        [_fmt(v) for v in c]
-        for c, ct in zip(cols, coltypes)
-    ]
+    cols = [[_fmt(v) for v in c] for c, ct in zip(cols, coltypes)]
 
     n_cols = len(cols)
 
@@ -125,16 +138,17 @@ def build_latex_table(
     else:
         text.append("\\begin{tabular}{%s}" % table_spec)
     text.append(" & ".join(headers) + "\\\\")
-    text.append("\\hline")
-    for data_row, text_row, best_func in zip(data_rows, text_rows, best_funcs):
+    text.append("\\toprule" if booktabs else "\\hline")
+    for data_row, text_row, hl_func in zip(
+        data_rows, text_rows, highlight_funcs
+    ):
         text_row = list(text_row)
-        if not best_func is None:
-            best_val = best_func([x for x in data_row if isinstance(x, float)])
-            best_idx = [i for i, v in enumerate(data_row) if v == best_val]
-            for idx in best_idx:
+        if not hl_func is None:
+            hl_idx = hl_func(data_row)
+            for idx in hl_idx:
                 text_row[idx] = "\\textbf{" + text_row[idx] + "}"
         text.append(" & ".join(text_row) + "\\\\")
-    text.append("\\hline")
+    text.append("\\bottomrule" if booktabs else "\\hline")
     text.append("\\end{tabular}")
 
     return "\n".join(text)

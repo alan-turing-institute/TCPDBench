@@ -17,7 +17,7 @@ import json
 import os
 import statistics
 
-N_DATASETS = 42
+from common import Dataset
 
 
 def parse_args():
@@ -40,7 +40,7 @@ def parse_args():
 
 def load_summary_nobs(summary_dir):
     files = os.listdir(summary_dir)
-    assert len(files) == N_DATASETS
+    assert len(files) == len(Dataset)
 
     all_nobs = []
     for f in sorted(files):

@@ -8,33 +8,28 @@ License: See the LICENSE file.
 
 """
 
-import colorama
-import json
 import numpy as np
-import sys
-import termcolor
+
+from typing import Dict
 
 from scipy.stats import rankdata
 
-colorama.init()
+from common import Dataset
+from common import Method
 
 
-def load_data(filename):
-    with open(filename, "r") as fp:
-        return json.load(fp)
-
-
-def compute_ranks(results, keep_methods=None, higher_better=True):
+def compute_ranks(
+    scores: Dict[Dataset, Dict[Method, float]],
+    higher_better=True,
+):
     """Compute the ranks
 
     Parameters
     ----------
-    results : dict
-        Mapping from dataset name to dict, where each dict in turn is a map 
-        from method name to a score value.
-
-    keep_methods: list
-        Methods to include in the ranks
+    scores : dict
+        Mapping from dataset name to dict, where each dict in turn is a map
+        from method name to a score value. It is assumed there are no None
+        values in this input.
 
     higher_better: bool
         Whether a higher or a lower value is considered better
@@ -45,80 +40,39 @@ def compute_ranks(results, keep_methods=None, higher_better=True):
         Map from method name to average rank
 
     all_ranks: dict
-        Map from dataset name to dictionary, which is in turn a map from method 
+        Map from dataset name to dictionary, which is in turn a map from method
         name to rank for that dataset and that method.
 
     """
     vec_ranks = []
     all_ranks = {}
 
-    for dset in results:
-        methods = results[dset].keys()
-        methods = sorted(methods)
+    known_methods = set([m for d in scores for m in scores[d]])
+    method_names = sorted([m.name for m in known_methods])
+    methods_by_name = {name: Method[name] for name in method_names}
 
-        methods = [m for m in methods if m in keep_methods]
-        assert methods == keep_methods
-
-        if higher_better:
-            values = [-results[dset][m] for m in methods]
-        else:
-            values = [results[dset][m] for m in methods]
-
-        if any(np.isnan(v) for v in values):
-            print(
-                "Skipping dataset %s because of nans" % dset, file=sys.stderr
-            )
-            continue
+    for dataset in scores:
+        values = []
+        for method_name in method_names:
+            method = methods_by_name[method_name]
+            # scipy's rankdata assigns rank 1 to the lowest value by default
+            sign = -1 if higher_better else 1
+            values.append(sign * scores[dataset][method])
 
         ranks = rankdata(values, method="average")
 
         vec_ranks.append(ranks)
-        rank_dict = {m: ranks[i] for i, m in enumerate(methods)}
+        rank_dict = {}
+        for i, method_name in enumerate(method_names):
+            method = methods_by_name[method_name]
+            rank_dict[method] = ranks[i]
 
-        all_ranks[dset] = rank_dict
+        all_ranks[dataset] = rank_dict
 
     avg_ranks = np.mean(vec_ranks, axis=0)
-    avg_ranks = {m: r for m, r in zip(methods, avg_ranks)}
-    return avg_ranks, all_ranks
+    average_ranks = {}
+    for i, method_name in enumerate(method_names):
+        method = methods_by_name[method_name]
+        average_ranks[method] = avg_ranks[i]
 
-
-def warning(msg):
-    termcolor.cprint(msg, "yellow", file=sys.stderr)
-
-
-def preprocess_data(data, _type):
-    methods = set([m for dset in data.keys() for m in data[dset].keys()])
-    methods = sorted(methods)
-
-    # filter out rbocpdms on "best" (uni or multi)
-    if _type == "best":
-        warning(
-            "\nWarning: Filtering out RBOCPDMS due to insufficient results.\n"
-        )
-        methods = [m for m in methods if not m == "rbocpdms"]
-
-    # filter out methods that have no results on any dataset
-    methods_no_result = set()
-    for m in methods:
-        if all(data[d][m] is None for d in data):
-            methods_no_result.add(m)
-    if methods_no_result:
-        print(
-            "\nWarning: Filtering out %r due to no results on any series\n"
-            % methods_no_result,
-            file=sys.stderr,
-        )
-        methods = [m for m in methods if not m in methods_no_result]
-
-    data_w_methods = {}
-    for dset in data:
-        data_w_methods[dset] = {}
-        for method in methods:
-            data_w_methods[dset][method] = data[dset][method]
-
-    data_no_missing = {}
-    for dset in data_w_methods:
-        if any((x is None for x in data_w_methods[dset].values())):
-            continue
-        data_no_missing[dset] = data_w_methods[dset]
-    return data_no_missing, methods
+    return average_ranks, all_ranks

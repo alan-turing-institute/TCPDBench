@@ -11,13 +11,12 @@ License: See the LICENSE file.
 
 """
 
-
 import argparse
 import json
 import os
 import statistics
 
-N_DATASETS = 42
+from common import Dataset
 
 
 def parse_args():
@@ -40,7 +39,7 @@ def parse_args():
 
 def load_unique_annotations(summary_dir):
     files = os.listdir(summary_dir)
-    assert len(files) == N_DATASETS
+    assert len(files) == len(Dataset)
 
     n_uniq_anno = []
     for f in sorted(files):

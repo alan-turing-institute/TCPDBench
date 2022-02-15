@@ -82,7 +82,7 @@ def f_measure(annotations, predictions, margin=5, alpha=0.5, return_PR=False):
 
 
 def overlap(A, B):
-    """ Return the overlap (i.e. Jaccard index) of two sets
+    """Return the overlap (i.e. Jaccard index) of two sets
 
     >>> overlap({1, 2, 3}, set())
     0.0
@@ -97,7 +97,7 @@ def overlap(A, B):
 
 
 def partition_from_cps(locations, n_obs):
-    """ Return a list of sets that give a partition of the set [0, T-1], as 
+    """Return a list of sets that give a partition of the set [0, T-1], as
     defined by the change point locations.
 
     >>> partition_from_cps([], 5)
@@ -126,18 +126,18 @@ def partition_from_cps(locations, n_obs):
     return partition
 
 
-def cover_single(Sprime, S):
+def cover_single(S, Sprime):
     """Compute the covering of a segmentation S by a segmentation Sprime.
 
     This follows equation (8) in Arbaleaz, 2010.
 
-    >>> cover_single([{1, 2, 3}, {4, 5}, {6}], [{1, 2, 3}, {4, 5, 6}])
+    >>> cover_single([{1, 2, 3}, {4, 5, 6}], [{1, 2, 3}, {4, 5}, {6}])
     0.8333333333333334
-    >>> cover_single([{1, 2, 3, 4}, {5, 6}], [{1, 2, 3, 4, 5, 6}])
+    >>> cover_single([{1, 2, 3, 4, 5, 6}], [{1, 2, 3, 4}, {5, 6}])
     0.6666666666666666
-    >>> cover_single([{1, 2}, {3, 4}, {5, 6}], [{1, 2, 3}, {4, 5, 6}])
+    >>> cover_single([{1, 2, 3}, {4, 5, 6}], [{1, 2}, {3, 4}, {5, 6}])
     0.6666666666666666
-    >>> cover_single([{1, 2, 3, 4, 5, 6}], [{1}, {2}, {3}, {4, 5, 6}])
+    >>> cover_single([{1}, {2}, {3}, {4, 5, 6}], [{1, 2, 3, 4, 5, 6}])
     0.3333333333333333
     """
     T = sum(map(len, Sprime))
@@ -170,5 +170,5 @@ def covering(annotations, predictions, n_obs):
     }
     pX = partition_from_cps(predictions, n_obs)
 
-    Cs = [cover_single(pX, Ak[k]) for k in Ak]
+    Cs = [cover_single(Ak[k], pX) for k in Ak]
     return sum(Cs) / len(Cs)
