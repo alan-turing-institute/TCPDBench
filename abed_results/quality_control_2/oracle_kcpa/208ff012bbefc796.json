@@ -1,0 +1,32 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_2.json -a kcpa --maxcp default --cost 23.9883291901949",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "quality_control_2",
+	"dataset_md5" : "919a55440bd00d635db80fe83e921c7d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 5,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 23.98833,
+		"maxcp" : "default",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			97,
+			133,
+			138,
+			268,
+			273,
+			283
+		],
+		"runtime" : 6.120542
+	}
+} 

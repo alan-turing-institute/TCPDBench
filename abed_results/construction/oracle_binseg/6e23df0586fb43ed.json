@@ -1,0 +1,43 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/construction.json -p Manual -f mean -t CUSUM -m BinSeg -Q max --pen.value 0.09549925860214359",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "construction",
+	"dataset_md5" : "fb0347dc9fd353b11b35e99f7d531f13",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 160.5,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 0.09549926,
+		"penalty" : "Manual",
+		"test_statistic" : "CUSUM"
+	},
+	"result" : {
+		"cplocations" : [
+			38,
+			63,
+			123,
+			135,
+			142,
+			146,
+			165,
+			171,
+			178,
+			190,
+			242,
+			254,
+			266,
+			274,
+			277,
+			279,
+			286,
+			290,
+			318
+		],
+		"runtime" : 0.02757406
+	}
+} 

@@ -1,0 +1,32 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ratner_stock.json -a kcpa --maxcp default --cost 0.28840315031266056",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "ratner_stock",
+	"dataset_md5" : "f7086ff916f35b88463bf8fd1857815e",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 5,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 0.2884032,
+		"maxcp" : "default",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			69,
+			205,
+			245,
+			272,
+			286,
+			600
+		],
+		"runtime" : 122.6038
+	}
+} 

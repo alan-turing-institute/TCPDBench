@@ -1,0 +1,37 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/homeruns.json -p BIC -f meanvar -t Normal -m PELT --pen.value NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "homeruns",
+	"dataset_md5" : "987bbab63e2c72acba1c07325303720c",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "PELT",
+		"penalty" : "BIC",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			2,
+			4,
+			18,
+			27,
+			34,
+			40,
+			44,
+			54,
+			59,
+			63,
+			65,
+			75,
+			94,
+			114,
+			117
+		],
+		"runtime" : 0.001719236
+	}
+} 

@@ -1,0 +1,32 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/measles.json -N max",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R",
+	"script_md5" : "c6a9f7404f11ab6108d72723fe5ff253",
+	"hostname" : "nyx",
+	"dataset" : "measles",
+	"dataset_md5" : "e42afd03be893fc7deb98514c94fa4c7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"changepoint.range" : 1,
+		"threshold" : 0.01,
+		"yearly.seasonality" : "auto",
+		"weekly.seasonality" : "auto",
+		"daily.seasonality" : "auto",
+		"Nmax" : 990
+	},
+	"result" : {
+		"cplocations" : [
+			561,
+			610,
+			611,
+			670,
+			744,
+			746,
+			749,
+			752,
+			754
+		],
+		"runtime" : 61.44192
+	}
+} 

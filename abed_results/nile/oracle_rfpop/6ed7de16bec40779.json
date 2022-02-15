@@ -1,0 +1,21 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/nile.json -l Outlier --pen.value 218.77616239495518 --lthreshold 6.309573444801933",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "nile",
+	"dataset_md5" : "5b08800e3ec692bfa5385b978658199b",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 218.7762,
+		"lthreshold" : 6.309573,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			99
+		],
+		"runtime" : 0.0008533001
+	}
+} 

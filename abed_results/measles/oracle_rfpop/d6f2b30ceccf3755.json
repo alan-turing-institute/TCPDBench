@@ -1,0 +1,52 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/measles.json -l Outlier --pen.value 0.0630957344480193 --lthreshold 0.15848931924611134",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "measles",
+	"dataset_md5" : "e42afd03be893fc7deb98514c94fa4c7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 0.06309573,
+		"lthreshold" : 0.1584893,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			71,
+			96,
+			114,
+			188,
+			207,
+			211,
+			286,
+			301,
+			310,
+			316,
+			333,
+			428,
+			447,
+			511,
+			514,
+			524,
+			541,
+			553,
+			608,
+			613,
+			628,
+			640,
+			657,
+			717,
+			735,
+			749,
+			830,
+			919,
+			930,
+			938,
+			972,
+			990
+		],
+		"runtime" : 0.005031586
+	}
+} 

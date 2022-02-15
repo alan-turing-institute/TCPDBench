@@ -1,0 +1,21 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ozone.json -l Outlier --pen.value 144.5439770745928 --lthreshold 1.584893192461114",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "ozone",
+	"dataset_md5" : "348b1f85c3ec3da3b8989afe04c33b80",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 144.544,
+		"lthreshold" : 1.584893,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			53
+		],
+		"runtime" : 0.000721693
+	}
+} 

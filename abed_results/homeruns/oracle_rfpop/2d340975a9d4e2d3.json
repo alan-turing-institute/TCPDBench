@@ -1,0 +1,25 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/homeruns.json -l Huber --pen.value 218.77616239495518 --lthreshold 6.309573444801933",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "homeruns",
+	"dataset_md5" : "987bbab63e2c72acba1c07325303720c",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 218.7762,
+		"lthreshold" : 6.309573,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			19,
+			54,
+			75,
+			94,
+			117
+		],
+		"runtime" : 0.0005125999
+	}
+} 

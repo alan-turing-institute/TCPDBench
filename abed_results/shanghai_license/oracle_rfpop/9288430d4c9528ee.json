@@ -1,0 +1,35 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/shanghai_license.json -l Outlier --pen.value 109.64781961431851 --lthreshold 10.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "shanghai_license",
+	"dataset_md5" : "b4ac173eb6c0a1a4d10268abc109eda1",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 109.6478,
+		"lthreshold" : 10,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			73,
+			139,
+			146,
+			152,
+			157,
+			160,
+			168,
+			170,
+			173,
+			175,
+			180,
+			189,
+			194,
+			200,
+			204
+		],
+		"runtime" : 0.0008964539
+	}
+} 

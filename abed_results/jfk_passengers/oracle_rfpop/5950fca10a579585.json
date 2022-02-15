@@ -1,0 +1,53 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/jfk_passengers.json -l Outlier --pen.value 0.09549925860214359 --lthreshold 0.251188643150958",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "jfk_passengers",
+	"dataset_md5" : "9655295214078f2a45a4c18e6c4e6d0d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 0.09549926,
+		"lthreshold" : 0.2511886,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			10,
+			12,
+			37,
+			39,
+			75,
+			87,
+			122,
+			141,
+			156,
+			171,
+			176,
+			183,
+			189,
+			205,
+			216,
+			261,
+			264,
+			268,
+			292,
+			298,
+			300,
+			316,
+			325,
+			336,
+			361,
+			377,
+			380,
+			397,
+			399,
+			404,
+			422,
+			446,
+			467
+		],
+		"runtime" : 0.00140357
+	}
+} 

@@ -1,0 +1,30 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/iceland_tourism.json -p Manual -f mean -t CUSUM -m BinSeg -Q default --pen.value 0.001",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "iceland_tourism",
+	"dataset_md5" : "8bbac4ca95319a865f2d58ff564f063d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "mean",
+		"max_cp" : "default",
+		"method" : "BinSeg",
+		"pen.value" : 0.001,
+		"penalty" : "Manual",
+		"test_statistic" : "CUSUM"
+	},
+	"result" : {
+		"cplocations" : [
+			136,
+			140,
+			148,
+			152,
+			160,
+			198
+		],
+		"runtime" : 0.003335476
+	}
+} 

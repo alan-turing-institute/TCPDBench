@@ -1,0 +1,27 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bitcoin.json -p Manual -f var -t Normal -m BinSeg -Q default --pen.value 54.954087385762485",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "bitcoin",
+	"dataset_md5" : "f90ff14ed1fc0c3d47d4394d25cbce93",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "var",
+		"max_cp" : "default",
+		"method" : "BinSeg",
+		"pen.value" : 54.95409,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			568,
+			642,
+			773
+		],
+		"runtime" : 0.00135994
+	}
+} 

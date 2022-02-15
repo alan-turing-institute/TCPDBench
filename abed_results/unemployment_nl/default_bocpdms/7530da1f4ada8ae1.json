@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/deploy/cpdbench/datasets/unemployment_nl.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/unemployment_nl.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
 	"dataset": "unemployment_nl",
 	"dataset_md5": "26d8c0359de7f733a6fb51d4d60b5af6",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -25,9 +25,9 @@
 			131,
 			145
 		],
-		"runtime": 108.8199610710144
+		"runtime": 8.351309061050415
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
 	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

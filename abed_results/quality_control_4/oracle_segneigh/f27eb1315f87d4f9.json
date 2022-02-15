@@ -1,0 +1,23 @@
+{
+	"error" : "missing value where TRUE/FALSE needed",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_4.json -p Asymptotic -f var -t CSS -m SegNeigh -Q max --pen.value NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "quality_control_4",
+	"dataset_md5" : "1efedb9a52cd0b9a9250cf9781c5f7ef",
+	"status" : "FAIL",
+	"parameters" : {
+		"Q" : 251,
+		"pen.value" : null,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"penalty" : "Asymptotic",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

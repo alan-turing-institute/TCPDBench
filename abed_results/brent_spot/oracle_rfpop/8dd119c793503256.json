@@ -1,0 +1,21 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/brent_spot.json -l Outlier --pen.value 165.95869074375597 --lthreshold 0.251188643150958",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "brent_spot",
+	"dataset_md5" : "79892116ef8a0aa16e2450123655b31d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 165.9587,
+		"lthreshold" : 0.2511886,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			499
+		],
+		"runtime" : 0.0104568
+	}
+} 

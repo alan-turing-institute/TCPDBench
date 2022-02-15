@@ -3,7 +3,7 @@
 	"dataset": "occupancy",
 	"dataset_md5": "bc6cd9adaf496fe30bf0e417d2c3b0c6",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 4,
 		"S2": 1,
@@ -32,13 +32,13 @@
 		"cplocations": [
 			1,
 			2,
-			36,
-			174,
-			227,
-			270,
-			297
+			25,
+			53,
+			172,
+			256,
+			296
 		],
-		"runtime": 3162.1755912303925
+		"runtime": 2468.0126345157623
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",

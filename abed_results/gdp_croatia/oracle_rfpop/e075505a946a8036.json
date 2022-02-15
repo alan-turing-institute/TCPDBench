@@ -1,0 +1,39 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_croatia.json -l Outlier --pen.value 0.43651583224016566 --lthreshold 2.511886431509581",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "gdp_croatia",
+	"dataset_md5" : "4f902ba68bf710fa245e5eb0ab35fea7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 0.4365158,
+		"lthreshold" : 2.511886,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			1,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			16,
+			19,
+			20,
+			21,
+			22,
+			23
+		],
+		"runtime" : 0.00046134
+	}
+} 

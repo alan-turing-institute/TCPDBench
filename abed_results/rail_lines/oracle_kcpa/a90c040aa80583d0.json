@@ -1,0 +1,32 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/rail_lines.json -a kcpa --maxcp default --cost 501.18723362727246",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "rail_lines",
+	"dataset_md5" : "fa7d19c61264f0d6b9d74cd145a50012",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 5,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 501.1872,
+		"maxcp" : "default",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			4,
+			7,
+			10,
+			25,
+			26,
+			37
+		],
+		"runtime" : 0.003333569
+	}
+} 

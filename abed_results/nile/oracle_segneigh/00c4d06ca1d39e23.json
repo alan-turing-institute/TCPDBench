@@ -1,0 +1,25 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/nile.json -p Manual -f var -t CSS -m SegNeigh -Q max --pen.value 47.863009232263806",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "nile",
+	"dataset_md5" : "5b08800e3ec692bfa5385b978658199b",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 51,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 47.86301,
+		"penalty" : "Manual",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : [
+			99
+		],
+		"runtime" : 0.04923224
+	}
+} 

@@ -1,0 +1,32 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json --intensity 200 --prior-a 0.1 --prior-b 0.1 --threshold 100 --use-timeout",
+	"dataset": "usd_isk",
+	"dataset_md5": "5cac2807a0e280c8ffd7321662e339ac",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {
+		"S1": 1,
+		"S2": 1,
+		"intensity": 200.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 0.1,
+		"prior_b": 0.1,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 100,
+		"upper_AR": 3,
+		"use_timeout": true
+	},
+	"result": {
+		"cplocations": [
+			1,
+			2,
+			116
+		],
+		"runtime": 10.780329942703247
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
+	"status": "SUCCESS"
+}

@@ -1,0 +1,22 @@
+{
+	"error" : "Exponential test statistic requires positive data",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/scanline_42049.json -p Manual -f meanvar -t Exponential -m PELT --pen.value 0.19054607179632463",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "scanline_42049",
+	"dataset_md5" : "39921dfa959576bd0b3d6c95558f17f4",
+	"status" : "FAIL",
+	"parameters" : {
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "PELT",
+		"pen.value" : 0.1905461,
+		"penalty" : "Manual",
+		"test_statistic" : "Exponential"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

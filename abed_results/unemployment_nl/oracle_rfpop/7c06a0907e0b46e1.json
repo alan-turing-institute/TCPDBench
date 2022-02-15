@@ -1,0 +1,36 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/unemployment_nl.json -l L2 --pen.value 63.0957344480193 --lthreshold NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "unemployment_nl",
+	"dataset_md5" : "26d8c0359de7f733a6fb51d4d60b5af6",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 63.09573,
+		"loss" : "L2"
+	},
+	"result" : {
+		"cplocations" : [
+			19,
+			42,
+			54,
+			70,
+			120,
+			130,
+			131,
+			136,
+			138,
+			141,
+			142,
+			173,
+			181,
+			185,
+			197,
+			211,
+			213
+		],
+		"runtime" : 0.001098394
+	}
+} 

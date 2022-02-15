@@ -1,0 +1,30 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/well_log.json -p Manual -f var -t Normal -m BinSeg -Q default --pen.value 0.006918309709189363",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "well_log",
+	"dataset_md5" : "7c80d2cbd5864b923e6a653aad115de6",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "var",
+		"max_cp" : "default",
+		"method" : "BinSeg",
+		"pen.value" : 0.00691831,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			172,
+			280,
+			310,
+			467,
+			656,
+			674
+		],
+		"runtime" : 0.001547098
+	}
+} 

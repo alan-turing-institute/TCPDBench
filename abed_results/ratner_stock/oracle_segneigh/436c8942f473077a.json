@@ -1,0 +1,29 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ratner_stock.json -p Manual -f var -t Normal -m SegNeigh -Q default --pen.value 0.054954087385762455",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "ratner_stock",
+	"dataset_md5" : "f7086ff916f35b88463bf8fd1857815e",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "var",
+		"max_cp" : "default",
+		"method" : "SegNeigh",
+		"pen.value" : 0.05495409,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			68,
+			204,
+			245,
+			280,
+			599
+		],
+		"runtime" : 0.08088088
+	}
+} 

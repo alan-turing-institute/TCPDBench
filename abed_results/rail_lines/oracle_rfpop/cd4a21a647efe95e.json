@@ -1,0 +1,24 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/rail_lines.json -l Huber --pen.value 36.3078054770101 --lthreshold 2.511886431509581",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "rail_lines",
+	"dataset_md5" : "fa7d19c61264f0d6b9d74cd145a50012",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 36.30781,
+		"lthreshold" : 2.511886,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			5,
+			9,
+			25,
+			36
+		],
+		"runtime" : 0.0006380081
+	}
+} 

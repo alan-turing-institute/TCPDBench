@@ -1,0 +1,46 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/us_population.json -p Manual -f var -t Normal -m BinSeg -Q max --pen.value 2.2908676527677723",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "us_population",
+	"dataset_md5" : "77037fc5ff0338516a56ae686aa4dcba",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 409,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 2.290868,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			114,
+			215,
+			279,
+			326,
+			355,
+			379,
+			405,
+			417,
+			425,
+			428,
+			433,
+			436,
+			440,
+			449,
+			463,
+			488,
+			512,
+			544,
+			590,
+			652,
+			725,
+			815
+		],
+		"runtime" : 0.01368117
+	}
+} 

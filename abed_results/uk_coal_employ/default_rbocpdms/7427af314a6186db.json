@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/deploy/cpdbench/datasets/uk_coal_employ.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/uk_coal_employ.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
 	"dataset": "uk_coal_employ",
 	"dataset_md5": "a7c72746e46d6e09f516bd87e0e68bef",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -32,7 +32,7 @@
 		"cplocations": null,
 		"runtime": null
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",
 	"status": "FAIL"
 }

@@ -1,0 +1,24 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/co2_canada.json -p Manual -f var -t Normal -m AMOC --pen.value 31.622776601683793",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "co2_canada",
+	"dataset_md5" : "de8d2cac911d2a8e3ce5addacbaed8e0",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "AMOC",
+		"pen.value" : 31.62278,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			166
+		],
+		"runtime" : 0.001049757
+	}
+} 

@@ -1,0 +1,21 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_iran.json -l Outlier --pen.value 4.570881896148747 --lthreshold 0.251188643150958",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "gdp_iran",
+	"dataset_md5" : "889e9fc6292125189fd3188396167431",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 4.570882,
+		"lthreshold" : 0.2511886,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			57
+		],
+		"runtime" : 0.0006377697
+	}
+} 

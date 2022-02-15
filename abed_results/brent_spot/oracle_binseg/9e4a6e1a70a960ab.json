@@ -1,0 +1,49 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/brent_spot.json -p Manual -f mean -t Normal -m BinSeg -Q max --pen.value 0.38018939632056126",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "brent_spot",
+	"dataset_md5" : "79892116ef8a0aa16e2450123655b31d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 251,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 0.3801894,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			110,
+			131,
+			139,
+			190,
+			199,
+			208,
+			213,
+			219,
+			223,
+			226,
+			239,
+			249,
+			279,
+			283,
+			307,
+			313,
+			372,
+			378,
+			395,
+			404,
+			415,
+			452,
+			464,
+			479,
+			499
+		],
+		"runtime" : 0.004574299
+	}
+} 

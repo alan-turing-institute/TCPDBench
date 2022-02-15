@@ -1,0 +1,36 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/co2_canada.json -p Manual -f var -t CSS -m BinSeg -Q max --pen.value 0.43651583224016566",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "co2_canada",
+	"dataset_md5" : "de8d2cac911d2a8e3ce5addacbaed8e0",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 108.5,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 0.4365158,
+		"penalty" : "Manual",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : [
+			82,
+			100,
+			103,
+			106,
+			110,
+			112,
+			130,
+			133,
+			136,
+			140,
+			166,
+			214
+		],
+		"runtime" : 0.01822519
+	}
+} 

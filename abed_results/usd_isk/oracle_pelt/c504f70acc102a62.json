@@ -1,0 +1,37 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json -p Manual -f mean -t Normal -m PELT --pen.value 0.6606934480075958",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "usd_isk",
+	"dataset_md5" : "5cac2807a0e280c8ffd7321662e339ac",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "PELT",
+		"pen.value" : 0.6606934,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			18,
+			26,
+			39,
+			47,
+			58,
+			70,
+			85,
+			98,
+			109,
+			116,
+			119,
+			213,
+			236,
+			246
+		],
+		"runtime" : 0.00124073
+	}
+} 

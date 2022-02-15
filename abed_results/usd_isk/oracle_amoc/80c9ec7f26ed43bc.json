@@ -1,0 +1,24 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json -p Manual -f meanvar -t Normal -m AMOC --pen.value 1.513561248436207",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "usd_isk",
+	"dataset_md5" : "5cac2807a0e280c8ffd7321662e339ac",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "AMOC",
+		"pen.value" : 1.513561,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			119
+		],
+		"runtime" : 0.001009464
+	}
+} 

@@ -1,0 +1,25 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/children_per_woman.json -p Manual -f mean -t CUSUM -m SegNeigh -Q max --pen.value 3.019951720402016",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "children_per_woman",
+	"dataset_md5" : "826e0a2328b8a8a085050115768eef98",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 151.5,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 3.019952,
+		"penalty" : "Manual",
+		"test_statistic" : "CUSUM"
+	},
+	"result" : {
+		"cplocations" : [
+			300
+		],
+		"runtime" : 0.7382474
+	}
+} 

@@ -1,0 +1,40 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/measles.json -l Huber --pen.value 251.18864315095772 --lthreshold 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "measles",
+	"dataset_md5" : "e42afd03be893fc7deb98514c94fa4c7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 251.1886,
+		"lthreshold" : 1,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			79,
+			108,
+			149,
+			179,
+			255,
+			276,
+			369,
+			393,
+			472,
+			496,
+			572,
+			599,
+			681,
+			693,
+			705,
+			776,
+			810,
+			879,
+			910,
+			990
+		],
+		"runtime" : 0.004008055
+	}
+} 

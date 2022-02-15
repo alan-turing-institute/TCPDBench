@@ -1,0 +1,26 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/centralia.json -p Manual -f mean -t Normal -m BinSeg -Q default --pen.value 2.6302679918953813",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "centralia",
+	"dataset_md5" : "addb9b70ac1294eba6da958f3ab26595",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "mean",
+		"max_cp" : "default",
+		"method" : "BinSeg",
+		"pen.value" : 2.630268,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			9,
+			14
+		],
+		"runtime" : 0.001327038
+	}
+} 

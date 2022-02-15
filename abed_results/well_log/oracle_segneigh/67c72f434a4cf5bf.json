@@ -1,0 +1,47 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/well_log.json -p Manual -f var -t CSS -m SegNeigh -Q max --pen.value 0.38018939632056126",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "well_log",
+	"dataset_md5" : "7c80d2cbd5864b923e6a653aad115de6",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 338.5,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 0.3801894,
+		"penalty" : "Manual",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : [
+			13,
+			170,
+			254,
+			280,
+			311,
+			340,
+			401,
+			411,
+			421,
+			431,
+			461,
+			463,
+			499,
+			525,
+			564,
+			611,
+			612,
+			621,
+			656,
+			660,
+			666,
+			671,
+			674
+		],
+		"runtime" : 5.508945
+	}
+} 

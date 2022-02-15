@@ -1,0 +1,50 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ratner_stock.json -l Huber --pen.value 72.44359600749891 --lthreshold 2.511886431509581",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "ratner_stock",
+	"dataset_md5" : "f7086ff916f35b88463bf8fd1857815e",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 72.4436,
+		"lthreshold" : 2.511886,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			5,
+			10,
+			34,
+			44,
+			68,
+			81,
+			90,
+			134,
+			156,
+			165,
+			168,
+			174,
+			192,
+			204,
+			212,
+			218,
+			223,
+			235,
+			245,
+			257,
+			271,
+			280,
+			285,
+			296,
+			328,
+			403,
+			465,
+			524,
+			559,
+			599
+		],
+		"runtime" : 0.001390457
+	}
+} 

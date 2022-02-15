@@ -3,7 +3,7 @@
 	"dataset": "quality_control_5",
 	"dataset_md5": "2ebb10acafae18ebabf0217218717970",
 	"error": null,
-	"hostname": "gertjan-arch",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -23,9 +23,9 @@
 			1,
 			2
 		],
-		"runtime": 80.20804786682129
+		"runtime": 19.800499200820923
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
-	"script_md5": "e6a84daedb85993dbe95448b4a5018e7",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

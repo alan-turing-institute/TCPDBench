@@ -1,0 +1,47 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_5.json -p Manual -f mean -t Normal -m SegNeigh -Q max --pen.value 3.019951720402016",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "quality_control_5",
+	"dataset_md5" : "2ebb10acafae18ebabf0217218717970",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 163.5,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 3.019952,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			31,
+			35,
+			52,
+			59,
+			60,
+			64,
+			72,
+			78,
+			123,
+			129,
+			147,
+			151,
+			201,
+			203,
+			206,
+			221,
+			277,
+			278,
+			285,
+			286,
+			289,
+			301,
+			324
+		],
+		"runtime" : 0.4141424
+	}
+} 

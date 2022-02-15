@@ -1,0 +1,44 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ozone.json -l Huber --pen.value 1.3182567385564075 --lthreshold 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "ozone",
+	"dataset_md5" : "348b1f85c3ec3da3b8989afe04c33b80",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 1.318257,
+		"lthreshold" : 1,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			2,
+			4,
+			6,
+			8,
+			10,
+			11,
+			12,
+			13,
+			22,
+			24,
+			25,
+			26,
+			28,
+			29,
+			30,
+			31,
+			32,
+			33,
+			35,
+			38,
+			40,
+			44,
+			49,
+			53
+		],
+		"runtime" : 0.0006945133
+	}
+} 

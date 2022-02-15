@@ -1,0 +1,30 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/homeruns.json -p Manual -f mean -t CUSUM -m SegNeigh -Q max --pen.value 0.012022644346174132",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "homeruns",
+	"dataset_md5" : "987bbab63e2c72acba1c07325303720c",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 60,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 0.01202264,
+		"penalty" : "Manual",
+		"test_statistic" : "CUSUM"
+	},
+	"result" : {
+		"cplocations" : [
+			30,
+			67,
+			94,
+			105,
+			113,
+			117
+		],
+		"runtime" : 0.07929301
+	}
+} 

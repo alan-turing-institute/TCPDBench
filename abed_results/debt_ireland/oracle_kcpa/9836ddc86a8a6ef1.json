@@ -1,0 +1,47 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/debt_ireland.json -a kcpa --maxcp max --cost 0.07244359600749899",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "debt_ireland",
+	"dataset_md5" : "a5a9e752c338d2ffcceb614bb2064cc9",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 21,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 0.0724436,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18,
+			19,
+			20,
+			21
+		],
+		"runtime" : 0.001706123
+	}
+} 

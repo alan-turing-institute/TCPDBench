@@ -7,7 +7,7 @@
 	"parameters": {},
 	"result": {
 		"cplocations": [],
-		"runtime": 4.76837158203125e-07
+		"runtime": 2.384185791015625e-07
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_zero.py",
 	"script_md5": "95b65ddd5669b41385966a4aad387118",

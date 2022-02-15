@@ -1,0 +1,48 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/construction.json -l Outlier --pen.value 1.7378008287493745 --lthreshold 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "construction",
+	"dataset_md5" : "fb0347dc9fd353b11b35e99f7d531f13",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 1.737801,
+		"lthreshold" : 1,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			2,
+			15,
+			40,
+			53,
+			64,
+			76,
+			87,
+			100,
+			115,
+			124,
+			135,
+			147,
+			163,
+			177,
+			189,
+			194,
+			201,
+			213,
+			220,
+			232,
+			244,
+			255,
+			266,
+			280,
+			291,
+			303,
+			308,
+			318
+		],
+		"runtime" : 0.001010418
+	}
+} 

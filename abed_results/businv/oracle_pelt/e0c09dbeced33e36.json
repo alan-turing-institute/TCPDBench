@@ -1,0 +1,49 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/businv.json -p Manual -f mean -t Normal -m PELT --pen.value 0.047863009232263824",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "businv",
+	"dataset_md5" : "d2ab178da17b2e659a10a102a4b9f332",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "PELT",
+		"pen.value" : 0.04786301,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			20,
+			32,
+			44,
+			67,
+			80,
+			92,
+			118,
+			128,
+			145,
+			152,
+			164,
+			170,
+			176,
+			188,
+			202,
+			207,
+			223,
+			229,
+			236,
+			247,
+			260,
+			272,
+			296,
+			308,
+			320,
+			329
+		],
+		"runtime" : 0.001462698
+	}
+} 

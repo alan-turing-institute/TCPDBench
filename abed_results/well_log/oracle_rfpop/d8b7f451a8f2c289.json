@@ -1,0 +1,36 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/well_log.json -l L1 --pen.value 9.120108393559097 --lthreshold NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "well_log",
+	"dataset_md5" : "7c80d2cbd5864b923e6a653aad115de6",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 9.120108,
+		"loss" : "L1"
+	},
+	"result" : {
+		"cplocations" : [
+			170,
+			178,
+			201,
+			203,
+			254,
+			280,
+			310,
+			342,
+			401,
+			411,
+			421,
+			431,
+			461,
+			463,
+			657,
+			660,
+			674
+		],
+		"runtime" : 0.001996994
+	}
+} 

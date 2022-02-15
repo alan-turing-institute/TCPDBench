@@ -1,0 +1,37 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/co2_canada.json -p Manual -q 30 --pen.value 7.943282347242813",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "co2_canada",
+	"dataset_md5" : "de8d2cac911d2a8e3ce5addacbaed8e0",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 30,
+		"pen.value" : 7.943282,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : [
+			16,
+			31,
+			41,
+			45,
+			57,
+			78,
+			97,
+			140,
+			171,
+			177,
+			181,
+			199,
+			208,
+			214
+		],
+		"runtime" : 0.003289938
+	}
+} 

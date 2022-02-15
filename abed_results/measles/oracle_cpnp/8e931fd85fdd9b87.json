@@ -1,0 +1,24 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/measles.json -p Manual -q 10 --pen.value 288.40315031266056",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "measles",
+	"dataset_md5" : "e42afd03be893fc7deb98514c94fa4c7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 10,
+		"pen.value" : 288.4032,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : [
+			990
+		],
+		"runtime" : 0.1127524
+	}
+} 

@@ -1,0 +1,31 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/global_co2.json --intensity 10 --prior-a 10 --prior-b 100 --threshold 100 --use-timeout",
+	"dataset": "global_co2",
+	"dataset_md5": "7c8edd8887f51a6f841cc9d806ab4e56",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {
+		"S1": 1,
+		"S2": 1,
+		"intensity": 10.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 10.0,
+		"prior_b": 100.0,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 100,
+		"upper_AR": 3,
+		"use_timeout": true
+	},
+	"result": {
+		"cplocations": [
+			3,
+			4
+		],
+		"runtime": 3.750648260116577
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
+	"status": "SUCCESS"
+}

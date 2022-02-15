@@ -1,0 +1,31 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/shanghai_license.json --intensity 50 --prior-a 10 --prior-b 1.0 --threshold 100 --use-timeout",
+	"dataset": "shanghai_license",
+	"dataset_md5": "b4ac173eb6c0a1a4d10268abc109eda1",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {
+		"S1": 1,
+		"S2": 1,
+		"intensity": 50.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 10.0,
+		"prior_b": 1.0,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 100,
+		"upper_AR": 3,
+		"use_timeout": true
+	},
+	"result": {
+		"cplocations": [
+			2,
+			3
+		],
+		"runtime": 7.89990758895874
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
+	"status": "SUCCESS"
+}

@@ -1,0 +1,53 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/apple.json --intensity 100 --prior-a 1.0 --prior-b 0.1 --threshold 100 --use-timeout",
+	"dataset": "apple",
+	"dataset_md5": "22edb48471bd3711f7a6e15de6413643",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {
+		"S1": 2,
+		"S2": 1,
+		"intensity": 100.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 1.0,
+		"prior_b": 0.1,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 100,
+		"upper_AR": 4,
+		"use_timeout": true
+	},
+	"result": {
+		"cplocations": [
+			3,
+			4,
+			26,
+			48,
+			57,
+			113,
+			156,
+			182,
+			214,
+			216,
+			228,
+			241,
+			319,
+			321,
+			350,
+			359,
+			367,
+			388,
+			468,
+			469,
+			530,
+			538,
+			552,
+			554
+		],
+		"runtime": 55.739851236343384
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
+	"status": "SUCCESS"
+}

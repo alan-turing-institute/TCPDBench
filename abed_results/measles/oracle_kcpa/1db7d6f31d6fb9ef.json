@@ -1,0 +1,32 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/measles.json -a kcpa --maxcp default --cost 1.9952623149688788",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "measles",
+	"dataset_md5" : "e42afd03be893fc7deb98514c94fa4c7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 5,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 1.995262,
+		"maxcp" : "default",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			289,
+			364,
+			396,
+			777,
+			811,
+			991
+		],
+		"runtime" : 921.9857
+	}
+} 

@@ -1,0 +1,37 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/lga_passengers.json -p Manual -f mean -t Normal -m SegNeigh -Q max --pen.value 3.981071705534969",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "lga_passengers",
+	"dataset_md5" : "3e7bf55fac17f59b400f8a558d3f0337",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 235,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 3.981072,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			13,
+			86,
+			110,
+			163,
+			253,
+			277,
+			295,
+			301,
+			326,
+			370,
+			422,
+			458,
+			467
+		],
+		"runtime" : 0.8884699
+	}
+} 

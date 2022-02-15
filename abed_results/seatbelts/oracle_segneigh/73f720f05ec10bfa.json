@@ -1,0 +1,25 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/seatbelts.json -p Manual -f mean -t CUSUM -m SegNeigh -Q default --pen.value 2.2908676527677723",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "seatbelts",
+	"dataset_md5" : "976ef4318e7b6381ff37dd4ac8029718",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "mean",
+		"max_cp" : "default",
+		"method" : "SegNeigh",
+		"pen.value" : 2.290868,
+		"penalty" : "Manual",
+		"test_statistic" : "CUSUM"
+	},
+	"result" : {
+		"cplocations" : [
+			191
+		],
+		"runtime" : 0.01263356
+	}
+} 

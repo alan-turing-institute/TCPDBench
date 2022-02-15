@@ -1,0 +1,24 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_argentina.json -p Manual -f var -t CSS -m AMOC --pen.value 1.7378008287493745",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "gdp_argentina",
+	"dataset_md5" : "694212b5682ebd808d740ffd83d4bc16",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "AMOC",
+		"pen.value" : 1.737801,
+		"penalty" : "Manual",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : [
+			45
+		],
+		"runtime" : 0.001208067
+	}
+} 

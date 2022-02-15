@@ -1,0 +1,36 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/occupancy.json --intensity 10 --prior-a 0.01 --prior-b 10 --threshold 100 --use-timeout",
+	"dataset": "occupancy",
+	"dataset_md5": "bc6cd9adaf496fe30bf0e417d2c3b0c6",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {
+		"S1": 4,
+		"S2": 1,
+		"intensity": 10.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 0.01,
+		"prior_b": 10.0,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 100,
+		"upper_AR": 4,
+		"use_timeout": true
+	},
+	"result": {
+		"cplocations": [
+			4,
+			5,
+			91,
+			92,
+			93,
+			187,
+			506
+		],
+		"runtime": 48.28927445411682
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
+	"status": "SUCCESS"
+}

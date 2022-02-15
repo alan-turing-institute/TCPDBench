@@ -1,0 +1,32 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/run_log.json -a kcpa --maxcp default --cost 1.3182567385564075",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "run_log",
+	"dataset_md5" : "2c78a8fa0b4a2f8e2d22ba3ad4dfd49f",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 5,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 1.318257,
+		"maxcp" : "default",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			60,
+			117,
+			176,
+			204,
+			317,
+			376
+		],
+		"runtime" : 18.46591
+	}
+} 

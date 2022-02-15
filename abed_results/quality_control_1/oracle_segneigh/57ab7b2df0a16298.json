@@ -1,0 +1,27 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_1.json -p Manual -f mean -t CUSUM -m SegNeigh -Q max --pen.value 0.054954087385762455",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "quality_control_1",
+	"dataset_md5" : "fcfd5b0323a0dbd499c22b32c77f6a43",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 157.5,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 0.05495409,
+		"penalty" : "Manual",
+		"test_statistic" : "CUSUM"
+	},
+	"result" : {
+		"cplocations" : [
+			143,
+			273,
+			312
+		],
+		"runtime" : 0.7044189
+	}
+} 

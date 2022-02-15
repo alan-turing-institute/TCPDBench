@@ -1,0 +1,23 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/robocalls.json -l Outlier --pen.value 72.44359600749891 --lthreshold 6.309573444801933",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "robocalls",
+	"dataset_md5" : "f67ec0ccb50f2a835912e5c51932c083",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 72.4436,
+		"lthreshold" : 6.309573,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			7,
+			35,
+			51
+		],
+		"runtime" : 0.0006210804
+	}
+} 

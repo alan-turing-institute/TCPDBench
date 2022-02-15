@@ -3,7 +3,7 @@
 	"dataset": "lga_passengers",
 	"dataset_md5": "3e7bf55fac17f59b400f8a558d3f0337",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -24,7 +24,7 @@
 			2,
 			273
 		],
-		"runtime": 44.7284152507782
+		"runtime": 32.72812080383301
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
 	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",

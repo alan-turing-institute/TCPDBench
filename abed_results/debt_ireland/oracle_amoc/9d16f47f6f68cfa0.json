@@ -1,0 +1,24 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/debt_ireland.json -p Manual -f mean -t Normal -m AMOC --pen.value 436.51583224016565",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "debt_ireland",
+	"dataset_md5" : "a5a9e752c338d2ffcceb614bb2064cc9",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "AMOC",
+		"pen.value" : 436.5158,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			20
+		],
+		"runtime" : 0.001116514
+	}
+} 

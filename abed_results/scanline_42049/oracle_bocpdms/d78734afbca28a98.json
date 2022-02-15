@@ -1,0 +1,48 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/scanline_42049.json --intensity 200 --prior-a 100 --prior-b 0.1 --threshold 100 --use-timeout",
+	"dataset": "scanline_42049",
+	"dataset_md5": "39921dfa959576bd0b3d6c95558f17f4",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {
+		"S1": 1,
+		"S2": 1,
+		"intensity": 200.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 100.0,
+		"prior_b": 0.1,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 100,
+		"upper_AR": 3,
+		"use_timeout": true
+	},
+	"result": {
+		"cplocations": [
+			1,
+			2,
+			13,
+			28,
+			53,
+			55,
+			81,
+			183,
+			184,
+			185,
+			274,
+			275,
+			278,
+			349,
+			353,
+			367,
+			466,
+			467,
+			478
+		],
+		"runtime": 23.03604531288147
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
+	"status": "SUCCESS"
+}

@@ -1,0 +1,24 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/seatbelts.json -p BIC -f var -t CSS -m BinSeg -Q default --pen.value NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "seatbelts",
+	"dataset_md5" : "976ef4318e7b6381ff37dd4ac8029718",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "var",
+		"max_cp" : "default",
+		"method" : "BinSeg",
+		"penalty" : "BIC",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : [
+			191
+		],
+		"runtime" : 0.002094269
+	}
+} 

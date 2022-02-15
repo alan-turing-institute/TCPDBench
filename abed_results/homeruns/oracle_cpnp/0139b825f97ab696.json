@@ -1,0 +1,39 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/homeruns.json -p Manual -q 10 --pen.value 3.019951720402016",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "homeruns",
+	"dataset_md5" : "987bbab63e2c72acba1c07325303720c",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 10,
+		"pen.value" : 3.019952,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : [
+			4,
+			8,
+			14,
+			17,
+			19,
+			34,
+			40,
+			47,
+			75,
+			84,
+			86,
+			94,
+			105,
+			113,
+			114,
+			117
+		],
+		"runtime" : 0.001116276
+	}
+} 

@@ -1,0 +1,44 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/unemployment_nl.json -p Manual -q 20 --pen.value 5.248074602497723",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "unemployment_nl",
+	"dataset_md5" : "26d8c0359de7f733a6fb51d4d60b5af6",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 20,
+		"pen.value" : 5.248075,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : [
+			9,
+			15,
+			23,
+			42,
+			55,
+			70,
+			86,
+			100,
+			120,
+			130,
+			138,
+			142,
+			159,
+			165,
+			171,
+			174,
+			180,
+			186,
+			198,
+			202,
+			213
+		],
+		"runtime" : 0.002366304
+	}
+} 

@@ -1,0 +1,34 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/unemployment_nl.json -p Manual -f mean -t Normal -m SegNeigh -Q max --pen.value 2.2908676527677723",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "unemployment_nl",
+	"dataset_md5" : "26d8c0359de7f733a6fb51d4d60b5af6",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 108,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 2.290868,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			22,
+			66,
+			120,
+			131,
+			138,
+			141,
+			173,
+			181,
+			196,
+			213
+		],
+		"runtime" : 0.1504002
+	}
+} 

@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/children_per_woman.json -N default",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/children_per_woman.json -N default",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R",
-	"script_md5" : "6dfa8c33703f6b5b0624c4a686df148a",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "c6a9f7404f11ab6108d72723fe5ff253",
+	"hostname" : "nyx",
 	"dataset" : "children_per_woman",
 	"dataset_md5" : "826e0a2328b8a8a085050115768eef98",
 	"status" : "SUCCESS",
@@ -26,6 +26,6 @@
 			216,
 			228
 		],
-		"runtime" : 0.7071474
+		"runtime" : 0.434293
 	}
 } 

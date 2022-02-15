@@ -1,0 +1,32 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ocp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/homeruns.json -l 200 --prior-a 100 --prior-b 1.0 --prior-k 10",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ocp.R",
+	"script_md5" : "566236fe18f3e7c48a5f3b6e0c71c2af",
+	"hostname" : "nyx",
+	"dataset" : "homeruns",
+	"dataset_md5" : "987bbab63e2c72acba1c07325303720c",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"missPts" : "none",
+		"cpthreshold" : 0.5,
+		"truncRlim" : 0.0001,
+		"minRlength" : 1,
+		"maxRlength" : 10000,
+		"minsep" : 1,
+		"maxsep" : 10000,
+		"multivariate" : false,
+		"lambda" : 200,
+		"prior_a" : 100,
+		"prior_b" : 1,
+		"prior_k" : 10
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			60,
+			76
+		],
+		"runtime" : 0.09786534
+	}
+} 

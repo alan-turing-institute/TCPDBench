@@ -1,0 +1,22 @@
+{
+	"error" : "NA/NaN/Inf in foreign function call (arg 2)",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/uk_coal_employ.json -p Manual -q 20 --pen.value 0.015848931924611134",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "uk_coal_employ",
+	"dataset_md5" : "a7c72746e46d6e09f516bd87e0e68bef",
+	"status" : "FAIL",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 20,
+		"pen.value" : 0.01584893,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

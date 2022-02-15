@@ -1,0 +1,23 @@
+{
+	"error" : "Poisson test statistic requires positive data",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/construction.json -p Manual -f meanvar -t Poisson -m SegNeigh -Q default --pen.value 6.025595860743575",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "construction",
+	"dataset_md5" : "fb0347dc9fd353b11b35e99f7d531f13",
+	"status" : "FAIL",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "meanvar",
+		"max_cp" : "default",
+		"method" : "SegNeigh",
+		"pen.value" : 6.025596,
+		"penalty" : "Manual",
+		"test_statistic" : "Poisson"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

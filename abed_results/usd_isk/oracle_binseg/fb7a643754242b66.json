@@ -1,0 +1,46 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json -p Manual -f mean -t Normal -m BinSeg -Q max --pen.value 0.19054607179632463",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "usd_isk",
+	"dataset_md5" : "5cac2807a0e280c8ffd7321662e339ac",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 124.5,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 0.1905461,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			18,
+			26,
+			39,
+			46,
+			58,
+			69,
+			85,
+			96,
+			99,
+			109,
+			110,
+			115,
+			116,
+			119,
+			138,
+			154,
+			178,
+			190,
+			211,
+			219,
+			236,
+			246
+		],
+		"runtime" : 0.00159502
+	}
+} 

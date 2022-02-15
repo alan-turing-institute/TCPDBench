@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/deploy/cpdbench/datasets/well_log.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/well_log.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
 	"dataset": "well_log",
 	"dataset_md5": "7c80d2cbd5864b923e6a653aad115de6",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -32,13 +32,13 @@
 		"cplocations": [
 			1,
 			2,
-			175,
+			173,
 			432,
 			468
 		],
-		"runtime": 14006.083217859268
+		"runtime": 2389.2833256721497
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",
 	"status": "SUCCESS"
 }

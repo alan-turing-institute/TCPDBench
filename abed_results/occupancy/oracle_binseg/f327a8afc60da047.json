@@ -1,0 +1,23 @@
+{
+	"error" : "This method has no support for multidimensional data.",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/occupancy.json -p Manual -f var -t Normal -m BinSeg -Q max --pen.value 144.5439770745928",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "occupancy",
+	"dataset_md5" : "bc6cd9adaf496fe30bf0e417d2c3b0c6",
+	"status" : "SKIP",
+	"parameters" : {
+		"Q" : 255.5,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 144.544,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

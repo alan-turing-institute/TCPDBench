@@ -1,0 +1,41 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/global_co2.json -l Huber --pen.value 31.622776601683793 --lthreshold 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "global_co2",
+	"dataset_md5" : "7c8edd8887f51a6f841cc9d806ab4e56",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 31.62278,
+		"lthreshold" : 1,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			39,
+			46,
+			53,
+			63,
+			68,
+			72,
+			76,
+			79,
+			84,
+			89,
+			92,
+			94,
+			95,
+			96,
+			97,
+			98,
+			99,
+			100,
+			101,
+			102,
+			103
+		],
+		"runtime" : 0.0006389618
+	}
+} 

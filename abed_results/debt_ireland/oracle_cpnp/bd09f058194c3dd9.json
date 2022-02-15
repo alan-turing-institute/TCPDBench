@@ -1,0 +1,33 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/debt_ireland.json -p Manual -q 10 --pen.value 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "debt_ireland",
+	"dataset_md5" : "a5a9e752c338d2ffcceb614bb2064cc9",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 10,
+		"pen.value" : 1,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : [
+			3,
+			5,
+			7,
+			9,
+			10,
+			11,
+			13,
+			14,
+			18,
+			20
+		],
+		"runtime" : 0.001610756
+	}
+} 

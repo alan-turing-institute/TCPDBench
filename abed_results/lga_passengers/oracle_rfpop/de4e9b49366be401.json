@@ -1,0 +1,40 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/lga_passengers.json -l Outlier --pen.value 1.0 --lthreshold 0.6309573444801934",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "lga_passengers",
+	"dataset_md5" : "3e7bf55fac17f59b400f8a558d3f0337",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 1,
+		"lthreshold" : 0.6309573,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			13,
+			22,
+			87,
+			110,
+			119,
+			138,
+			162,
+			200,
+			230,
+			251,
+			275,
+			282,
+			301,
+			315,
+			326,
+			337,
+			356,
+			401,
+			431,
+			467
+		],
+		"runtime" : 0.001174212
+	}
+} 

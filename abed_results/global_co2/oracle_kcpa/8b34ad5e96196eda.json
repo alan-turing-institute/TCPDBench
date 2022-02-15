@@ -1,0 +1,50 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/global_co2.json -a kcpa --maxcp max --cost 23.9883291901949",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "global_co2",
+	"dataset_md5" : "7c8edd8887f51a6f841cc9d806ab4e56",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 104,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 23.98833,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			41,
+			48,
+			56,
+			65,
+			70,
+			73,
+			76,
+			79,
+			81,
+			85,
+			89,
+			91,
+			93,
+			94,
+			95,
+			96,
+			97,
+			98,
+			99,
+			100,
+			101,
+			102,
+			103,
+			104
+		],
+		"runtime" : 0.1493111
+	}
+} 

@@ -1,0 +1,49 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/scanline_42049.json -p Manual -f mean -t Normal -m PELT --pen.value 0.3311311214825911",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "scanline_42049",
+	"dataset_md5" : "39921dfa959576bd0b3d6c95558f17f4",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "PELT",
+		"pen.value" : 0.3311311,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			20,
+			54,
+			60,
+			66,
+			75,
+			76,
+			183,
+			184,
+			192,
+			210,
+			233,
+			241,
+			246,
+			273,
+			274,
+			348,
+			353,
+			357,
+			360,
+			361,
+			465,
+			466,
+			470,
+			473,
+			477,
+			480
+		],
+		"runtime" : 0.001442194
+	}
+} 

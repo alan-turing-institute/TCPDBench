@@ -3,7 +3,7 @@
 	"dataset": "bee_waggle_6",
 	"dataset_md5": "4f03feafecb3be0b069b3cb0d6b17d4f",
 	"error": null,
-	"hostname": "gertjan-arch",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 4,
 		"S2": 1,
@@ -20,12 +20,13 @@
 	},
 	"result": {
 		"cplocations": [
+			1,
 			2,
-			3
+			24
 		],
-		"runtime": 706.9707410335541
+		"runtime": 89.87665748596191
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
-	"script_md5": "e6a84daedb85993dbe95448b4a5018e7",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

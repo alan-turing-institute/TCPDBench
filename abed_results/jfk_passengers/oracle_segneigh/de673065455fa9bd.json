@@ -1,0 +1,29 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/jfk_passengers.json -p Manual -f var -t CSS -m SegNeigh -Q default --pen.value 0.047863009232263824",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "jfk_passengers",
+	"dataset_md5" : "9655295214078f2a45a4c18e6c4e6d0d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "var",
+		"max_cp" : "default",
+		"method" : "SegNeigh",
+		"pen.value" : 0.04786301,
+		"penalty" : "Manual",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : [
+			62,
+			165,
+			207,
+			352,
+			467
+		],
+		"runtime" : 0.05571604
+	}
+} 

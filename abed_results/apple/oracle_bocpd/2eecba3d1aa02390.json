@@ -1,0 +1,51 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ocp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/apple.json -l 100 --prior-a 0.01 --prior-b 0.01 --prior-k 0.1",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ocp.R",
+	"script_md5" : "566236fe18f3e7c48a5f3b6e0c71c2af",
+	"hostname" : "nyx",
+	"dataset" : "apple",
+	"dataset_md5" : "22edb48471bd3711f7a6e15de6413643",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"missPts" : "none",
+		"cpthreshold" : 0.5,
+		"truncRlim" : 0.0001,
+		"minRlength" : 1,
+		"maxRlength" : 10000,
+		"minsep" : 1,
+		"maxsep" : 10000,
+		"multivariate" : true,
+		"lambda" : 100,
+		"prior_a" : 0.01,
+		"prior_b" : 0.01,
+		"prior_k" : 0.1
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			54,
+			56,
+			71,
+			101,
+			131,
+			182,
+			198,
+			215,
+			243,
+			261,
+			319,
+			321,
+			366,
+			386,
+			415,
+			460,
+			469,
+			530,
+			537,
+			552,
+			605
+		],
+		"runtime" : 0.5105731
+	}
+} 

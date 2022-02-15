@@ -1,0 +1,28 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_3.json -l Huber --pen.value 13.803842646028839 --lthreshold 2.511886431509581",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "quality_control_3",
+	"dataset_md5" : "94f55ddedd03197bc3e660f6e1d840ee",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 13.80384,
+		"lthreshold" : 2.511886,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			178,
+			208,
+			222,
+			229,
+			238,
+			244,
+			256,
+			365
+		],
+		"runtime" : 0.0007994175
+	}
+} 

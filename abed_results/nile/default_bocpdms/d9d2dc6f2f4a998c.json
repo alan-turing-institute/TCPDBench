@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/deploy/cpdbench/datasets/nile.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/nile.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
 	"dataset": "nile",
 	"dataset_md5": "5b08800e3ec692bfa5385b978658199b",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -23,9 +23,9 @@
 			3,
 			28
 		],
-		"runtime": 26.993305444717407
+		"runtime": 2.2955424785614014
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
 	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

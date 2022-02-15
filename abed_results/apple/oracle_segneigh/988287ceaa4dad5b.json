@@ -1,0 +1,23 @@
+{
+	"error" : "This method has no support for multidimensional data.",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/apple.json -p Manual -f meanvar -t Poisson -m SegNeigh -Q max --pen.value 758.5775750291835",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "apple",
+	"dataset_md5" : "22edb48471bd3711f7a6e15de6413643",
+	"status" : "SKIP",
+	"parameters" : {
+		"Q" : 312,
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 758.5776,
+		"penalty" : "Manual",
+		"test_statistic" : "Poisson"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

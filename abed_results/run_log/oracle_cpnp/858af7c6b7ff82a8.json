@@ -1,0 +1,22 @@
+{
+	"error" : "This method has no support for multidimensional data.",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/run_log.json -p Manual -q 40 --pen.value 13.803842646028839",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "run_log",
+	"dataset_md5" : "2c78a8fa0b4a2f8e2d22ba3ad4dfd49f",
+	"status" : "SKIP",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 40,
+		"pen.value" : 13.80384,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

@@ -1,0 +1,44 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/measles.json --intensity 10 --prior-a 10 --prior-b 10 --threshold 100 --use-timeout",
+	"dataset": "measles",
+	"dataset_md5": "e42afd03be893fc7deb98514c94fa4c7",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {
+		"S1": 1,
+		"S2": 1,
+		"intensity": 10.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 10.0,
+		"prior_b": 10.0,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 100,
+		"upper_AR": 4,
+		"use_timeout": true
+	},
+	"result": {
+		"cplocations": [
+			2,
+			3,
+			256,
+			277,
+			364,
+			399,
+			462,
+			498,
+			573,
+			574,
+			597,
+			673,
+			706,
+			770,
+			808
+		],
+		"runtime": 70.29904651641846
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
+	"status": "SUCCESS"
+}

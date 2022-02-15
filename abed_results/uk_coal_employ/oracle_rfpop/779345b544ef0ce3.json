@@ -1,0 +1,18 @@
+{
+	"error" : "NA/NaN/Inf in foreign function call (arg 1)",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/uk_coal_employ.json -l L1 --pen.value 41.68693834703355 --lthreshold NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "uk_coal_employ",
+	"dataset_md5" : "a7c72746e46d6e09f516bd87e0e68bef",
+	"status" : "FAIL",
+	"parameters" : {
+		"lambda" : 41.68694,
+		"loss" : "L1"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

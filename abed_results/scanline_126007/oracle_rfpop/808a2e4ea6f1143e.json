@@ -1,0 +1,22 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/scanline_126007.json -l Outlier --pen.value 125.89254117941663 --lthreshold 2.511886431509581",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "scanline_126007",
+	"dataset_md5" : "057d5741b623308af00c42e2c8e525c3",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 125.8925,
+		"lthreshold" : 2.511886,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			163,
+			480
+		],
+		"runtime" : 0.002620697
+	}
+} 

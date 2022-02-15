@@ -1,0 +1,49 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bitcoin.json -l Huber --pen.value 27.542287033381633 --lthreshold 0.1",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "bitcoin",
+	"dataset_md5" : "f90ff14ed1fc0c3d47d4394d25cbce93",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 27.54229,
+		"lthreshold" : 0.1,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			92,
+			121,
+			194,
+			230,
+			331,
+			401,
+			469,
+			513,
+			520,
+			547,
+			567,
+			574,
+			582,
+			586,
+			591,
+			599,
+			605,
+			609,
+			618,
+			623,
+			628,
+			641,
+			648,
+			660,
+			666,
+			702,
+			746,
+			759,
+			773
+		],
+		"runtime" : 0.003941298
+	}
+} 

@@ -1,0 +1,34 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_croatia.json -a kcpa --maxcp max --cost 165.95869074375597",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "gdp_croatia",
+	"dataset_md5" : "4f902ba68bf710fa245e5eb0ab35fea7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 24,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 165.9587,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			2,
+			6,
+			8,
+			10,
+			12,
+			14,
+			21,
+			24
+		],
+		"runtime" : 0.00158
+	}
+} 

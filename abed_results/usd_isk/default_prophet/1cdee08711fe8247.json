@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json -N default",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json -N default",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R",
-	"script_md5" : "6dfa8c33703f6b5b0624c4a686df148a",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "c6a9f7404f11ab6108d72723fe5ff253",
+	"hostname" : "nyx",
 	"dataset" : "usd_isk",
 	"dataset_md5" : "5cac2807a0e280c8ffd7321662e339ac",
 	"status" : "SUCCESS",
@@ -17,6 +17,6 @@
 	},
 	"result" : {
 		"cplocations" : [],
-		"runtime" : 0.3095191
+		"runtime" : 0.169755
 	}
 } 

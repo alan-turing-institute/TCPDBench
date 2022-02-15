@@ -1,0 +1,48 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/robocalls.json -p Manual -f var -t CSS -m SegNeigh -Q max --pen.value 0.007943282347242814",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "robocalls",
+	"dataset_md5" : "f67ec0ccb50f2a835912e5c51932c083",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 27,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 0.007943282,
+		"penalty" : "Manual",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : [
+			1,
+			6,
+			14,
+			17,
+			21,
+			25,
+			26,
+			27,
+			29,
+			34,
+			36,
+			37,
+			38,
+			40,
+			42,
+			43,
+			44,
+			45,
+			46,
+			47,
+			48,
+			49,
+			50,
+			51
+		],
+		"runtime" : 0.0158155
+	}
+} 

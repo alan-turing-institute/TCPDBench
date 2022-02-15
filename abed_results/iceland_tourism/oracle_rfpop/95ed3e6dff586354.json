@@ -1,0 +1,51 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/iceland_tourism.json -l Huber --pen.value 15.848931924611142 --lthreshold 10.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "iceland_tourism",
+	"dataset_md5" : "8bbac4ca95319a865f2d58ff564f063d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 15.84893,
+		"lthreshold" : 10,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			52,
+			55,
+			64,
+			67,
+			77,
+			79,
+			88,
+			91,
+			100,
+			103,
+			112,
+			115,
+			124,
+			127,
+			136,
+			139,
+			148,
+			151,
+			160,
+			161,
+			163,
+			172,
+			173,
+			175,
+			177,
+			184,
+			185,
+			187,
+			189,
+			196,
+			198
+		],
+		"runtime" : 0.0009233952
+	}
+} 

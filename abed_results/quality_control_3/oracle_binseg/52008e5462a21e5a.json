@@ -1,0 +1,41 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_3.json -p Manual -f var -t Normal -m BinSeg -Q max --pen.value 1.7378008287493745",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "quality_control_3",
+	"dataset_md5" : "94f55ddedd03197bc3e660f6e1d840ee",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 184,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 1.737801,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			11,
+			61,
+			67,
+			71,
+			79,
+			131,
+			139,
+			143,
+			157,
+			163,
+			178,
+			186,
+			203,
+			208,
+			213,
+			223,
+			365
+		],
+		"runtime" : 0.003401518
+	}
+} 

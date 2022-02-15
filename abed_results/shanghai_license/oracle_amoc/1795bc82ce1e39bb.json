@@ -1,0 +1,24 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/shanghai_license.json -p Manual -f var -t Normal -m AMOC --pen.value 380.1893963205613",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "shanghai_license",
+	"dataset_md5" : "b4ac173eb6c0a1a4d10268abc109eda1",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "AMOC",
+		"pen.value" : 380.1894,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			204
+		],
+		"runtime" : 0.001399279
+	}
+} 

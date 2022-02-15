@@ -1,0 +1,46 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ozone.json -a kcpa --maxcp max --cost 436.51583224016565",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "ozone",
+	"dataset_md5" : "348b1f85c3ec3da3b8989afe04c33b80",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 54,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 436.5158,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			3,
+			6,
+			9,
+			11,
+			12,
+			14,
+			23,
+			25,
+			27,
+			29,
+			30,
+			31,
+			32,
+			33,
+			35,
+			37,
+			41,
+			45,
+			50,
+			54
+		],
+		"runtime" : 0.01146531
+	}
+} 

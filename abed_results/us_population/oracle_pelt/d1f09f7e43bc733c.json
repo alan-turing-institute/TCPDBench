@@ -1,0 +1,53 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/us_population.json -p Manual -f var -t Normal -m PELT --pen.value 0.7585775750291835",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "us_population",
+	"dataset_md5" : "77037fc5ff0338516a56ae686aa4dcba",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "PELT",
+		"pen.value" : 0.7585776,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			62,
+			118,
+			172,
+			225,
+			270,
+			306,
+			333,
+			356,
+			376,
+			392,
+			405,
+			416,
+			424,
+			428,
+			430,
+			432,
+			434,
+			437,
+			442,
+			450,
+			461,
+			473,
+			488,
+			510,
+			537,
+			571,
+			615,
+			667,
+			737,
+			815
+		],
+		"runtime" : 0.001994371
+	}
+} 

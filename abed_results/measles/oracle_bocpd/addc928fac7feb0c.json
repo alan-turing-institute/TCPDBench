@@ -1,0 +1,50 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ocp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/measles.json -l 10 --prior-a 100 --prior-b 100 --prior-k 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ocp.R",
+	"script_md5" : "566236fe18f3e7c48a5f3b6e0c71c2af",
+	"hostname" : "nyx",
+	"dataset" : "measles",
+	"dataset_md5" : "e42afd03be893fc7deb98514c94fa4c7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"missPts" : "none",
+		"cpthreshold" : 0.5,
+		"truncRlim" : 0.0001,
+		"minRlength" : 1,
+		"maxRlength" : 10000,
+		"minsep" : 1,
+		"maxsep" : 10000,
+		"multivariate" : false,
+		"lambda" : 10,
+		"prior_a" : 100,
+		"prior_b" : 100,
+		"prior_k" : 1
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			56,
+			69,
+			150,
+			179,
+			256,
+			277,
+			370,
+			395,
+			474,
+			498,
+			573,
+			600,
+			677,
+			683,
+			694,
+			707,
+			778,
+			811,
+			883,
+			904
+		],
+		"runtime" : 0.64534
+	}
+} 

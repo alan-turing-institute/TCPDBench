@@ -1,0 +1,37 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_2.json -p Manual -q 40 --pen.value 7.943282347242813",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "quality_control_2",
+	"dataset_md5" : "919a55440bd00d635db80fe83e921c7d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 40,
+		"pen.value" : 7.943282,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : [
+			2,
+			22,
+			63,
+			97,
+			100,
+			125,
+			126,
+			132,
+			137,
+			168,
+			169,
+			265,
+			270,
+			282
+		],
+		"runtime" : 0.008165598
+	}
+} 

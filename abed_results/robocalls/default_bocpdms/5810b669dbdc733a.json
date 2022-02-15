@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/deploy/cpdbench/datasets/robocalls.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/robocalls.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
 	"dataset": "robocalls",
 	"dataset_md5": "f67ec0ccb50f2a835912e5c51932c083",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -22,9 +22,9 @@
 		"cplocations": [
 			2
 		],
-		"runtime": 5.854941368103027
+		"runtime": 0.6001796722412109
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
 	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

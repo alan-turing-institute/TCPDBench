@@ -1,0 +1,27 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ratner_stock.json -p Manual -f meanvar -t Normal -m BinSeg -Q default --pen.value 144.5439770745928",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "ratner_stock",
+	"dataset_md5" : "f7086ff916f35b88463bf8fd1857815e",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 5,
+		"func" : "meanvar",
+		"max_cp" : "default",
+		"method" : "BinSeg",
+		"pen.value" : 144.544,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			207,
+			285,
+			599
+		],
+		"runtime" : 0.001411438
+	}
+} 

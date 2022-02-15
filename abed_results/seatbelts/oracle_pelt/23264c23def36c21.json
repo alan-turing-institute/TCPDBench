@@ -1,0 +1,22 @@
+{
+	"error" : "Gamma test statistic requires positive data",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/seatbelts.json -p Manual -f meanvar -t Gamma -m PELT --pen.value 0.09549925860214359",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "seatbelts",
+	"dataset_md5" : "976ef4318e7b6381ff37dd4ac8029718",
+	"status" : "FAIL",
+	"parameters" : {
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "PELT",
+		"pen.value" : 0.09549926,
+		"penalty" : "Manual",
+		"test_statistic" : "Gamma"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

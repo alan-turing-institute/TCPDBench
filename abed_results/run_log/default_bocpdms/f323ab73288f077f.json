@@ -3,7 +3,7 @@
 	"dataset": "run_log",
 	"dataset_md5": "2c78a8fa0b4a2f8e2d22ba3ad4dfd49f",
 	"error": null,
-	"hostname": "gertjan-arch",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 2,
 		"S2": 1,
@@ -21,11 +21,13 @@
 	"result": {
 		"cplocations": [
 			3,
-			4
+			5,
+			317,
+			319
 		],
-		"runtime": 122.36364459991455
+		"runtime": 28.500539302825928
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
-	"script_md5": "e6a84daedb85993dbe95448b4a5018e7",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

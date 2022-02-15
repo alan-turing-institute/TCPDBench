@@ -1,0 +1,46 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/homeruns.json -l Outlier --pen.value 4.570881896148747 --lthreshold 6.309573444801933",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "homeruns",
+	"dataset_md5" : "987bbab63e2c72acba1c07325303720c",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 4.570882,
+		"lthreshold" : 6.309573,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			18,
+			27,
+			34,
+			40,
+			44,
+			48,
+			54,
+			59,
+			65,
+			67,
+			69,
+			74,
+			75,
+			79,
+			80,
+			83,
+			85,
+			86,
+			93,
+			94,
+			105,
+			110,
+			112,
+			113,
+			114,
+			117
+		],
+		"runtime" : 0.0006525517
+	}
+} 

@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/businv.json -p MBIC -q 10",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/businv.json -p MBIC -q 10",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
-	"script_md5" : "0960dc48e5296b852678528c87d06b97",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
 	"dataset" : "businv",
 	"dataset_md5" : "d2ab178da17b2e659a10a102a4b9f332",
 	"status" : "SUCCESS",
@@ -27,6 +27,6 @@
 			317,
 			329
 		],
-		"runtime" : 0.008636236
+		"runtime" : 0.004502773
 	}
 } 

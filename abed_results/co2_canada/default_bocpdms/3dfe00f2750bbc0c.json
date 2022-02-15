@@ -3,7 +3,7 @@
 	"dataset": "co2_canada",
 	"dataset_md5": "de8d2cac911d2a8e3ce5addacbaed8e0",
 	"error": null,
-	"hostname": "gertjan-arch",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -23,9 +23,9 @@
 			1,
 			2
 		],
-		"runtime": 40.99388003349304
+		"runtime": 8.007298231124878
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
-	"script_md5": "e6a84daedb85993dbe95448b4a5018e7",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

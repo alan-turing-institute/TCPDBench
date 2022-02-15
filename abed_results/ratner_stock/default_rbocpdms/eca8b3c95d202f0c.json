@@ -3,7 +3,7 @@
 	"dataset": "ratner_stock",
 	"dataset_md5": "f7086ff916f35b88463bf8fd1857815e",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -32,9 +32,9 @@
 		"cplocations": [
 			1,
 			2,
-			267
+			268
 		],
-		"runtime": 2563.8544974327087
+		"runtime": 4747.9849400520325
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",

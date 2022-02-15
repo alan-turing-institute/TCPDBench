@@ -1,0 +1,44 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/us_population.json -l Outlier --pen.value 288.40315031266056 --lthreshold 10.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "us_population",
+	"dataset_md5" : "77037fc5ff0338516a56ae686aa4dcba",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 288.4032,
+		"lthreshold" : 10,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			171,
+			182,
+			195,
+			207,
+			243,
+			255,
+			267,
+			279,
+			292,
+			350,
+			374,
+			386,
+			398,
+			410,
+			422,
+			435,
+			446,
+			701,
+			711,
+			735,
+			759,
+			784,
+			795,
+			815
+		],
+		"runtime" : 0.02087307
+	}
+} 

@@ -1,0 +1,34 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/us_population.json -p Manual -f var -t CSS -m SegNeigh -Q max --pen.value 0.012022644346174132",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "us_population",
+	"dataset_md5" : "77037fc5ff0338516a56ae686aa4dcba",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 409,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 0.01202264,
+		"penalty" : "Manual",
+		"test_statistic" : "CSS"
+	},
+	"result" : {
+		"cplocations" : [
+			108,
+			246,
+			343,
+			400,
+			469,
+			515,
+			575,
+			668,
+			766,
+			815
+		],
+		"runtime" : 9.416032
+	}
+} 

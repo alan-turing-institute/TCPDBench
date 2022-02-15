@@ -1,0 +1,21 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/rail_lines.json -l Outlier --pen.value 31.622776601683793 --lthreshold 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "rail_lines",
+	"dataset_md5" : "fa7d19c61264f0d6b9d74cd145a50012",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 31.62278,
+		"lthreshold" : 1,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			36
+		],
+		"runtime" : 0.0007412434
+	}
+} 

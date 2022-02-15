@@ -1,0 +1,51 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/robocalls.json -p Manual -f mean -t CUSUM -m SegNeigh -Q max --pen.value 0.0026302679918953813",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "robocalls",
+	"dataset_md5" : "f67ec0ccb50f2a835912e5c51932c083",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 27,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 0.002630268,
+		"penalty" : "Manual",
+		"test_statistic" : "CUSUM"
+	},
+	"result" : {
+		"cplocations" : [
+			1,
+			4,
+			5,
+			7,
+			9,
+			10,
+			11,
+			12,
+			14,
+			16,
+			21,
+			26,
+			27,
+			28,
+			30,
+			34,
+			38,
+			40,
+			42,
+			43,
+			44,
+			45,
+			46,
+			47,
+			48,
+			49,
+			51
+		],
+		"runtime" : 0.01663399
+	}
+} 

@@ -1,0 +1,23 @@
+{
+	"error" : "Poisson test statistic requires positive data",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_iran.json -p Asymptotic -f meanvar -t Poisson -m BinSeg -Q max --pen.value NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "gdp_iran",
+	"dataset_md5" : "889e9fc6292125189fd3188396167431",
+	"status" : "FAIL",
+	"parameters" : {
+		"Q" : 30,
+		"pen.value" : null,
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"penalty" : "Asymptotic",
+		"test_statistic" : "Poisson"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

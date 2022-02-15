@@ -1,0 +1,39 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/robocalls.json -l Huber --pen.value 1.7378008287493745 --lthreshold 3.981071705534973",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "robocalls",
+	"dataset_md5" : "f67ec0ccb50f2a835912e5c51932c083",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 1.737801,
+		"lthreshold" : 3.981072,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			1,
+			6,
+			7,
+			14,
+			17,
+			21,
+			26,
+			27,
+			29,
+			33,
+			35,
+			38,
+			40,
+			42,
+			43,
+			46,
+			48,
+			49,
+			51
+		],
+		"runtime" : 0.0006158352
+	}
+} 

@@ -1,0 +1,51 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/us_population.json -l Huber --pen.value 218.77616239495518 --lthreshold 0.1",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "us_population",
+	"dataset_md5" : "77037fc5ff0338516a56ae686aa4dcba",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 218.7762,
+		"lthreshold" : 0.1,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			28,
+			55,
+			82,
+			107,
+			132,
+			159,
+			188,
+			221,
+			248,
+			279,
+			307,
+			333,
+			360,
+			387,
+			414,
+			441,
+			466,
+			489,
+			514,
+			539,
+			562,
+			585,
+			610,
+			635,
+			660,
+			685,
+			712,
+			739,
+			764,
+			789,
+			815
+		],
+		"runtime" : 0.004216433
+	}
+} 

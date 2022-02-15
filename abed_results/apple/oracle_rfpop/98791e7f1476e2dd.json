@@ -1,0 +1,19 @@
+{
+	"error" : "This method has no support for multidimensional data.",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/apple.json -l Outlier --pen.value 0.015848931924611134 --lthreshold 2.511886431509581",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "apple",
+	"dataset_md5" : "22edb48471bd3711f7a6e15de6413643",
+	"status" : "SKIP",
+	"parameters" : {
+		"lambda" : 0.01584893,
+		"lthreshold" : 2.511886,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

@@ -1,0 +1,43 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/seatbelts.json -p Manual -q 30 --pen.value 7.943282347242813",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "seatbelts",
+	"dataset_md5" : "976ef4318e7b6381ff37dd4ac8029718",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 30,
+		"pen.value" : 7.943282,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : [
+			9,
+			11,
+			20,
+			23,
+			45,
+			47,
+			59,
+			64,
+			71,
+			93,
+			95,
+			105,
+			108,
+			117,
+			119,
+			168,
+			175,
+			179,
+			188,
+			191
+		],
+		"runtime" : 0.002897263
+	}
+} 

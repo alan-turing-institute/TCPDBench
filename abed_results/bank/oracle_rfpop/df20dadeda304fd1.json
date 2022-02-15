@@ -1,0 +1,53 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bank.json -l Huber --pen.value 1000.0 --lthreshold 1.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "bank",
+	"dataset_md5" : "5207135ea53fc6fa2a8119908da73abf",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 1000,
+		"lthreshold" : 1,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			19,
+			27,
+			48,
+			54,
+			106,
+			112,
+			124,
+			140,
+			144,
+			186,
+			201,
+			204,
+			232,
+			255,
+			263,
+			315,
+			326,
+			354,
+			368,
+			385,
+			403,
+			413,
+			420,
+			442,
+			446,
+			474,
+			478,
+			533,
+			538,
+			546,
+			566,
+			571,
+			580
+		],
+		"runtime" : 0.001401424
+	}
+} 

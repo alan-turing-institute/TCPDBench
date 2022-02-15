@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/deploy/cpdbench/datasets/lga_passengers.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/lga_passengers.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
 	"dataset": "lga_passengers",
 	"dataset_md5": "3e7bf55fac17f59b400f8a558d3f0337",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -33,9 +33,9 @@
 			1,
 			2
 		],
-		"runtime": 12355.01631116867
+		"runtime": 2987.0665893554688
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",
 	"status": "SUCCESS"
 }

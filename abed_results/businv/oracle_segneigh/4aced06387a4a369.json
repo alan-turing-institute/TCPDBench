@@ -1,0 +1,34 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/businv.json -p Manual -f var -t Normal -m SegNeigh -Q max --pen.value 5.248074602497723",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "businv",
+	"dataset_md5" : "d2ab178da17b2e659a10a102a4b9f332",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 166,
+		"func" : "var",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 5.248075,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			38,
+			91,
+			152,
+			164,
+			175,
+			207,
+			223,
+			236,
+			264,
+			329
+		],
+		"runtime" : 0.3664677
+	}
+} 

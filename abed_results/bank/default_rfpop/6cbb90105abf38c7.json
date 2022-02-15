@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bank.json -l Outlier",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bank.json -l Outlier",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
-	"script_md5" : "3b863ed48a30b8b0b5615d4614c3fa4b",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
 	"dataset" : "bank",
 	"dataset_md5" : "5207135ea53fc6fa2a8119908da73abf",
 	"status" : "SUCCESS",
@@ -146,6 +146,6 @@
 			574,
 			580
 		],
-		"runtime" : 0.002964973
+		"runtime" : 0.001192093
 	}
 } 

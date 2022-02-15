@@ -1,0 +1,19 @@
+{
+	"error" : "This method has no support for multidimensional data.",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/occupancy.json -l Huber --pen.value 0.16595869074375597 --lthreshold 6.309573444801933",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "occupancy",
+	"dataset_md5" : "bc6cd9adaf496fe30bf0e417d2c3b0c6",
+	"status" : "SKIP",
+	"parameters" : {
+		"lambda" : 0.1659587,
+		"lthreshold" : 6.309573,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

@@ -1,0 +1,48 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json -l Outlier --pen.value 23.9883291901949 --lthreshold 10.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "usd_isk",
+	"dataset_md5" : "5cac2807a0e280c8ffd7321662e339ac",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 23.98833,
+		"lthreshold" : 10,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			15,
+			19,
+			26,
+			27,
+			39,
+			47,
+			58,
+			69,
+			70,
+			85,
+			90,
+			96,
+			99,
+			107,
+			109,
+			112,
+			115,
+			116,
+			119,
+			122,
+			138,
+			154,
+			178,
+			189,
+			210,
+			219,
+			236,
+			246
+		],
+		"runtime" : 0.0009114742
+	}
+} 
