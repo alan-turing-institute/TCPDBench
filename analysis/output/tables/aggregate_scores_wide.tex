@@ -1,0 +1,25 @@
+%% This table requires booktabs!
+\begin{tabular}{lrrcrrcrrcrr}
+\toprule
+ & \multicolumn{5}{c}{Default} &  & \multicolumn{5}{c}{Oracle} \\
+\cmidrule(lr){2-6} \cmidrule(lr){8-12}
+ & \multicolumn{2}{c}{Univariate} &  & \multicolumn{2}{c}{Multivariate} &  & \multicolumn{2}{c}{Univariate} &  & \multicolumn{2}{c}{Multivariate} \\
+\cmidrule(lr){2-3} \cmidrule(lr){5-6} \cmidrule(lr){8-9} \cmidrule(lr){11-12}
+ & Cover & F1 & & Cover & F1 & & Cover & F1 & & Cover & F1\\
+\midrule
+\textsc{amoc}     & \textbf{0.668} & \textbf{0.653} &  &                &                &  & 0.717          & 0.773          &  &                &                \\
+\textsc{binseg}   & \textbf{0.672} & \textbf{0.698} &  &                &                &  & \textbf{0.774} & \textbf{0.873} &  &                &                \\
+\textsc{bocpd}    & \textbf{0.594} & \textbf{0.662} &  & \textbf{0.455} & \textbf{0.610} &  & \textbf{0.783} & \textbf{0.886} &  & \textbf{0.801} & \textbf{0.941} \\
+\textsc{bocpdms}  & \textbf{0.590} & 0.495          &  & \textbf{0.512} & \textbf{0.426} &  & 0.753          & 0.659          &  & \textbf{0.689} & 0.654          \\
+\textsc{cpnp}     & 0.488          & \textbf{0.586} &  &                &                &  & \textbf{0.759} & \textbf{0.845} &  &                &                \\
+\textsc{ecp}      & 0.470          & 0.560          &  & \textbf{0.402} & \textbf{0.545} &  & 0.693          & 0.773          &  & \textbf{0.590} & \textbf{0.725} \\
+\textsc{kcpa}     & 0.069          & 0.124          &  & 0.047          & 0.071          &  & 0.608          & 0.686          &  & \textbf{0.649} & \textbf{0.774} \\
+\textsc{pelt}     & \textbf{0.652} & \textbf{0.674} &  &                &                &  & \textbf{0.772} & \textbf{0.864} &  &                &                \\
+\textsc{prophet}  & 0.522          & 0.472          &  &                &                &  & 0.554          & 0.502          &  &                &                \\
+\textsc{rbocpdms} & 0.561          & 0.397          &  & \textbf{0.485} & \textbf{0.352} &  & 0.717          & 0.677          &  & \textbf{0.649} & 0.559          \\
+\textsc{rfpop}    & 0.341          & 0.476          &  &                &                &  & \textbf{0.784} & \textbf{0.870} &  &                &                \\
+\textsc{segneigh} & \textbf{0.642} & \textbf{0.635} &  &                &                &  & \textbf{0.777} & \textbf{0.875} &  &                &                \\
+\textsc{wbs}      & 0.264          & 0.365          &  &                &                &  & 0.366          & 0.482          &  &                &                \\
+\textsc{zero}     & \textbf{0.566} & \textbf{0.645} &  & \textbf{0.464} & \textbf{0.577} &  & 0.566          & 0.645          &  & 0.464          & 0.577          \\
+\bottomrule
+\end{tabular}
