@@ -12,8 +12,10 @@ MAKEFLAGS += --warn-undefined-variables --no-builtin-rules
 
 DATA_DIR=./datasets
 OUTPUT_DIR=./analysis/output
+FIGURE_DIR=$(OUTPUT_DIR)/figures
 TABLE_DIR=$(OUTPUT_DIR)/tables
-RANK_DIR=$(OUTPUT_DIR)/rankplots
+SCORE_DIR=$(OUTPUT_DIR)/scores
+CDD_DIR=$(OUTPUT_DIR)/cd_diagrams
 CONST_DIR=$(OUTPUT_DIR)/constants
 SCRIPT_DIR=./analysis/scripts
 
@@ -26,17 +28,22 @@ DATASETS=$(sort $(filter-out demo_*, $(wildcard $(DATA_DIR)/*.json)))
 DATANAMES=$(subst $(DATA_DIR)/,,$(subst .json,,$(DATASETS)))
 DATASET_SUMMARIES=$(addsuffix .json,$(addprefix $(SUMMARY_DIR)/summary_,$(DATANAMES)))
 
+EXPERIMENTS=default oracle
+METRICS=cover f1
+DIMENSIONALITY=univariate multivariate
+MISSING_STRATEGY=zero_no_coal # or 'zero' or 'complete'
+
 #############
 #           #
 # Top-level #
 #           #
 #############
 
-.PHONY: all clean
+.PHONY: all clean results
 
 all: results
 
-results: tables rankplots constants
+results: tables figures cd_diagrams constants
 
 #############
 #           #
@@ -51,8 +58,10 @@ summary-dir:
 
 summaries: $(DATASET_SUMMARIES)
 
-$(DATASET_SUMMARIES): $(SUMMARY_DIR)/summary_%.json: $(DATA_DIR)/%.json $(SCRIPT_DIR)/summarize.py | summary-dir
-	python $(SCRIPT_DIR)/summarize.py -a $(ANNOTATION_FILE) -d $< -r $(RESULT_DIR) -o $@
+$(DATASET_SUMMARIES): $(SUMMARY_DIR)/summary_%.json: $(DATA_DIR)/%.json \
+	$(SCRIPT_DIR)/summarize.py $(SCRIPT_DIR)/metrics.py | summary-dir
+	python $(SCRIPT_DIR)/summarize.py -a $(ANNOTATION_FILE) -d $< \
+		-r $(RESULT_DIR) -o $@
 
 clean_summaries:
 	rm -f $(DATASET_SUMMARIES)
@@ -63,212 +72,213 @@ clean_summaries:
 #        #
 ##########
 
-.PHONY: tables default_tables best_tables aggregate_wide
+.PHONY: tables \
+	default_tables \
+	oracle_tables \
+	aggregate_wide \
+	descriptive \
+	annotator_agreement
 
 table-dir:
 	mkdir -p $(TABLE_DIR)
 
-tables: default_tables best_tables aggregate_wide
+tables: default_tables \
+	oracle_tables \
+	aggregate_wide \
+	descriptive \
+	annotator_agreement
 
-best_tables: \
-	$(TABLE_DIR)/best_f1_combined_full.tex \
-	$(TABLE_DIR)/best_cover_combined_full.tex \
-	$(TABLE_DIR)/best_f1_uni_avg.json \
-	$(TABLE_DIR)/best_f1_multi_avg.json \
-	$(TABLE_DIR)/best_cover_uni_avg.json \
-	$(TABLE_DIR)/best_cover_multi_avg.json \
-	$(TABLE_DIR)/best_f1_uni_full.json \
-	$(TABLE_DIR)/best_cover_uni_full.json \
-	$(TABLE_DIR)/best_f1_multi_full.json \
-	$(TABLE_DIR)/best_cover_multi_full.json
-
-$(TABLE_DIR)/best_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e best -m f1 -d combined -f tex -t full > $@
-
-$(TABLE_DIR)/best_cover_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e best -m cover -d combined -f tex -t full > $@
-
-$(TABLE_DIR)/best_f1_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e best -m f1 -d uni -f json -t avg > $@
-
-$(TABLE_DIR)/best_f1_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e best -m f1 -d multi -f json -t avg > $@
-
-$(TABLE_DIR)/best_cover_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e best -m cover -d uni -f json -t avg > $@
-
-$(TABLE_DIR)/best_cover_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e best -m cover -d multi -f json -t avg > $@
-
-$(TABLE_DIR)/best_cover_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e best -m cover -d uni -f json -t full > $@
-
-$(TABLE_DIR)/best_f1_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e best -m f1 -d uni -f json -t full > $@
-
-$(TABLE_DIR)/best_f1_multi_full.json: $(SCRIPT_DIR)/make_table.py summaries
-	python $< -s $(SUMMARY_DIR) -e best -m f1 -d multi -f json -t full > $@
-
-$(TABLE_DIR)/best_cover_multi_full.json: $(SCRIPT_DIR)/make_table.py summaries
-	python $< -s $(SUMMARY_DIR) -e best -m cover -d multi -f json -t full > $@
+oracle_tables: \
+	$(TABLE_DIR)/oracle_f1_combined_full.tex \
+	$(TABLE_DIR)/oracle_cover_combined_full.tex
 
 default_tables: \
 	$(TABLE_DIR)/default_f1_combined_full.tex \
-	$(TABLE_DIR)/default_cover_combined_full.tex \
-	$(TABLE_DIR)/default_f1_uni_avg.json \
-	$(TABLE_DIR)/default_f1_multi_avg.json \
-	$(TABLE_DIR)/default_cover_uni_avg.json \
-	$(TABLE_DIR)/default_cover_multi_avg.json \
-	$(TABLE_DIR)/default_cover_uni_full.json \
-	$(TABLE_DIR)/default_f1_uni_full.json \
-	$(TABLE_DIR)/default_cover_multi_full.json \
-	$(TABLE_DIR)/default_f1_multi_full.json
+	$(TABLE_DIR)/default_cover_combined_full.tex
 
-$(TABLE_DIR)/default_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m f1 -d combined -f tex -t full > $@
+$(TABLE_DIR)/oracle_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/latex.py \
+	$(SCRIPT_DIR)/score_file.py $(DATASET_SUMMARIES) | table-dir
+	python $< -s $(SUMMARY_DIR) -e oracle -m f1 > $@
 
-$(TABLE_DIR)/default_cover_combined_full.tex: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m cover -d combined -f tex -t full > $@
+$(TABLE_DIR)/oracle_cover_combined_full.tex: $(SCRIPT_DIR)/make_table.py \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/latex.py \
+	$(SCRIPT_DIR)/score_file.py $(DATASET_SUMMARIES) | table-dir
+	python $< -s $(SUMMARY_DIR) -e oracle -m cover > $@
 
-$(TABLE_DIR)/default_f1_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m f1 -d uni -f json -t avg > $@
+$(TABLE_DIR)/default_f1_combined_full.tex: $(SCRIPT_DIR)/make_table.py \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/latex.py \
+	$(SCRIPT_DIR)/score_file.py $(DATASET_SUMMARIES) | table-dir
+	python $< -s $(SUMMARY_DIR) -e default -m f1 > $@
 
-$(TABLE_DIR)/default_f1_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m f1 -d multi -f json -t avg > $@
+$(TABLE_DIR)/default_cover_combined_full.tex: $(SCRIPT_DIR)/make_table.py \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/latex.py \
+	$(SCRIPT_DIR)/score_file.py $(DATASET_SUMMARIES) | table-dir
+	python $< -s $(SUMMARY_DIR) -e default -m cover > $@
 
-$(TABLE_DIR)/default_cover_uni_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m cover -d uni -f json -t avg > $@
+aggregate_wide: $(TABLE_DIR)/aggregate_scores_wide.tex
 
-$(TABLE_DIR)/default_cover_multi_avg.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m cover -d multi -f json -t avg > $@
-
-$(TABLE_DIR)/default_cover_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m cover -d uni -f json -t full > $@
-
-$(TABLE_DIR)/default_f1_uni_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m f1 -d uni -f json -t full > $@
-
-$(TABLE_DIR)/default_cover_multi_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m cover -d multi -f json -t full > $@
-
-$(TABLE_DIR)/default_f1_multi_full.json: $(SCRIPT_DIR)/make_table.py summaries | table-dir
-	python $< -s $(SUMMARY_DIR) -e default -m f1 -d multi -f json -t full > $@
-
-aggregate_wide: $(TABLE_DIR)/aggregate_table_wide.tex
-
-$(TABLE_DIR)/aggregate_table_wide.tex: $(SCRIPT_DIR)/aggregate_table_wide.py \
-	$(TABLE_DIR)/best_cover_uni_avg.json \
-	$(TABLE_DIR)/best_cover_multi_avg.json \
-	$(TABLE_DIR)/best_f1_uni_avg.json \
-	$(TABLE_DIR)/best_f1_uni_avg.json \
-	$(TABLE_DIR)/default_cover_uni_avg.json \
-	$(TABLE_DIR)/default_cover_multi_avg.json \
-	$(TABLE_DIR)/default_f1_uni_avg.json \
-	$(TABLE_DIR)/default_f1_uni_avg.json | table-dir
+$(TABLE_DIR)/aggregate_scores_wide.tex: $(SCRIPT_DIR)/aggregate_scores_wide.py \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/rank_common.py \
+	$(SCRIPT_DIR)/significance.py \
+	$(SCORE_DIR)/default_cover_scores.json \
+	$(SCORE_DIR)/default_f1_scores.json \
+	$(SCORE_DIR)/oracle_cover_scores.json \
+	$(SCORE_DIR)/oracle_f1_scores.json | table-dir
 	python $< \
-		--bcu $(TABLE_DIR)/best_cover_uni_avg.json \
-		--bcm $(TABLE_DIR)/best_cover_multi_avg.json \
-		--bfu $(TABLE_DIR)/best_f1_uni_avg.json \
-		--bfm $(TABLE_DIR)/best_f1_multi_avg.json \
-		--dcu $(TABLE_DIR)/default_cover_uni_avg.json \
-		--dcm $(TABLE_DIR)/default_cover_multi_avg.json \
-		--dfu $(TABLE_DIR)/default_f1_uni_avg.json \
-		--dfm $(TABLE_DIR)/default_f1_multi_avg.json > $@
+		--default-cover $(SCORE_DIR)/default_cover_scores.json \
+		--default-f1 $(SCORE_DIR)/default_f1_scores.json \
+		--oracle-cover $(SCORE_DIR)/oracle_cover_scores.json \
+		--oracle-f1 $(SCORE_DIR)/oracle_f1_scores.json \
+		-o $@ -m $(MISSING_STRATEGY)
 
+
+descriptive: $(TABLE_DIR)/descriptive_statistics.tex
+
+$(TABLE_DIR)/descriptive_statistics.tex: $(SCRIPT_DIR)/descriptive_statistics.py \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/frequencies.py \
+	$(DATASET_SUMMARIES) | table-dir
+	python $< -d $(DATA_DIR) -s $(SUMMARY_DIR) -o $@
+
+annotator_agreement: $(TABLE_DIR)/annotation_simulation_pvalues.tex
+
+$(TABLE_DIR)/annotation_simulation_pvalues.tex: \
+	$(SCRIPT_DIR)/annotator_agreement_simulation.py \
+	$(SCRIPT_DIR)/common.py \
+	$(SCRIPT_DIR)/latex.py \
+	$(SCRIPT_DIR)/metrics.py \
+	$(DATASET_SUMMARIES) | table-dir
+	python $< -s $(SUMMARY_DIR) -o $@ --seed 123 -r 100000
 
 clean_tables:
-	rm -f $(TABLE_DIR)/aggregate_table_wide.tex
-	rm -f $(TABLE_DIR)/best_cover_combined_full.tex
-	rm -f $(TABLE_DIR)/best_cover_multi_avg.json
-	rm -f $(TABLE_DIR)/best_cover_uni_avg.json
-	rm -f $(TABLE_DIR)/best_cover_uni_full.js
-	rm -f $(TABLE_DIR)/best_f1_combined_full.tex
-	rm -f $(TABLE_DIR)/best_f1_multi_avg.json
-	rm -f $(TABLE_DIR)/best_f1_uni_avg.json
-	rm -f $(TABLE_DIR)/best_f1_uni_full.json
+	rm -f $(TABLE_DIR)/aggregate_scores_wide.tex
 	rm -f $(TABLE_DIR)/default_cover_combined_full.tex
-	rm -f $(TABLE_DIR)/default_cover_multi_avg.json
-	rm -f $(TABLE_DIR)/default_cover_uni_avg.json
-	rm -f $(TABLE_DIR)/default_cover_uni_full.json
 	rm -f $(TABLE_DIR)/default_f1_combined_full.tex
-	rm -f $(TABLE_DIR)/default_f1_multi_avg.json
-	rm -f $(TABLE_DIR)/default_f1_uni_avg.json
-	rm -f $(TABLE_DIR)/default_f1_uni_full.json
+	rm -f $(TABLE_DIR)/oracle_cover_combined_full.tex
+	rm -f $(TABLE_DIR)/oracle_f1_combined_full.tex
+	rm -f $(TABLE_DIR)/descriptive_statistics.tex
+	rm -f $(TABLE_DIR)/annotation_simulation_pvalues.tex
+
+###########
+#         #
+# Figures #
+#         #
+###########
+
+.PHONY: figures annotator_histograms clean_figures
+
+figures: annotator_histograms
+
+annotator_histograms: \
+	$(FIGURE_DIR)/anno_hist/histogram_f1.pdf \
+	$(FIGURE_DIR)/anno_hist/histogram_cover.pdf
+
+figure-dirs:
+	mkdir -p $(FIGURE_DIR)
+	mkdir -p $(FIGURE_DIR)/anno_hist
+
+$(FIGURE_DIR)/anno_hist/histogram_f1.tex: \
+	$(SCRIPT_DIR)/annotator_histogram.py \
+	$(SCRIPT_DIR)/common.py \
+	$(SCRIPT_DIR)/metrics.py \
+	$(DATASET_SUMMARIES) | figure-dirs
+	python $< -s $(SUMMARY_DIR) -o $@ --metric f1
+
+$(FIGURE_DIR)/anno_hist/histogram_cover.tex: \
+	$(SCRIPT_DIR)/annotator_histogram.py \
+	$(SCRIPT_DIR)/common.py \
+	$(SCRIPT_DIR)/metrics.py \
+	$(DATASET_SUMMARIES) | figure-dirs
+	python $< -s $(SUMMARY_DIR) -o $@ --metric covering
+
+$(FIGURE_DIR)/anno_hist/histogram_%.pdf: \
+	$(FIGURE_DIR)/anno_hist/histogram_%.tex | figure-dirs
+	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" \
+		-outdir=$(FIGURE_DIR)/anno_hist $< && \
+	cd $(FIGURE_DIR)/anno_hist && latexmk -c
+
+clean_figures:
+	rm -f $(FIGURE_DIR)/anno_hist/histogram_f1.tex
+	rm -f $(FIGURE_DIR)/anno_hist/histogram_cover.tex
 
 
-##############
-#            #
-# Rank plots #
-#            #
-##############
+##########
+#        #
+# Scores #
+#        #
+##########
 
-.PHONY: rankplots
+.PHONY: score_files default_score_files oracle_score_files
 
-rank-dir:
-	mkdir -p $(RANK_DIR)
+score-dir:
+	mkdir -p $(SCORE_DIR)
 
-rankplots: \
-	$(RANK_DIR)/rankplot_best_cover_uni.pdf \
-	$(RANK_DIR)/rankplot_best_f1_uni.pdf \
-	$(RANK_DIR)/rankplot_default_cover_uni.pdf \
-	$(RANK_DIR)/rankplot_default_f1_uni.pdf \
-	$(RANK_DIR)/rankplot_best_cover_multi.pdf \
-	$(RANK_DIR)/rankplot_best_f1_multi.pdf \
-	$(RANK_DIR)/rankplot_default_cover_multi.pdf \
-	$(RANK_DIR)/rankplot_default_f1_multi.pdf
+scores: default_scores oracle_scores
 
-#######
-# UNI #
-#######
+default_scores: \
+	$(SCORE_DIR)/default_cover_scores.json \
+	$(SCORE_DIR)/default_f1_scores.json
 
-$(RANK_DIR)/rankplot_best_cover_uni.tex: $(TABLE_DIR)/best_cover_uni_full.json \
-	$(SCRIPT_DIR)/rank_plots.py | rank-dir
-	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
+$(SCORE_DIR)/default_cover_scores.json: $(SCRIPT_DIR)/score_file.py \
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | score-dir
+	python $< -s $(SUMMARY_DIR) -e default -m cover > $@
 
-$(RANK_DIR)/rankplot_best_f1_uni.tex: $(TABLE_DIR)/best_f1_uni_full.json \
-	$(SCRIPT_DIR)/rank_plots.py | rank-dir
-	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
+$(SCORE_DIR)/default_f1_scores.json: $(SCRIPT_DIR)/score_file.py \
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | score-dir
+	python $< -s $(SUMMARY_DIR) -e default -m f1 > $@
 
-$(RANK_DIR)/rankplot_default_cover_uni.tex: $(TABLE_DIR)/default_cover_uni_full.json \
-	$(SCRIPT_DIR)/rank_plots.py | rank-dir
-	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
+oracle_scores: \
+	$(SCORE_DIR)/oracle_cover_scores.json \
+	$(SCORE_DIR)/oracle_f1_scores.json
 
-$(RANK_DIR)/rankplot_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json \
-	$(SCRIPT_DIR)/rank_plots.py | rank-dir
-	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
+$(SCORE_DIR)/oracle_cover_scores.json: $(SCRIPT_DIR)/score_file.py \
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | score-dir
+	python $< -s $(SUMMARY_DIR) -e oracle -m cover > $@
 
-#########
-# MULTI #
-#########
+$(SCORE_DIR)/oracle_f1_scores.json: $(SCRIPT_DIR)/score_file.py \
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | score-dir
+	python $< -s $(SUMMARY_DIR) -e oracle -m f1 > $@
 
-$(RANK_DIR)/rankplot_best_cover_multi.tex: $(TABLE_DIR)/best_cover_multi_full.json \
-	$(SCRIPT_DIR)/rank_plots.py | rank-dir
-	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
+clean_score_files:
+	rm -f $(SCORE_DIR)/default_cover_scores.json
+	rm -f $(SCORE_DIR)/default_f1_scores.json
+	rm -f $(SCORE_DIR)/oracle_cover_scores.json
+	rm -f $(SCORE_DIR)/oracle_f1_scores.json
 
-$(RANK_DIR)/rankplot_best_f1_multi.tex: $(TABLE_DIR)/best_f1_multi_full.json \
-	$(SCRIPT_DIR)/rank_plots.py | rank-dir
-	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type best
+################################
+#                              #
+# Critical Difference Diagrams #
+#                              #
+################################
 
-$(RANK_DIR)/rankplot_default_cover_multi.tex: $(TABLE_DIR)/default_cover_multi_full.json \
-	$(SCRIPT_DIR)/rank_plots.py | rank-dir
-	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
+.PHONY: cd_diagrams clean_cd_diagrams
 
-$(RANK_DIR)/rankplot_default_f1_multi.tex: $(TABLE_DIR)/default_f1_multi_full.json \
-	$(SCRIPT_DIR)/rank_plots.py | rank-dir
-	python $(SCRIPT_DIR)/rank_plots.py -i $< -o $@ -b max --type default
+cdd-dir:
+	mkdir -p $(CDD_DIR)
 
+CD_DIAGRAMS=
+define CDDiagram
+CD_DIAGRAMS += $(CDD_DIR)/cddiagram_$(1)_$(2)_$(3).tex
 
-$(RANK_DIR)/rankplot_%.pdf: $(RANK_DIR)/rankplot_%.tex | rank-dir
-	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode --shell-escape" \
-		-outdir=$(RANK_DIR) $<
-	cd $(RANK_DIR) && latexmk -c
+$(CDD_DIR)/cddiagram_$(1)_$(2)_$(3).tex: \
+	$(SCORE_DIR)/$(1)_$(2)_scores.json \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/rank_common.py \
+	$(SCRIPT_DIR)/significance.py \
+	$(SCRIPT_DIR)/critical_difference_diagram.py | cdd-dir
+	python $(SCRIPT_DIR)/critical_difference_diagram.py -i $$< -o $$@ \
+		-d $(3) -e $(1) -t wilcoxon -m $(MISSING_STRATEGY)
+endef
 
-clean_rankplots:
-	rm -f $(RANK_DIR)/rankplot_best_cover_uni.tex
-	rm -f $(RANK_DIR)/rankplot_best_f1_uni.tex
-	rm -f $(RANK_DIR)/rankplot_default_cover_uni.tex
-	rm -f $(RANK_DIR)/rankplot_default_f1_uni.tex
+$(foreach exp,$(EXPERIMENTS),\
+	$(foreach metric,$(METRICS),\
+	$(foreach dim,$(DIMENSIONALITY),\
+	$(eval $(call CDDiagram,$(exp),$(metric),$(dim)))\
+)))
 
+cd_diagrams: $(CD_DIAGRAMS)
+
+clean_cd_diagrams:
+	rm -f $(CD_DIAGRAMS)
 
 ###############
 #             #
@@ -278,8 +288,8 @@ clean_rankplots:
 
 .PHONY: constants
 
-CONSTANT_TARGETS = $(CONST_DIR)/sigtest_global_best_cover_uni.tex \
-		   $(CONST_DIR)/sigtest_global_best_f1_uni.tex \
+CONSTANT_TARGETS = $(CONST_DIR)/sigtest_global_oracle_cover_uni.tex \
+		   $(CONST_DIR)/sigtest_global_oracle_f1_uni.tex \
 		   $(CONST_DIR)/sigtest_global_default_cover_uni.tex \
 		   $(CONST_DIR)/sigtest_global_default_f1_uni.tex \
 		   $(CONST_DIR)/SeriesLengthMin.tex \
@@ -295,48 +305,60 @@ const-dir:
 
 constants: $(CONSTANT_TARGETS)
 
-$(CONST_DIR)/sigtest_global_best_cover_uni.tex: $(TABLE_DIR)/best_cover_uni_full.json \
+$(CONST_DIR)/sigtest_global_oracle_cover_uni.tex: \
+	$(SCORE_DIR)/oracle_cover_scores.json \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/rank_common.py \
 	$(SCRIPT_DIR)/significance.py | const-dir
-	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
+	python $(SCRIPT_DIR)/significance.py -i $< -o $@ -d univariate \
+		--experiment oracle --mode global --missing $(MISSING_STRATEGY)
 
-$(CONST_DIR)/sigtest_global_best_f1_uni.tex: $(TABLE_DIR)/best_f1_uni_full.json \
+$(CONST_DIR)/sigtest_global_oracle_f1_uni.tex: \
+	$(SCORE_DIR)/oracle_f1_scores.json \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/rank_common.py \
 	$(SCRIPT_DIR)/significance.py | const-dir
-	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
+	python $(SCRIPT_DIR)/significance.py -i $< -o $@ -d univariate \
+		--experiment oracle --mode global --missing $(MISSING_STRATEGY)
 
-$(CONST_DIR)/sigtest_global_default_cover_uni.tex: $(TABLE_DIR)/default_cover_uni_full.json \
+$(CONST_DIR)/sigtest_global_default_cover_uni.tex: \
+	$(SCORE_DIR)/default_cover_scores.json \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/rank_common.py \
 	$(SCRIPT_DIR)/significance.py | const-dir
-	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
+	python $(SCRIPT_DIR)/significance.py -i $< -o $@ -d univariate \
+		--experiment oracle --mode global --missing $(MISSING_STRATEGY)
 
-$(CONST_DIR)/sigtest_global_default_f1_uni.tex: $(TABLE_DIR)/default_f1_uni_full.json \
+$(CONST_DIR)/sigtest_global_default_f1_uni.tex: \
+	$(SCORE_DIR)/default_f1_scores.json \
+	$(SCRIPT_DIR)/common.py $(SCRIPT_DIR)/rank_common.py \
 	$(SCRIPT_DIR)/significance.py | const-dir
-	python $(SCRIPT_DIR)/significance.py -i $< -o $@ --type best --mode global
+	python $(SCRIPT_DIR)/significance.py -i $< -o $@ -d univariate \
+		--experiment oracle --mode global --missing $(MISSING_STRATEGY)
 
 $(CONST_DIR)/SeriesLengthMin.tex: $(SCRIPT_DIR)/descriptive_length.py \
-	$(DATASET_SUMMARIES) | const-dir
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | const-dir
 	python $< -s $(SUMMARY_DIR) -t min > $@
 
 $(CONST_DIR)/SeriesLengthMax.tex: $(SCRIPT_DIR)/descriptive_length.py \
-	$(DATASET_SUMMARIES) | const-dir
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | const-dir
 	python $< -s $(SUMMARY_DIR) -t max > $@
 
 $(CONST_DIR)/SeriesLengthMean.tex: $(SCRIPT_DIR)/descriptive_length.py \
-	$(DATASET_SUMMARIES) | const-dir
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | const-dir
 	python $< -s $(SUMMARY_DIR) -t mean > $@
 
 $(CONST_DIR)/UniqueAnnotationsMin.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
-	$(DATASET_SUMMARIES) | const-dir
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | const-dir
 	python $< -s $(SUMMARY_DIR) -t min > $@
 
 $(CONST_DIR)/UniqueAnnotationsMax.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
-	$(DATASET_SUMMARIES) | const-dir
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | const-dir
 	python $< -s $(SUMMARY_DIR) -t max > $@
 
 $(CONST_DIR)/UniqueAnnotationsMean.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
-	$(DATASET_SUMMARIES) | const-dir
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | const-dir
 	python $< -s $(SUMMARY_DIR) -t mean > $@
 
 $(CONST_DIR)/UniqueAnnotationsStd.tex: $(SCRIPT_DIR)/descriptive_annotations.py \
-	$(DATASET_SUMMARIES) | const-dir
+	$(SCRIPT_DIR)/common.py $(DATASET_SUMMARIES) | const-dir
 	python $< -s $(SUMMARY_DIR) -t std > $@
 
 clean_constants:
@@ -348,31 +370,40 @@ clean_constants:
 #             #
 ###############
 
-.PHONY: venv_bocpdms venv_rbocpdms R_venv venvs
+.PHONY: venvs R_venv py_venvs venv_bocpdms venv_rbocpdms clean_venvs \
+	clean_py_venv clean_R_venv
 
 venvs: venv_bocpdms venv_rbocpdms R_venv
+
+py_venvs: venv_bocpdms venv_rbocpdms
 
 venv_bocpdms: ./execs/python/bocpdms/venv
 
 ./execs/python/bocpdms/venv:
-	cd execs/python/bocpdms && virtualenv venv && source venv/bin/activate && pip install -r requirements.txt
+	cd execs/python/bocpdms && python -m venv venv && \
+		source venv/bin/activate && pip install wheel && \
+		pip install -r requirements.txt
 
 venv_rbocpdms: ./execs/python/rbocpdms/venv
 
 ./execs/python/rbocpdms/venv:
-	cd execs/python/rbocpdms && virtualenv venv && source venv/bin/activate && pip install -r requirements.txt
+	cd execs/python/rbocpdms && python -m venv venv && \
+		source venv/bin/activate && pip install wheel && \
+		pip install -r requirements.txt
 
 R_venv:
 	bash ./utils/R_setup.sh Rpackages.txt ./execs/R/rlibs
+
+clean_py_venv:
+	rm -rf ./execs/python/bocpdms/venv
+	rm -rf ./execs/python/rbocpdms/venv
 
 clean_R_venv:
 	rm -rf ./execs/R/rlibs
 	rm -f ./.Rprofile ./.Renviron
 	rm -f ./.Renviron
 
-clean_venvs: clean_R_venv
-	rm -rf ./execs/python/bocpdms/venv
-	rm -rf ./execs/python/rbocpdms/venv
+clean_venvs: clean_R_venv clean_py_venv
 
 ##############
 #            #
@@ -393,4 +424,4 @@ validate: ./utils/validate_schema.py ./schema.json
 
 clean: clean_results clean_venvs
 
-clean_results: clean_summaries clean_tables clean_rankplots clean_constants
+clean_results: clean_summaries clean_tables clean_constants
