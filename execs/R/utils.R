@@ -138,10 +138,10 @@ make.param.list <- function(args, defaults)
     params <- defaults
 
     args.copy <- args
-    args.copy['input'] <- NULL
-    args.copy['output'] <- NULL
+    args.copy["input"] <- NULL
+    args.copy["output"] <- NULL
 
-    params <- modifyList(params, args.copy)
+    params <- modifyList(params, args.copy, keep.null=T)
     return(params)
 }
 

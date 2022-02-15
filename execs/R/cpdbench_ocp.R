@@ -32,7 +32,7 @@ parse.args <- function() {
     parser$add_argument('-l',
                         '--lambda',
                         help='lambda parameter for constant hazard function',
-                        type='integer',
+                        type='double',
                         default=100
                         )
     parser$add_argument('--prior-a',

@@ -28,7 +28,8 @@ parse.args <- function() {
     )
     parser$add_argument('-o',
                         '--output',
-                        help='path to the output file')
+                        help='path to the output file'
+    )
     parser$add_argument('-f',
                         '--func',
                         choices=c('mean', 'var', 'meanvar'), 
@@ -44,20 +45,19 @@ parse.args <- function() {
                                   'MBIC',
                                   'AIC',
                                   'Hannan-Quinn',
-                                  'Asymptotic'
+                                  'Asymptotic',
+                                  'Manual'
                                   ),
                         help='Choice of penalty in the cpt function',
                         default='MBIC'
     )
-    parser$add_argument(
-                        '-m',
+    parser$add_argument('-m',
                         '--method',
                         choices=c('AMOC', 'PELT', 'SegNeigh', 'BinSeg'),
                         help="Choice of method in the cpt function",
                         default='AMOC'
     )
-    parser$add_argument(
-                        '-t',
+    parser$add_argument('-t',
                         '--test-statistic',
                         choices=c('Normal', 'CUSUM', 'CSS', 'Gamma',
                                   'Exponential', 'Poisson'),
@@ -68,7 +68,13 @@ parse.args <- function() {
                         '--max-cp',
                         help='Maximum number of change points',
                         choices=c('max', 'default'),
-                        default='max')
+                        default='max'
+    )
+    parser$add_argument('-P',
+                        '--pen.value',
+                        help='Penalty value to use with the Manual penalty',
+                        default=NULL
+    )
     return(parser$parse_args())
 }
 
@@ -91,10 +97,23 @@ main <- function()
         else
             defaults$Q <- 5
     }
-    if (args$penalty == "Asymptotic")
+
+    if (!is.null(args$pen.value) && args$pen.value == "NULL") {
+      args["pen.value"] <- list(NULL)
+    }
+
+    if (args$penalty == "Asymptotic") {
         defaults$pen.value <- 0.05
-    else
-        defaults$pen.value <- 0 # not used for other penalties
+        stopifnot(is.null(args$pen.value))
+    } else if (args$penalty == "Manual") {
+        stopifnot(!is.null(args$pen.value))
+        args$pen.value <- as.double(args$pen.value)
+    } else {
+        stopifnot(is.null(args$pen.value))
+        # not used for other penalties
+        args$pen.value <- NULL
+        defaults$pen.value <- NULL
+    }
     params <- make.param.list(args, defaults)
 
     if (args$func == "mean") {
