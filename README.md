@@ -125,7 +125,7 @@ instructions are as follows:
    running:
 
    ```
-   $ pip install abed
+   $ pip install 'abed>=0.1.3'
    ```
 
 3. Tell abed to rediscover all the tasks that need to be done:
