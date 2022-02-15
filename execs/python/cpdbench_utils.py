@@ -45,7 +45,7 @@ def load_dataset(filename):
         mat[:, j] = series["raw"]
 
     # We normalize to avoid numerical errors.
-    mat = (mat - np.nanmean(mat)) / np.sqrt(np.nanvar(mat))
+    mat = (mat - np.nanmean(mat, axis=0)) / np.sqrt(np.nanvar(mat, axis=0, ddof=1))
 
     return data, mat
 
