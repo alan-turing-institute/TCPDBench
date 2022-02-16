@@ -149,7 +149,8 @@ def _compute_wilcoxon_exact(x, y):
             "-i",
             filename,
         ]
-        output = subprocess.check_output(cmd, stderr=subprocess.PIPE)
+        os.system(" ".join(cmd))
+        #output = subprocess.check_output(cmd, stderr=subprocess.PIPE)
 
     output = output.decode()
     return float(output.strip())
