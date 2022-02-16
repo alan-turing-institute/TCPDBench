@@ -20,7 +20,7 @@ echo "::group::Recreating results and checking for differences"
 
 docker run -v ${GITHUB_WORKSPACE}/analysis/output:/TCPDBench/analysis/output \
 	alan-turing-institute/tcpdbench \
-	/bin/bash -c "make clean && make results && git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code"
+	/bin/bash -c "make clean && make results && git checkout ./analysis/output/cd_diagrams/*.pdf && git diff --exit-code"
 
 echo "::group::Test building the virtual environments works"
 
