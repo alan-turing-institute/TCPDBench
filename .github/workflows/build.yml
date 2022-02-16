@@ -2,7 +2,11 @@ name: Reproducible Research
 
 on:
   push:
+    branches:
+      - master
   pull_request:
+    branchers:
+      - master
   schedule:
     - cron: 42 8 */21 * *
 
