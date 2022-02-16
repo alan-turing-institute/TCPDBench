@@ -78,15 +78,23 @@ $ git clone --recurse-submodules https://github.com/alan-turing-institute/TCPDBe
 ### Generating Tables/Figures
 
 Generating the tables and figures from the paper is done through the scripts 
-in ``analysis/scripts`` and can be run through the provided ``Makefile``. 
-
-First make sure you have all requirements:
+in ``analysis/scripts`` and can be run through the provided ``Makefile``. A 
+working Python and R installation is necessary to reproduce the analysis. For 
+Python, install the required dependencies by running:
 
 ```
 $ pip install -r ./analysis/requirements.txt
 ```
 
-and then use make:
+For R, we need the 
+[exactRankTests](https://cran.r-project.org/web/packages/exactRankTests/index.html) 
+package, which we can install as follows from the command line:
+
+```
+$ Rscript -e "install.packages('exactRankTests')"
+```
+
+Subsequently we can use make to reproduce the experimental results:
 
 ```
 $ make results
@@ -359,22 +367,23 @@ that it works correctly, it's time to add it to the experiment configuration.
 For this, we'll have to edit the [abed_conf.py](./abed_conf.py) file.
 
 1. To add your method, located the ``METHODS`` list in the configuration file 
-   and add an entry ``best_<yourmethod>`` and ``default_<yourmethod>``, 
+   and add an entry ``oracle_<yourmethod>`` and ``default_<yourmethod>``, 
    replacing ``<yourmethod>`` with the name of your method (without spaces or 
    underscores).
 2. Next, add the method to the ``PARAMS`` dictionary. This is where you 
-   specify all the hyperparameters that your method takes (for the ``best`` 
+   specify all the hyperparameters that your method takes (for the ``oracle`` 
    experiment). The hyperparameters are specified with a name and a list of 
    values to explore (see the current configuration for examples). For the 
    default experiment, add an entry ``"default_<yourmethod>" : {"no_param": 
    [0]}``. This ensures it will be run without any parameters.
 3. Finally, add the command that needs to be executed to run your method to 
-   the ``COMMANDS`` dictionary. You'll need an entry for ``best_<yourmethod>`` 
-   and for ``default_<yourmethod>``. Please use the existing entries as 
-   examples. Methods implemented in R are run with Rscript. The ``{execdir}``, 
-   ``{datadir}``, and ``{dataset}`` values will be filled in by abed based on 
-   the other settings. Use curly braces to specify hyperparameters, matching 
-   the names of the fields in the ``PARAMS`` dictionary.
+   the ``COMMANDS`` dictionary. You'll need an entry for 
+   ``oracle_<yourmethod>`` and for ``default_<yourmethod>``. Please use the 
+   existing entries as examples. Methods implemented in R are run with 
+   Rscript. The ``{execdir}``, ``{datadir}``, and ``{dataset}`` values will be 
+   filled in by abed based on the other settings. Use curly braces to specify 
+   hyperparameters, matching the names of the fields in the ``PARAMS`` 
+   dictionary.
 
 
 #### Dependencies
