@@ -91,7 +91,7 @@ For R, we need the
 package, which we can install as follows from the command line:
 
 ```
-$ Rscript -e "install.packages('exactRankTests')"
+$ Rscript -e "install.packages(c('argparse', 'exactRankTests'))"
 ```
 
 Subsequently we can use make to reproduce the experimental results:

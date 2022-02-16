@@ -53,7 +53,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          install.packages('exactRankTests')
+          install.packages(c('argparse', 'exactRankTests'))
         shell: Rscript {0}
 
       - name: Make results
