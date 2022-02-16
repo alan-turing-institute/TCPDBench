@@ -30,6 +30,18 @@ jobs:
         with:
           r-version: 'release'
 
+      - name: Clone TCPD
+        run: git clone https://github.com/alan-turing-institute/TCPD ../TCPD
+        shell: bash
+
+      - name: Build TCPD
+        run: cd ../TCPD && make export
+        shell: bash
+
+      - name: Copy datasets
+        run: mkdir -p ./datasets && cp ../TCPD/export/*.json ./datasets/
+        shell: bash
+
       - name: Checkout code
         uses: actions/checkout@v2
         with:
