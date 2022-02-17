@@ -56,6 +56,10 @@ jobs:
         run: mkdir -p ./datasets && cp ../TCPD/export/*.json ./datasets/ && pwd && ls -1 .
         shell: bash
 
+      - name: Skip annotation simulation p-values
+        run: touch ./analysis/output/tables/annotation_simulation_pvalues.tex
+        shell: bash
+
       - name: Make results
         run: make results
         shell: bash
