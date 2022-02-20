@@ -65,9 +65,7 @@ jobs:
         shell: bash
 
       - name: Check results
-        run: git checkout ./analysis/output/cd_diagrams/*.pdf && \
-          git checkout ./analysis/output/figures/anno_hist/histogram*.pdf && \
-          git diff --exit-code
+        run: git checkout ./analysis/output/cd_diagrams/*.pdf && git checkout ./analysis/output/figures/anno_hist/histogram*.pdf && git diff --exit-code
         shell: bash
 
   tcpdbench-docker:
