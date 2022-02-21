@@ -6,3 +6,4 @@ termcolor
 colorama
 networkx
 statsmodels
+tqdm
