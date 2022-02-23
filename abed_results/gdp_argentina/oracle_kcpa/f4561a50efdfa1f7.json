@@ -1,0 +1,50 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_argentina.json -a kcpa --maxcp max --cost 501.18723362727246",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "gdp_argentina",
+	"dataset_md5" : "694212b5682ebd808d740ffd83d4bc16",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 59,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 501.1872,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			5,
+			9,
+			11,
+			14,
+			19,
+			26,
+			29,
+			31,
+			32,
+			33,
+			34,
+			37,
+			41,
+			42,
+			43,
+			44,
+			45,
+			46,
+			47,
+			48,
+			49,
+			50,
+			51,
+			59
+		],
+		"runtime" : 0.01326656
+	}
+} 

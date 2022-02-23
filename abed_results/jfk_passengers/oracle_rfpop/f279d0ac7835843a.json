@@ -1,0 +1,40 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/jfk_passengers.json -l Huber --pen.value 18.197008586099827 --lthreshold 3.981071705534973",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "jfk_passengers",
+	"dataset_md5" : "9655295214078f2a45a4c18e6c4e6d0d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 18.19701,
+		"lthreshold" : 3.981072,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			16,
+			88,
+			92,
+			136,
+			139,
+			160,
+			163,
+			208,
+			295,
+			301,
+			326,
+			352,
+			424,
+			427,
+			436,
+			439,
+			447,
+			451,
+			458,
+			467
+		],
+		"runtime" : 0.000797987
+	}
+} 

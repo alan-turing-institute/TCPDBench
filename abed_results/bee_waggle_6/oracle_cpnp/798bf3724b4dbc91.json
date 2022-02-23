@@ -1,0 +1,22 @@
+{
+	"error" : "This method has no support for multidimensional data.",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bee_waggle_6.json -p Manual -q 20 --pen.value 0.02754228703338166",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "bee_waggle_6",
+	"dataset_md5" : "4f03feafecb3be0b069b3cb0d6b17d4f",
+	"status" : "SKIP",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 20,
+		"pen.value" : 0.02754229,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

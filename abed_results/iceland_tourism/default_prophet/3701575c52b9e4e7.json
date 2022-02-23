@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/iceland_tourism.json -N default",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/iceland_tourism.json -N default",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R",
-	"script_md5" : "6dfa8c33703f6b5b0624c4a686df148a",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "c6a9f7404f11ab6108d72723fe5ff253",
+	"hostname" : "nyx",
 	"dataset" : "iceland_tourism",
 	"dataset_md5" : "8bbac4ca95319a865f2d58ff564f063d",
 	"status" : "SUCCESS",
@@ -25,6 +25,6 @@
 			127,
 			135
 		],
-		"runtime" : 0.3248038
+		"runtime" : 0.136363
 	}
 } 

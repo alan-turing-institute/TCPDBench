@@ -1,0 +1,66 @@
+\documentclass[10pt]{standalone}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=1
+\pdfinfo{ /Creator () /Producer () }
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[axis x line=center,%
+axis y line=none,%
+xmin=1,%
+xmax=6,%
+ymin=-4.5,%
+ymax=0,%
+clip=false,%
+scale only axis,%
+height=3cm,%
+width=6cm,%
+ticklabel style={
+anchor=south,%
+yshift=1.33*\pgfkeysvalueof{/pgfplots/major tick length},%
+font=\footnotesize},%
+every tick/.style={
+yshift=.5*\pgfkeysvalueof{/pgfplots/major tick length}},%
+xtick={1,...,6},%
+axis line style={-},%
+title style={
+yshift=\baselineskip}]
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:2.5, 0) |- (axis cs: 1, -1.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{bocpd}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:2.75, 0) |- (axis cs: 1, -2.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{rbocpdms}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:3.25, 0) |- (axis cs: 1, -3.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{bocpdms}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:3.25, 0) |- (axis cs: 6, -3.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{ecp}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:3.25, 0) |- (axis cs: 6, -2.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{zero}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:6.0, 0) |- (axis cs: 6, -1.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{kcpa}};
+
+\draw[ultra thick, line cap=round]
+(axis cs:2.5, -0.75) -- (axis cs:6.0, -0.75);
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+{
+	"error" : "Exponential test statistic requires positive data",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/well_log.json -p Manual -f meanvar -t Exponential -m AMOC --pen.value 218.77616239495518",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "well_log",
+	"dataset_md5" : "7c80d2cbd5864b923e6a653aad115de6",
+	"status" : "FAIL",
+	"parameters" : {
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "AMOC",
+		"pen.value" : 218.7762,
+		"penalty" : "Manual",
+		"test_statistic" : "Exponential"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

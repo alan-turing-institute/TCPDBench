@@ -1,0 +1,52 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/scanline_42049.json -a kcpa --maxcp max --cost 380.1893963205613",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "scanline_42049",
+	"dataset_md5" : "39921dfa959576bd0b3d6c95558f17f4",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 481,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 380.1894,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			12,
+			28,
+			55,
+			61,
+			64,
+			68,
+			77,
+			133,
+			184,
+			191,
+			198,
+			211,
+			231,
+			234,
+			242,
+			247,
+			273,
+			276,
+			349,
+			354,
+			363,
+			368,
+			411,
+			466,
+			479,
+			481
+		],
+		"runtime" : 50.58677
+	}
+} 

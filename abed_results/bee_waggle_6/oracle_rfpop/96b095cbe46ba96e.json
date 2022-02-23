@@ -1,0 +1,19 @@
+{
+	"error" : "This method has no support for multidimensional data.",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bee_waggle_6.json -l Outlier --pen.value 47.863009232263806 --lthreshold 0.1",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "bee_waggle_6",
+	"dataset_md5" : "4f03feafecb3be0b069b3cb0d6b17d4f",
+	"status" : "SKIP",
+	"parameters" : {
+		"lambda" : 47.86301,
+		"lthreshold" : 0.1,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

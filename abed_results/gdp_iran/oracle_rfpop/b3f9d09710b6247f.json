@@ -1,0 +1,26 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_iran.json -l Huber --pen.value 6.025595860743575 --lthreshold 0.15848931924611134",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "gdp_iran",
+	"dataset_md5" : "889e9fc6292125189fd3188396167431",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 6.025596,
+		"lthreshold" : 0.1584893,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			9,
+			19,
+			30,
+			41,
+			46,
+			57
+		],
+		"runtime" : 0.0007004738
+	}
+} 

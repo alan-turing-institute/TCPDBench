@@ -1,0 +1,53 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ozone.json -p Manual -f mean -t Normal -m BinSeg -Q max --pen.value 0.0015135612484362087",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "ozone",
+	"dataset_md5" : "348b1f85c3ec3da3b8989afe04c33b80",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 28,
+		"func" : "mean",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 0.001513561,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			1,
+			2,
+			4,
+			5,
+			7,
+			8,
+			10,
+			12,
+			13,
+			15,
+			19,
+			20,
+			22,
+			24,
+			26,
+			28,
+			29,
+			30,
+			32,
+			34,
+			35,
+			37,
+			39,
+			41,
+			43,
+			45,
+			48,
+			50,
+			53
+		],
+		"runtime" : 0.00152564
+	}
+} 

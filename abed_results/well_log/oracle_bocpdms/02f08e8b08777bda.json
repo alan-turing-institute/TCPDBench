@@ -1,0 +1,53 @@
+{
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/well_log.json --intensity 10 --prior-a 10 --prior-b 0.1 --threshold 100 --use-timeout",
+	"dataset": "well_log",
+	"dataset_md5": "7c80d2cbd5864b923e6a653aad115de6",
+	"error": null,
+	"hostname": "nyx",
+	"parameters": {
+		"S1": 1,
+		"S2": 1,
+		"intensity": 10.0,
+		"intercept_grouping": null,
+		"lower_AR": 1,
+		"prior_a": 10.0,
+		"prior_b": 0.1,
+		"prior_mean_scale": 0,
+		"prior_var_scale": 1,
+		"threshold": 100,
+		"upper_AR": 4,
+		"use_timeout": true
+	},
+	"result": {
+		"cplocations": [
+			2,
+			3,
+			7,
+			8,
+			131,
+			156,
+			282,
+			311,
+			343,
+			345,
+			383,
+			402,
+			413,
+			422,
+			432,
+			453,
+			462,
+			466,
+			522,
+			523,
+			525,
+			565,
+			612,
+			657
+		],
+		"runtime": 32.146231174468994
+	},
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
+	"status": "SUCCESS"
+}

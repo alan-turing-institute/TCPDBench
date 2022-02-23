@@ -1,0 +1,33 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/centralia.json -l Outlier --pen.value 0.012022644346174132 --lthreshold 2.511886431509581",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "centralia",
+	"dataset_md5" : "addb9b70ac1294eba6da958f3ab26595",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 0.01202264,
+		"lthreshold" : 2.511886,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			1,
+			2,
+			3,
+			4,
+			5,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			14
+		],
+		"runtime" : 0.0007197857
+	}
+} 

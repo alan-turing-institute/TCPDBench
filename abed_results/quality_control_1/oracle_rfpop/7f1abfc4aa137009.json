@@ -1,0 +1,21 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_1.json -l L1 --pen.value 190.54607179632444 --lthreshold NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "quality_control_1",
+	"dataset_md5" : "fcfd5b0323a0dbd499c22b32c77f6a43",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 190.5461,
+		"loss" : "L1"
+	},
+	"result" : {
+		"cplocations" : [
+			143,
+			312
+		],
+		"runtime" : 0.003342867
+	}
+} 

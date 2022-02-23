@@ -3,7 +3,7 @@
 	"dataset": "shanghai_license",
 	"dataset_md5": "b4ac173eb6c0a1a4d10268abc109eda1",
 	"error": null,
-	"hostname": "gertjan-arch",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -26,9 +26,9 @@
 			75,
 			143
 		],
-		"runtime": 36.411595582962036
+		"runtime": 7.667704343795776
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
-	"script_md5": "e6a84daedb85993dbe95448b4a5018e7",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

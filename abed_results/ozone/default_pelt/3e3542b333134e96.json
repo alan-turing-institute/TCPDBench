@@ -1,14 +1,13 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ozone.json -p MBIC -f mean -t Normal -m PELT",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ozone.json -p MBIC -f mean -t Normal -m PELT",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
-	"script_md5" : "88eac82295fae0cc030d40da93501e50",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
 	"dataset" : "ozone",
 	"dataset_md5" : "348b1f85c3ec3da3b8989afe04c33b80",
 	"status" : "SUCCESS",
 	"parameters" : {
-		"pen.value" : 0,
 		"func" : "mean",
 		"max_cp" : "max",
 		"method" : "PELT",
@@ -21,6 +20,6 @@
 			33,
 			53
 		],
-		"runtime" : 0.003045082
+		"runtime" : 0.001174688
 	}
 } 

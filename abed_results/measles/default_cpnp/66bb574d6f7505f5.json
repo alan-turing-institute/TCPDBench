@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/deploy/cpdbench/datasets/measles.json -p MBIC -q 10",
-	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_changepointnp.R",
-	"script_md5" : "0960dc48e5296b852678528c87d06b97",
-	"hostname" : "scw-blissful-wiles",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/measles.json -p MBIC -q 10",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
 	"dataset" : "measles",
 	"dataset_md5" : "e42afd03be893fc7deb98514c94fa4c7",
 	"status" : "SUCCESS",
@@ -49,6 +49,6 @@
 			982,
 			990
 		],
-		"runtime" : 0.05208635
+		"runtime" : 0.007641792
 	}
 } 

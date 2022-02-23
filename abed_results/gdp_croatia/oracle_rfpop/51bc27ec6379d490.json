@@ -1,0 +1,22 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_croatia.json -l Huber --pen.value 251.18864315095772 --lthreshold 10.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "gdp_croatia",
+	"dataset_md5" : "4f902ba68bf710fa245e5eb0ab35fea7",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 251.1886,
+		"lthreshold" : 10,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			7,
+			23
+		],
+		"runtime" : 0.0006241798
+	}
+} 

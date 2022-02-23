@@ -1,0 +1,115 @@
+\documentclass[10pt]{standalone}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=1
+\pdfinfo{ /Creator () /Producer () }
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[axis x line=center,%
+axis y line=none,%
+xmin=1,%
+xmax=14,%
+ymin=-8.5,%
+ymax=0,%
+clip=false,%
+scale only axis,%
+height=3cm,%
+width=6cm,%
+ticklabel style={
+anchor=south,%
+yshift=1.33*\pgfkeysvalueof{/pgfplots/major tick length},%
+font=\footnotesize},%
+every tick/.style={
+yshift=.5*\pgfkeysvalueof{/pgfplots/major tick length}},%
+xtick={1,...,14},%
+axis line style={-},%
+title style={
+yshift=\baselineskip}]
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:4.421875, 0) |- (axis cs: 1, -1.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{binseg}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:4.578125, 0) |- (axis cs: 1, -2.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{pelt}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:4.734375, 0) |- (axis cs: 1, -3.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{amoc}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:4.796875, 0) |- (axis cs: 1, -4.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{segneigh}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:6.21875, 0) |- (axis cs: 1, -5.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{bocpd}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:6.453125, 0) |- (axis cs: 1, -6.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{bocpdms}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:6.8125, 0) |- (axis cs: 1, -7.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=east]
+{\textsc{zero}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:7.140625, 0) |- (axis cs: 14, -7.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{rbocpdms}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:7.328125, 0) |- (axis cs: 14, -6.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{prophet}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:8.234375, 0) |- (axis cs: 14, -5.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{cpnp}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:8.28125, 0) |- (axis cs: 14, -4.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{ecp}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:10.90625, 0) |- (axis cs: 14, -3.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{rfpop}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:11.265625, 0) |- (axis cs: 14, -2.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{wbs}};
+
+\draw[semithick, rounded corners=1pt]
+(axis cs:13.828125, 0) |- (axis cs: 14, -1.5)
+node[font=\footnotesize, fill=white, inner xsep=1pt, outer xsep=0pt, anchor=west]
+{\textsc{kcpa}};
+
+\draw[ultra thick, line cap=round]
+(axis cs:4.421875, -0.375) -- (axis cs:7.140625, -0.375);
+
+\draw[ultra thick, line cap=round]
+(axis cs:10.90625, -0.375) -- (axis cs:11.265625, -0.375);
+
+\draw[ultra thick, line cap=round]
+(axis cs:6.21875, -0.75) -- (axis cs:7.328125, -0.75);
+
+\draw[ultra thick, line cap=round]
+(axis cs:6.453125, -1.125) -- (axis cs:8.28125, -1.125);
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

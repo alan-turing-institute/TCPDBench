@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/deploy/cpdbench/datasets/unemployment_nl.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/unemployment_nl.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
 	"dataset": "unemployment_nl",
 	"dataset_md5": "26d8c0359de7f733a6fb51d4d60b5af6",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -34,9 +34,9 @@
 			2,
 			134
 		],
-		"runtime": 6841.376325368881
+		"runtime": 848.6337330341339
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",
 	"status": "SUCCESS"
 }

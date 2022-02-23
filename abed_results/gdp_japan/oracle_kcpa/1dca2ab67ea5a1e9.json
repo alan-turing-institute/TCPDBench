@@ -1,0 +1,38 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_japan.json -a kcpa --maxcp max --cost 660.6934480075951",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_ecp.R",
+	"script_md5" : "a9174cb1682ef279a06637d2197d9305",
+	"hostname" : "nyx",
+	"dataset" : "gdp_japan",
+	"dataset_md5" : "17026e80ab363d9f668d69900824d9ae",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"L" : 58,
+		"algorithm" : "kcpa",
+		"alpha" : null,
+		"cost" : 660.6934,
+		"maxcp" : "max",
+		"minsize" : 30,
+		"runs" : 199,
+		"siglvl" : null
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			9,
+			13,
+			16,
+			19,
+			22,
+			25,
+			28,
+			30,
+			35,
+			49,
+			55,
+			58
+		],
+		"runtime" : 0.01502132
+	}
+} 

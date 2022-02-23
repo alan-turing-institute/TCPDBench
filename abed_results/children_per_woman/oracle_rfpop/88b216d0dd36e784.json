@@ -1,0 +1,31 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/children_per_woman.json -l Huber --pen.value 1000.0 --lthreshold 3.981071705534973",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "children_per_woman",
+	"dataset_md5" : "826e0a2328b8a8a085050115768eef98",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 1000,
+		"lthreshold" : 3.981072,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			77,
+			102,
+			114,
+			130,
+			174,
+			189,
+			196,
+			213,
+			234,
+			262,
+			300
+		],
+		"runtime" : 0.00134182
+	}
+} 

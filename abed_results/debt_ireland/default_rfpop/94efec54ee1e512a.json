@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/debt_ireland.json -l Outlier",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/debt_ireland.json -l Outlier",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
-	"script_md5" : "3b863ed48a30b8b0b5615d4614c3fa4b",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
 	"dataset" : "debt_ireland",
 	"dataset_md5" : "a5a9e752c338d2ffcceb614bb2064cc9",
 	"status" : "SUCCESS",
@@ -25,6 +25,6 @@
 			17,
 			20
 		],
-		"runtime" : 0.001962662
+		"runtime" : 0.0006988049
 	}
 } 

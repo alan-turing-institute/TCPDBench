@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/deploy/cpdbench/datasets/uk_coal_employ.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/uk_coal_employ.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
 	"dataset": "uk_coal_employ",
 	"dataset_md5": "a7c72746e46d6e09f516bd87e0e68bef",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -24,9 +24,9 @@
 			2,
 			15
 		],
-		"runtime": 32.21309781074524
+		"runtime": 1.998594045639038
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_bocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
 	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

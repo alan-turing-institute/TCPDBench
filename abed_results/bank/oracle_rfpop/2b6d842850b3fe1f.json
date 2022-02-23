@@ -1,0 +1,50 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bank.json -l Outlier --pen.value 190.54607179632444 --lthreshold 6.309573444801933",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "bank",
+	"dataset_md5" : "5207135ea53fc6fa2a8119908da73abf",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 190.5461,
+		"lthreshold" : 6.309573,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			9,
+			19,
+			41,
+			48,
+			54,
+			69,
+			83,
+			90,
+			98,
+			121,
+			215,
+			239,
+			251,
+			265,
+			273,
+			307,
+			328,
+			334,
+			344,
+			354,
+			362,
+			383,
+			406,
+			427,
+			442,
+			453,
+			516,
+			523,
+			548,
+			580
+		],
+		"runtime" : 0.002108812
+	}
+} 

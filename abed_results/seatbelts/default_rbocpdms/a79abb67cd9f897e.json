@@ -1,9 +1,9 @@
 {
-	"command": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/deploy/cpdbench/datasets/seatbelts.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
+	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/seatbelts.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
 	"dataset": "seatbelts",
 	"dataset_md5": "976ef4318e7b6381ff37dd4ac8029718",
 	"error": null,
-	"hostname": "scw-blissful-wiles",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -33,9 +33,9 @@
 			1,
 			2
 		],
-		"runtime": 4187.055878162384
+		"runtime": 863.5704922676086
 	},
-	"script": "/home/deploy/cpdbench/execs/python/cpdbench_rbocpdms.py",
+	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",
 	"status": "SUCCESS"
 }

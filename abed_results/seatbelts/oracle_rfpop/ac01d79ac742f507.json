@@ -1,0 +1,46 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/seatbelts.json -l Outlier --pen.value 0.21877616239495518 --lthreshold 0.3981071705534973",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "seatbelts",
+	"dataset_md5" : "976ef4318e7b6381ff37dd4ac8029718",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 0.2187762,
+		"lthreshold" : 0.3981072,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			6,
+			9,
+			11,
+			14,
+			17,
+			19,
+			24,
+			27,
+			30,
+			55,
+			60,
+			62,
+			68,
+			72,
+			100,
+			104,
+			108,
+			112,
+			117,
+			126,
+			132,
+			169,
+			175,
+			179,
+			189,
+			191
+		],
+		"runtime" : 0.0009992123
+	}
+} 

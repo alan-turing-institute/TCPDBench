@@ -1,0 +1,23 @@
+{
+	"error" : "Exponential test statistic requires positive data",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_argentina.json -p Manual -f meanvar -t Exponential -m BinSeg -Q max --pen.value 15.848931924611142",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "gdp_argentina",
+	"dataset_md5" : "694212b5682ebd808d740ffd83d4bc16",
+	"status" : "FAIL",
+	"parameters" : {
+		"Q" : 30.5,
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "BinSeg",
+		"pen.value" : 15.84893,
+		"penalty" : "Manual",
+		"test_statistic" : "Exponential"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

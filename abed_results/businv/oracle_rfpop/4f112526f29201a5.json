@@ -1,0 +1,50 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/businv.json -l Outlier --pen.value 0.010471285480508996 --lthreshold 0.1",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "businv",
+	"dataset_md5" : "d2ab178da17b2e659a10a102a4b9f332",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 0.01047129,
+		"lthreshold" : 0.1,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			5,
+			23,
+			37,
+			43,
+			59,
+			62,
+			67,
+			76,
+			87,
+			98,
+			102,
+			113,
+			119,
+			123,
+			127,
+			131,
+			143,
+			157,
+			183,
+			186,
+			218,
+			221,
+			255,
+			270,
+			284,
+			294,
+			302,
+			305,
+			320,
+			329
+		],
+		"runtime" : 0.00137639
+	}
+} 

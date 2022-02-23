@@ -1,0 +1,43 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/scanline_126007.json -l Huber --pen.value 10.471285480508985 --lthreshold 0.15848931924611134",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "scanline_126007",
+	"dataset_md5" : "057d5741b623308af00c42e2c8e525c3",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 10.47129,
+		"lthreshold" : 0.1584893,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			35,
+			51,
+			78,
+			106,
+			111,
+			116,
+			162,
+			250,
+			264,
+			279,
+			291,
+			306,
+			315,
+			324,
+			342,
+			352,
+			364,
+			376,
+			389,
+			393,
+			398,
+			402,
+			480
+		],
+		"runtime" : 0.001440048
+	}
+} 

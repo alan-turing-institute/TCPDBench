@@ -1,0 +1,49 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/shanghai_license.json -l Huber --pen.value 31.622776601683793 --lthreshold 6.309573444801933",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "shanghai_license",
+	"dataset_md5" : "b4ac173eb6c0a1a4d10268abc109eda1",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 31.62278,
+		"lthreshold" : 6.309573,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			11,
+			57,
+			58,
+			73,
+			74,
+			76,
+			107,
+			139,
+			145,
+			146,
+			147,
+			148,
+			150,
+			152,
+			157,
+			158,
+			160,
+			167,
+			169,
+			170,
+			171,
+			173,
+			175,
+			180,
+			189,
+			194,
+			198,
+			201,
+			204
+		],
+		"runtime" : 0.000803709
+	}
+} 

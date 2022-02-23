@@ -1,0 +1,44 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bitcoin.json -l Outlier --pen.value 63.0957344480193 --lthreshold 3.981071705534973",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "bitcoin",
+	"dataset_md5" : "f90ff14ed1fc0c3d47d4394d25cbce93",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 63.09573,
+		"lthreshold" : 3.981072,
+		"loss" : "Outlier"
+	},
+	"result" : {
+		"cplocations" : [
+			14,
+			83,
+			89,
+			120,
+			136,
+			155,
+			182,
+			194,
+			230,
+			329,
+			342,
+			400,
+			451,
+			469,
+			483,
+			490,
+			511,
+			544,
+			566,
+			641,
+			708,
+			732,
+			741,
+			773
+		],
+		"runtime" : 0.001996279
+	}
+} 

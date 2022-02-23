@@ -1,0 +1,41 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/usd_isk.json -l L2 --pen.value 54.954087385762485 --lthreshold NULL",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "usd_isk",
+	"dataset_md5" : "5cac2807a0e280c8ffd7321662e339ac",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 54.95409,
+		"loss" : "L2"
+	},
+	"result" : {
+		"cplocations" : [
+			15,
+			19,
+			26,
+			39,
+			47,
+			58,
+			70,
+			85,
+			90,
+			98,
+			109,
+			115,
+			116,
+			119,
+			138,
+			154,
+			178,
+			189,
+			210,
+			219,
+			236,
+			246
+		],
+		"runtime" : 0.0008938313
+	}
+} 

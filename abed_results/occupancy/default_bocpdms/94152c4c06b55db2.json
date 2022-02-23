@@ -3,7 +3,7 @@
 	"dataset": "occupancy",
 	"dataset_md5": "bc6cd9adaf496fe30bf0e417d2c3b0c6",
 	"error": null,
-	"hostname": "gertjan-arch",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 4,
 		"S2": 1,
@@ -20,16 +20,17 @@
 	},
 	"result": {
 		"cplocations": [
-			2,
-			3,
-			93,
-			183,
-			455,
+			4,
+			6,
+			95,
+			186,
+			358,
+			463,
 			506
 		],
-		"runtime": 476.85776686668396
+		"runtime": 69.5350968837738
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
-	"script_md5": "e6a84daedb85993dbe95448b4a5018e7",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

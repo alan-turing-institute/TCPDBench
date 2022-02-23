@@ -2,8 +2,8 @@
 	"command": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/bitcoin.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
 	"dataset": "bitcoin",
 	"dataset_md5": "f90ff14ed1fc0c3d47d4394d25cbce93",
-	"error": "We have a nan increment at position (array([], dtype=int64),)",
-	"hostname": "archlinux",
+	"error": null,
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,

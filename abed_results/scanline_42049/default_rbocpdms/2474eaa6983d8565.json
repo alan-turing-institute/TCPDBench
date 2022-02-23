@@ -3,7 +3,7 @@
 	"dataset": "scanline_42049",
 	"dataset_md5": "39921dfa959576bd0b3d6c95558f17f4",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -32,9 +32,9 @@
 		"cplocations": [
 			1,
 			2,
-			184
+			182
 		],
-		"runtime": 1855.039158821106
+		"runtime": 2868.7809777259827
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",

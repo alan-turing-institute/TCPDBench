@@ -1,0 +1,33 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/debt_ireland.json -l Huber --pen.value 1.7378008287493745 --lthreshold 10.0",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "debt_ireland",
+	"dataset_md5" : "a5a9e752c338d2ffcceb614bb2064cc9",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 1.737801,
+		"lthreshold" : 10,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			1,
+			4,
+			7,
+			8,
+			9,
+			10,
+			11,
+			13,
+			14,
+			16,
+			17,
+			19,
+			20
+		],
+		"runtime" : 0.000565052
+	}
+} 

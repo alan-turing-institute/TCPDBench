@@ -4,3 +4,6 @@ numpy
 labella>=0.9.7
 termcolor
 colorama
+networkx
+statsmodels
+tqdm

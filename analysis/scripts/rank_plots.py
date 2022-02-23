@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Create rank plots from best table json files.
+Create rank plots from table json files.
 
 Author: Gertjan van den Burg
 Copyright (c) 2020 - The Alan Turing Institute
@@ -12,10 +12,19 @@ License: See the LICENSE file.
 
 import argparse
 
+from typing import Dict
+
 from labella.timeline import TimelineTex
 from labella.scale import LinearScale
 
-from rank_common import load_data, compute_ranks, preprocess_data
+from common import Dataset
+from common import Dimensionality
+from common import Experiment
+from common import Method
+from common import MissingStrategy
+from common import filter_scores
+from common import load_score_file
+from rank_common import compute_ranks
 from significance import reference_difference
 
 
@@ -24,44 +33,53 @@ def parse_args():
     parser.add_argument(
         "-i",
         "--input",
-        help="Input JSON file with results for each method",
+        help="Score file with scores for each method and dataset",
         required=True,
     )
     parser.add_argument(
         "-o", "--output", help="Output tex file to write to", required=True
     )
     parser.add_argument(
-        "-b",
-        "--better",
-        help="Whether higher or lower is better",
-        choices=["min", "max"],
-        default="max",
+        "-d",
+        "--dim",
+        help="Dimensionality to consider",
+        choices=["univariate", "multivariate"],
+        required=True,
     )
     parser.add_argument(
-        "--type",
-        help="Type of table to make",
-        choices=["best", "default"],
+        "-e",
+        "--experiment",
+        help="Experiment to consider for rank plots",
+        choices=["default", "oracle"],
+        required=True,
+    )
+    parser.add_argument(
+        "-m",
+        "--missing",
+        help=(
+            "How to handle failures (do 'complete' case analysis or "
+            "give score of 'zero')"
+        ),
+        choices=[ms.name for ms in MissingStrategy],
         required=True,
     )
     return parser.parse_args()
 
 
-def method_name(m):
-    m = m.split("_")[-1]
-    return "\\textsc{%s}" % m
+def method_name(m: Method):
+    return "\\textsc{%s}" % m.name
 
 
 def make_rank_plot(
-    results,
+    filtered_scores: Dict[Dataset, Dict[Method, float]],
     output_file,
-    keep_methods=None,
     higher_better=True,
     return_ranks=False,
 ):
-    methods = keep_methods[:]
     avg_ranks, all_ranks = compute_ranks(
-        results, keep_methods=keep_methods, higher_better=higher_better
+        filtered_scores, higher_better=higher_better
     )
+
     plot_data = [
         {"time": rank, "text": method_name(method)}
         for method, rank in avg_ranks.items()
@@ -72,7 +90,7 @@ def make_rank_plot(
     options = {
         "scale": LinearScale(),
         "direction": "up",
-        "domain": [1, len(methods)],
+        "domain": [1, len(avg_ranks)],
         "layerGap": 20,
         "borderColor": "#000",
         "showBorder": False,
@@ -91,8 +109,7 @@ def make_rank_plot(
     texlines = tl.export()
 
     n_datasets = len(all_ranks)
-
-    ref_method, CD, _ = reference_difference(avg_ranks, n_datasets)
+    ref_method, _, CD = reference_difference(avg_ranks, n_datasets)
 
     # we're going to insert the critical difference line after the dots
     # scope,·so we first have to figure out where that is.
@@ -137,14 +154,15 @@ def make_rank_plot(
 def main():
     args = parse_args()
 
-    higher_better = args.better == "max"
-
-    data = load_data(args.input)
-    clean, methods = preprocess_data(data, args.type)
-
-    make_rank_plot(
-        clean, args.output, keep_methods=methods, higher_better=higher_better
+    scores = load_score_file(args.input)
+    experiment = Experiment[args.experiment]
+    dimensionality = Dimensionality[args.dim]
+    missing_strategy = MissingStrategy[args.missing]
+    filtered_scores = filter_scores(
+        scores, experiment, dimensionality, missing_strategy=missing_strategy
     )
+
+    make_rank_plot(filtered_scores, args.output, higher_better=True)
 
 
 if __name__ == "__main__":

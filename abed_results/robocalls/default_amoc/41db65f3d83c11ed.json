@@ -1,14 +1,13 @@
 {
 	"error" : null,
-	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/deploy/cpdbench/datasets/robocalls.json -p MBIC -f mean -t Normal -m AMOC",
-	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_changepoint.R",
-	"script_md5" : "88eac82295fae0cc030d40da93501e50",
-	"hostname" : "scw-blissful-wiles",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/robocalls.json -p MBIC -f mean -t Normal -m AMOC",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
 	"dataset" : "robocalls",
 	"dataset_md5" : "f67ec0ccb50f2a835912e5c51932c083",
 	"status" : "SUCCESS",
 	"parameters" : {
-		"pen.value" : 0,
 		"func" : "mean",
 		"max_cp" : "max",
 		"method" : "AMOC",
@@ -19,6 +18,6 @@
 		"cplocations" : [
 			35
 		],
-		"runtime" : 0.00184989
+		"runtime" : 0.0008935928
 	}
 } 

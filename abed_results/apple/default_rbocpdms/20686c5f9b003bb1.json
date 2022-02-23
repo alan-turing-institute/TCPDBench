@@ -3,7 +3,7 @@
 	"dataset": "apple",
 	"dataset_md5": "22edb48471bd3711f7a6e15de6413643",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 2,
 		"S2": 1,
@@ -31,9 +31,12 @@
 	"result": {
 		"cplocations": [
 			1,
-			2
+			2,
+			4,
+			251,
+			263
 		],
-		"runtime": 3190.0223593711853
+		"runtime": 5194.791884660721
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",

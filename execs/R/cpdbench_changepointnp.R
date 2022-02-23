@@ -38,7 +38,8 @@ parse.args <- function() {
                                   'MBIC',
                                   'AIC',
                                   'Hannan-Quinn',
-                                  'Asymptotic'
+                                  'Asymptotic',
+                                  'Manual'
                                   ),
                         help='Choice of penalty in the cpt function',
                         default='MBIC'
@@ -48,6 +49,11 @@ parse.args <- function() {
                         type='integer',
                         help='Number of quantiles to use',
                         default=10
+    )
+    parser$add_argument('-P',
+                        '--pen.value',
+                        help='Penalty value to use with the Manual penalty',
+                        default=NULL
     )
     return(parser$parse_args())
 }
@@ -62,9 +68,25 @@ main <- function() {
     defaults <- list(method='PELT',
                      test.stat='empirical_distribution',
                      minseglen=1)
+
+    if (!is.null(args$pen.value) && args$pen.value == "NULL") {
+      args["pen.value"] <- list(NULL)
+    }
+
+    if (args$penalty == "Manual") {
+      stopifnot(!is.null(args$pen.value))
+      args$pen.value <- as.double(args$pen.value)
+    } else {
+      # If we're not using the Manual penalty, remove pen.value from parameter 
+      # list (it's not used and otherwise may lead to confusion). In this case, 
+      # it must be set to NULL on the command line or not supplied.
+      stopifnot(is.null(args$pen.value))
+      args$pen.value <- NULL
+      defaults$pen.value <- NULL
+    }
     params <- make.param.list(args, defaults)
 
-    if (data$origina$n_dim > 1) {
+    if (data$original$n_dim > 1) {
         # changepoint.np package can't handle multidimensional data
         exit.error.multidim(data$original, args, params)
     }
@@ -75,6 +97,7 @@ main <- function() {
     result <- tryCatch({
         locs <- cpt.np(vec,
                        penalty=params$penalty,
+                       pen.value=params$pen.value,
                        method=params$method,
                        test.stat=params$test.stat,
                        minseglen=params$minseglen,

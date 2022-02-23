@@ -1,0 +1,19 @@
+{
+	"error" : "NA/NaN/Inf in foreign function call (arg 1)",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/uk_coal_employ.json -l Huber --pen.value 3.4673685045253166 --lthreshold 3.981071705534973",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "uk_coal_employ",
+	"dataset_md5" : "a7c72746e46d6e09f516bd87e0e68bef",
+	"status" : "FAIL",
+	"parameters" : {
+		"lambda" : 3.467369,
+		"lthreshold" : 3.981072,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : null,
+		"runtime" : null
+	}
+} 

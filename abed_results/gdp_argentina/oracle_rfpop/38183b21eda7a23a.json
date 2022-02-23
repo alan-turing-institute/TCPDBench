@@ -1,0 +1,38 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/gdp_argentina.json -l Huber --pen.value 2.2908676527677723 --lthreshold 2.511886431509581",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
+	"dataset" : "gdp_argentina",
+	"dataset_md5" : "694212b5682ebd808d740ffd83d4bc16",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"lambda" : 2.290868,
+		"lthreshold" : 2.511886,
+		"loss" : "Huber"
+	},
+	"result" : {
+		"cplocations" : [
+			4,
+			8,
+			10,
+			13,
+			18,
+			31,
+			32,
+			36,
+			40,
+			41,
+			42,
+			43,
+			44,
+			45,
+			46,
+			49,
+			50,
+			58
+		],
+		"runtime" : 0.0007147789
+	}
+} 

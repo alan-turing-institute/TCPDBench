@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_4.json -l Outlier",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/quality_control_4.json -l Outlier",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_rfpop.R",
-	"script_md5" : "3b863ed48a30b8b0b5615d4614c3fa4b",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "775a9833fa7e690f682e78307f7cb4fc",
+	"hostname" : "nyx",
 	"dataset" : "quality_control_4",
 	"dataset_md5" : "1efedb9a52cd0b9a9250cf9781c5f7ef",
 	"status" : "SUCCESS",
@@ -68,6 +68,6 @@
 			487,
 			499
 		],
-		"runtime" : 0.002108335
+		"runtime" : 0.0009932518
 	}
 } 

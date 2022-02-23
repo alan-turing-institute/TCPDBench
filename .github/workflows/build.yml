@@ -2,7 +2,11 @@ name: Reproducible Research
 
 on:
   push:
+    branches:
+      - master
   pull_request:
+    branchers:
+      - master
   schedule:
     - cron: 42 8 */21 * *
 
@@ -21,6 +25,16 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2-branch
+        with:
+          r-version: 'release'
+
+      - name: Install R dependencies
+        run: |
+          install.packages(c('argparse', 'exactRankTests'))
+        shell: Rscript {0}
+
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -30,12 +44,28 @@ jobs:
         run: pip install -r ./analysis/requirements.txt
         shell: bash
 
+      - name: Clone TCPD
+        run: git clone https://github.com/alan-turing-institute/TCPD ../TCPD
+        shell: bash
+
+      - name: Build TCPD
+        run: cd ../TCPD && make export
+        shell: bash
+
+      - name: Copy datasets
+        run: mkdir -p ./datasets && cp ../TCPD/export/*.json ./datasets/ && pwd && ls -1 .
+        shell: bash
+
+      - name: Skip annotation simulation p-values
+        run: touch ./analysis/output/tables/annotation_simulation_pvalues.tex
+        shell: bash
+
       - name: Make results
         run: make results
         shell: bash
 
       - name: Check results
-        run: git checkout ./analysis/output/rankplots/*.pdf && git diff --exit-code
+        run: git checkout ./analysis/output/cd_diagrams/*.pdf && git checkout ./analysis/output/figures/anno_hist/histogram*.pdf && git diff --exit-code
         shell: bash
 
   tcpdbench-docker:

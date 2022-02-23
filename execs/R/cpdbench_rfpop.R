@@ -36,6 +36,16 @@ parse.args <- function() {
                         choices=c('L1', 'L2', 'Huber', 'Outlier'),
                         required=TRUE
     )
+    parser$add_argument('-P',
+                        '--pen.value',
+                        help='Penalty value (lambda = beta) to use',
+                        default=NULL
+    )
+    parser$add_argument('-K',
+                        '--lthreshold',
+                        help='Parameter K in loss function, relative to sigma hat',
+                        default=NULL
+    )
     return(parser$parse_args())
 }
 
@@ -56,7 +66,38 @@ main <- function() {
     } else if (args$loss == 'L2') {
         defaults$lambda <- log(data$original$n_obs)
     }
+
+    # Rename pen.value to lambda in args
+    args$lambda <- args$pen.value
+    args$pen.value <- NULL
+
+    # Deal with supplying NULL from command line
+    if (!is.null(args$lambda) && args$lambda == "NULL") {
+      args["lambda"] <- list(NULL)
+    }
+    if (!is.null(args$lthreshold) && args$lthreshold == "NULL") {
+      args["lthreshold"] <- list(NULL)
+    }
+
+    # If lambda/lthreshold are NULL, they should be dropped in favor of the 
+    # defaults. Otherwise, they should be converted to doubles.
+    if (is.null(args$lambda)) {
+      args$lambda <- NULL
+    } else {
+      args$lambda <- as.double(args$lambda)
+    }
+    if (is.null(args$lthreshold)) {
+      args$lthreshold <- NULL
+    } else {
+      args$lthreshold <- as.double(args$lthreshold)
+    }
+
     params <- make.param.list(args, defaults)
+
+    # With the L1/L2 penalties, lthreshold should never not be NULL at this 
+    # point, as it is unused.
+    if (params$loss == "L1" || params$loss == "L2")
+      stopifnot(is.null(params$lthreshold))
 
     if (data$original$n_dim > 1) {
         # robseg package can't handle multidimensional data

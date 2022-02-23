@@ -3,7 +3,7 @@
 	"dataset": "gdp_iran",
 	"dataset_md5": "889e9fc6292125189fd3188396167431",
 	"error": null,
-	"hostname": "gertjan-arch",
+	"hostname": "nyx",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -22,9 +22,9 @@
 		"cplocations": [
 			2
 		],
-		"runtime": 3.986168622970581
+		"runtime": 0.47578907012939453
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_bocpdms.py",
-	"script_md5": "e6a84daedb85993dbe95448b4a5018e7",
+	"script_md5": "db575e9e49ab0c7ab4f9a88093df095f",
 	"status": "SUCCESS"
 }

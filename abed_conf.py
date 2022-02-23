@@ -1,4 +1,5 @@
 import copy
+import numpy as np
 
 ##############################################################################
 #                                General Settings                            #
@@ -41,7 +42,7 @@ MW_NUM_WORKERS = None
 ##############################################################################
 # Uncomment the desired type
 # Model assessment #
-TYPE = "ASSESS"
+TYPE = "ASSESS_LIST"
 
 # Cross validation with train and test dataset #
 # TYPE = 'CV_TT'
@@ -112,20 +113,20 @@ DATASETS = [
 DATASET_NAMES = {k: k for k in DATASETS}
 
 METHODS = [
-    "best_bocpd",
-    "best_bocpdms",
-    "best_rbocpdms",
-    "best_cpnp",
-    "best_pelt",
-    "best_amoc",
-    "best_segneigh",
-    "best_binseg",
-    "best_rfpop",
-    "best_ecp",
-    "best_kcpa",
-    "best_wbs",
-    "best_prophet",
-    "best_zero",
+    "oracle_bocpd",
+    "oracle_bocpdms",
+    "oracle_rbocpdms",
+    "oracle_cpnp",
+    "oracle_pelt",
+    "oracle_amoc",
+    "oracle_segneigh",
+    "oracle_binseg",
+    "oracle_rfpop",
+    "oracle_ecp",
+    "oracle_kcpa",
+    "oracle_wbs",
+    "oracle_prophet",
+    "oracle_zero",
     "default_bocpd",
     "default_bocpdms",
     "default_rbocpdms",
@@ -142,8 +143,6 @@ METHODS = [
     "default_zero",
 ]
 
-# many of these combinations will be invalid for the changepoint package, but
-# it's easier to do it this way than to generate only the valid configurations.
 R_changepoint_params = {
     "function": ["mean", "var", "meanvar"],
     "penalty": [
@@ -160,108 +159,313 @@ R_changepoint_params = {
 R_changepoint_params_seg = copy.deepcopy(R_changepoint_params)
 R_changepoint_params_seg["Q"] = ["max", "default"]
 
+bocpd_intensities = [10, 50, 100, 200]
+bocpd_prior_a = [0.01, 0.1, 1.0, 10, 100]
+bocpd_prior_b = [0.01, 0.1, 1.0, 10, 100]
+bocpd_prior_k = [0.01, 0.1, 1.0, 10, 100]
+
+cpt_manual_penalty = list(np.logspace(-3, 3, 101))
+cpt_penalties = [
+    "None",
+    "SIC",
+    "BIC",
+    "MBIC",
+    "AIC",
+    "Hannan-Quinn",
+    "Asymptotic",
+]
+cpt_Q = ["default", "max"]
+cpt_function = ["mean", "var", "meanvar"]
+cpt_statistic = {
+    "mean": ["Normal", "CUSUM"],
+    "var": ["Normal", "CSS"],
+    "meanvar": ["Normal", "Gamma", "Exponential", "Poisson"],
+}
+cptnp_penalties = [p for p in cpt_penalties if not p == "Asymptotic"]
+cptnp_quantiles = [10, 20, 30, 40]
+
+pelt_params = [
+    {"function": f, "penalty": p, "penvalue": "NULL", "statistic": s}
+    for f in cpt_function
+    for p in cpt_penalties
+    for s in cpt_statistic[f]
+] + [
+    {"function": f, "penalty": "Manual", "penvalue": pv, "statistic": s}
+    for f in cpt_function
+    for pv in cpt_manual_penalty
+    for s in cpt_statistic[f]
+]
+amoc_params = copy.deepcopy(pelt_params)
+
+segneigh_params = [
+    {"function": f, "penalty": p, "penvalue": "NULL", "statistic": s, "Q": q}
+    for f in cpt_function
+    for p in cpt_penalties
+    for s in cpt_statistic[f]
+    for q in cpt_Q
+] + [
+    {
+        "function": f,
+        "penalty": "Manual",
+        "penvalue": pv,
+        "statistic": s,
+        "Q": q,
+    }
+    for f in cpt_function
+    for pv in cpt_manual_penalty
+    for s in cpt_statistic[f]
+    for q in cpt_Q
+]
+binseg_params = copy.deepcopy(segneigh_params)
+
 PARAMS = {
-    "best_bocpd": {
-        "intensity": [50, 100, 200],
-        "prior_a": [0.01, 1.0, 100],
-        "prior_b": [0.01, 1.0, 100],
-        "prior_k": [0.01, 1.0, 100],
-    },
-    "best_bocpdms": {
-        "intensity": [50, 100, 200],
-        "prior_a": [0.01, 1.0, 100],
-        "prior_b": [0.01, 1.0, 100],
-    },
-    "best_rbocpdms": {
-        "intensity": [50, 100, 200],
-        "prior_a": [0.01, 1.0, 100],
-        "prior_b": [0.01, 1.0, 100],
-        "alpha_param": [0.5],
-        "alpha_rld": [0.5],
-    },
-    "best_cpnp": {
-        "penalty": [
-            "None",
-            "SIC",
-            "BIC",
-            "MBIC",
-            "AIC",
-            "Hannan-Quinn",
-            "Asymptotic",
-        ],
-        "quantiles": [10, 20, 30, 40],
-    },
-    "best_pelt": R_changepoint_params,
-    "best_amoc": R_changepoint_params,
-    "best_segneigh": R_changepoint_params_seg,
-    "best_binseg": R_changepoint_params_seg,
-    "best_rfpop": {"loss": ["L1", "L2", "Huber", "Outlier"]},
-    "best_ecp": {
-        "algorithm": ["e.agglo", "e.divisive"],
-        "siglvl": [0.01, 0.05],
-        "minsize": [2, 30],
-        "alpha": [0.5, 1.0, 1.5],
-    },
-    "best_kcpa": {
-        "maxcp": ["max", "default"],
-        "cost": [1e-3, 1e-2, 1e-1, 1, 1e1, 1e2, 1e3],
-    },
-    "best_wbs": {
-        "Kmax": ["max", "default"],
-        "penalty": ["SSIC", "BIC", "MBIC"],
-        "integrated": ["true", "false"],
-    },
-    "best_prophet": {"Nmax": ["max", "default"]},
-    "best_zero": {"no_param": [0]},
-    "default_bocpd": {"no_param": [0]},
-    "default_bocpdms": {"no_param": [0]},
-    "default_rbocpdms": {"no_param": [0]},
-    "default_cpnp": {"no_param": [0]},
-    "default_pelt": {"no_param": [0]},
-    "default_amoc": {"no_param": [0]},
-    "default_segneigh": {"no_param": [0]},
-    "default_binseg": {"no_param": [0]},
-    "default_rfpop": {"no_param": [0]},
-    "default_ecp": {"no_param": [0]},
-    "default_kcpa": {"no_param": [0]},
-    "default_wbs": {"no_param": [0]},
-    "default_prophet": {"no_param": [0]},
-    "default_zero": {"no_param": [0]}
+    "oracle_bocpd": [
+        {
+            "intensity": i,
+            "prior_a": a,
+            "prior_b": b,
+            "prior_k": k,
+        }
+        for i in bocpd_intensities
+        for a in bocpd_prior_a
+        for b in bocpd_prior_b
+        for k in bocpd_prior_k
+    ],
+    "oracle_bocpdms": [
+        {
+            "intensity": i,
+            "prior_a": a,
+            "prior_b": b,
+        }
+        for i in bocpd_intensities
+        for a in bocpd_prior_a
+        for b in bocpd_prior_b
+    ],
+    "oracle_rbocpdms": [
+        {
+            "intensity": i,
+            "prior_a": a,
+            "prior_b": b,
+            "alpha_param": 0.5,
+            "alpha_rld": 0.5,
+        }
+        for i in bocpd_intensities
+        for a in bocpd_prior_a
+        for b in bocpd_prior_b
+    ],
+    "oracle_cpnp": (
+        [
+            {"penalty": p, "penvalue": "NULL", "quantiles": q}
+            for p in cpt_penalties
+            for q in cptnp_quantiles
+        ]
+        + [
+            {"penalty": "Manual", "penvalue": pv, "quantiles": q}
+            for pv in cpt_manual_penalty
+            for q in cptnp_quantiles
+        ]
+    ),
+    "oracle_pelt": pelt_params,
+    "oracle_amoc": amoc_params,
+    "oracle_segneigh": segneigh_params,
+    "oracle_binseg": binseg_params,
+    "oracle_rfpop": (
+        [
+            {"loss": l, "penvalue": pv, "lthreshold": "NULL"}
+            for l in ["L1", "L2"]
+            for pv in cpt_manual_penalty
+        ]
+        + [
+            {"loss": l, "penvalue": pv, "lthreshold": lt}
+            for l in ["Outlier", "Huber"]
+            for pv in cpt_manual_penalty
+            for lt in list(np.logspace(-1, 1, 11))
+        ]
+    ),
+    "oracle_ecp": [
+        {"algorithm": a, "siglvl": s, "minsize": m, "alpha": v}
+        for a in ["e.agglo", "e.divisive"]
+        for s in [0.01, 0.05]
+        for m in [2, 30]
+        for v in [0.5, 1.0, 1.5]
+    ],
+    "oracle_kcpa": [
+        {"maxcp": m, "cost": c}
+        for m in ["max", "default"]
+        for c in cpt_manual_penalty
+    ],
+    "oracle_wbs": [
+        {"Kmax": K, "penalty": p, "integrated": i}
+        for K in ["max", "default"]
+        for p in ["SSIC", "BIC", "MBIC"]
+        for i in ["true", "false"]
+    ],
+    "oracle_prophet": [{"Nmax": "max"}, {"Nmax": "default"}],
+    "oracle_zero": [{"no_param": 0}],
+    "default_bocpd": [{"no_param": 0}],
+    "default_bocpdms": [{"no_param": 0}],
+    "default_rbocpdms": [{"no_param": 0}],
+    "default_cpnp": [{"no_param": 0}],
+    "default_pelt": [{"no_param": 0}],
+    "default_amoc": [{"no_param": 0}],
+    "default_segneigh": [{"no_param": 0}],
+    "default_binseg": [{"no_param": 0}],
+    "default_rfpop": [{"no_param": 0}],
+    "default_ecp": [{"no_param": 0}],
+    "default_kcpa": [{"no_param": 0}],
+    "default_wbs": [{"no_param": 0}],
+    "default_prophet": [{"no_param": 0}],
+    "default_zero": [{"no_param": 0}],
 }
 
 COMMANDS = {
-    "best_amoc": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p {penalty} -f {function} -t {statistic} -m AMOC",
-    "best_binseg": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p {penalty} -f {function} -t {statistic} -m BinSeg -Q {Q}",
-    "best_cpnp": "Rscript --no-save --slave {execdir}/R/cpdbench_changepointnp.R -i {datadir}/{dataset}.json -p {penalty} -q {quantiles}",
-    "best_ecp": "Rscript --no-save --slave {execdir}/R/cpdbench_ecp.R -i {datadir}/{dataset}.json -a {algorithm} --siglvl {siglvl} --minsize {minsize} --alpha {alpha}",
-    "best_kcpa": "Rscript --no-save --slave {execdir}/R/cpdbench_ecp.R -i {datadir}/{dataset}.json -a kcpa --maxcp {maxcp} --cost {cost}",
-    "best_pelt": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p {penalty} -f {function} -t {statistic} -m PELT",
-    "best_prophet": "Rscript --no-save --slave {execdir}/R/cpdbench_prophet.R -i {datadir}/{dataset}.json -N {Nmax}",
-    "best_rfpop": "Rscript --no-save --slave {execdir}/R/cpdbench_rfpop.R -i {datadir}/{dataset}.json -l {loss}",
-    "best_segneigh": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p {penalty} -f {function} -t {statistic} -m SegNeigh -Q {Q}",
-    "best_wbs": "Rscript --no-save --slave {execdir}/R/cpdbench_wbs.R -i {datadir}/{dataset}.json -K {Kmax} --penalty {penalty} -g {integrated}",
-    "best_bocpd": "Rscript --no-save --slave {execdir}/R/cpdbench_ocp.R -i {datadir}/{dataset}.json -l {intensity} --prior-a {prior_a} --prior-b {prior_b} --prior-k {prior_k}",
-    "best_bocpdms": (
-        "source {execdir}/python/bocpdms/venv/bin/activate && python {execdir}/python/cpdbench_bocpdms.py -i {datadir}/{dataset}.json --intensity {intensity} --prior-a {prior_a} --prior-b {prior_b} --threshold 100 --use-timeout"
+    "oracle_amoc": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json "
+        "-p {penalty} -f {function} -t {statistic} -m AMOC "
+        "--pen.value {penvalue}"
     ),
-    "best_rbocpdms": (
-        "source {execdir}/python/rbocpdms/venv/bin/activate && python {execdir}/python/cpdbench_rbocpdms.py -i {datadir}/{dataset}.json --intensity {intensity} --prior-a {prior_a} --prior-b {prior_b} --threshold 100 --alpha-param {alpha_param} --alpha-rld {alpha_rld} --use-timeout"
+    "oracle_binseg": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json "
+        "-p {penalty} -f {function} -t {statistic} -m BinSeg -Q {Q} "
+        "--pen.value {penvalue}"
     ),
-    "best_zero": "python {execdir}/python/cpdbench_zero.py -i {datadir}/{dataset}.json",
-    "default_amoc": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p MBIC -f mean -t Normal -m AMOC",
-    "default_binseg": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p MBIC -f mean -t Normal -m BinSeg -Q default",
-    "default_cpnp": "Rscript --no-save --slave {execdir}/R/cpdbench_changepointnp.R -i {datadir}/{dataset}.json -p MBIC -q 10",
-    "default_pelt": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p MBIC -f mean -t Normal -m PELT",
-    "default_segneigh": "Rscript --no-save --slave {execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json -p BIC -f mean -t Normal -m SegNeigh -Q default",
-    "default_wbs": "Rscript --no-save --slave {execdir}/R/cpdbench_wbs.R -i {datadir}/{dataset}.json -K default -p SSIC -g true",
-    "default_prophet": "Rscript --no-save --slave {execdir}/R/cpdbench_prophet.R -i {datadir}/{dataset}.json -N default",
-    "default_rfpop": "Rscript --no-save --slave {execdir}/R/cpdbench_rfpop.R -i {datadir}/{dataset}.json -l Outlier",
-    "default_ecp": "Rscript --no-save --slave {execdir}/R/cpdbench_ecp.R -i {datadir}/{dataset}.json -a e.divisive --alpha 1.0 --minsize 30 --runs 199 --siglvl 0.05",
-    "default_kcpa": "Rscript --no-save --slave {execdir}/R/cpdbench_ecp.R -i {datadir}/{dataset}.json -a kcpa -C 1.0 -L max",
-    "default_bocpd": "Rscript --no-save --slave {execdir}/R/cpdbench_ocp.R -i {datadir}/{dataset}.json -l 100 --prior-a 1.0 --prior-b 1.0 --prior-k 1.0",
-    "default_bocpdms": "source {execdir}/python/bocpdms/venv/bin/activate && python {execdir}/python/cpdbench_bocpdms.py -i {datadir}/{dataset}.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 0",
-    "default_rbocpdms": "source {execdir}/python/rbocpdms/venv/bin/activate && python {execdir}/python/cpdbench_rbocpdms.py -i {datadir}/{dataset}.json --intensity 100 --prior-a 1.0 --prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 --timeout 240",
-    "default_zero": "python {execdir}/python/cpdbench_zero.py -i {datadir}/{dataset}.json",
+    "oracle_cpnp": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepointnp.R -i {datadir}/{dataset}.json "
+        "-p {penalty} -q {quantiles} --pen.value {penvalue}"
+    ),
+    "oracle_ecp": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_ecp.R -i {datadir}/{dataset}.json "
+        "-a {algorithm} --siglvl {siglvl} --minsize {minsize} --alpha {alpha}"
+    ),
+    "oracle_kcpa": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_ecp.R -i {datadir}/{dataset}.json -a kcpa "
+        "--maxcp {maxcp} --cost {cost}"
+    ),
+    "oracle_pelt": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json "
+        "-p {penalty} -f {function} -t {statistic} -m PELT "
+        "--pen.value {penvalue}"
+    ),
+    "oracle_prophet": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_prophet.R -i {datadir}/{dataset}.json -N {Nmax}"
+    ),
+    "oracle_rfpop": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_rfpop.R -i {datadir}/{dataset}.json -l {loss} "
+        "--pen.value {penvalue} --lthreshold {lthreshold}"
+    ),
+    "oracle_segneigh": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json "
+        "-p {penalty} -f {function} -t {statistic} -m SegNeigh -Q {Q} "
+        "--pen.value {penvalue}"
+    ),
+    "oracle_wbs": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_wbs.R -i {datadir}/{dataset}.json -K {Kmax} "
+        "--penalty {penalty} -g {integrated}"
+    ),
+    "oracle_bocpd": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_ocp.R -i {datadir}/{dataset}.json "
+        "-l {intensity} --prior-a {prior_a} --prior-b {prior_b} "
+        "--prior-k {prior_k}"
+    ),
+    "oracle_bocpdms": (
+        "source {execdir}/python/bocpdms/venv/bin/activate && "
+        "python {execdir}/python/cpdbench_bocpdms.py "
+        "-i {datadir}/{dataset}.json --intensity {intensity} "
+        "--prior-a {prior_a} --prior-b {prior_b} --threshold 100 "
+        "--use-timeout"
+    ),
+    "oracle_rbocpdms": (
+        "source {execdir}/python/rbocpdms/venv/bin/activate && "
+        "python {execdir}/python/cpdbench_rbocpdms.py "
+        "-i {datadir}/{dataset}.json --intensity {intensity} "
+        "--prior-a {prior_a} --prior-b {prior_b} --threshold 100 "
+        "--alpha-param {alpha_param} --alpha-rld {alpha_rld} --use-timeout"
+    ),
+    "oracle_zero": (
+        "python {execdir}/python/cpdbench_zero.py "
+        "-i {datadir}/{dataset}.json"
+    ),
+    "default_amoc": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json "
+        "-p MBIC -f mean -t Normal -m AMOC"
+    ),
+    "default_binseg": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json "
+        "-p MBIC -f mean -t Normal -m BinSeg -Q default"
+    ),
+    "default_cpnp": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepointnp.R -i {datadir}/{dataset}.json "
+        "-p MBIC -q 10"
+    ),
+    "default_pelt": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json "
+        "-p MBIC -f mean -t Normal -m PELT"
+    ),
+    "default_segneigh": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_changepoint.R -i {datadir}/{dataset}.json "
+        "-p BIC -f mean -t Normal -m SegNeigh -Q default"
+    ),
+    "default_wbs": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_wbs.R -i {datadir}/{dataset}.json -K default "
+        "-p SSIC -g true"
+    ),
+    "default_prophet": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_prophet.R -i {datadir}/{dataset}.json -N default"
+    ),
+    "default_rfpop": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_rfpop.R -i {datadir}/{dataset}.json -l Outlier"
+    ),
+    "default_ecp": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_ecp.R -i {datadir}/{dataset}.json -a e.divisive "
+        "--alpha 1.0 --minsize 30 --runs 199 --siglvl 0.05"
+    ),
+    "default_kcpa": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_ecp.R -i {datadir}/{dataset}.json -a kcpa "
+        "-C 1.0 -L max"
+    ),
+    "default_bocpd": (
+        "Rscript --no-save --slave "
+        "{execdir}/R/cpdbench_ocp.R -i {datadir}/{dataset}.json -l 100 "
+        "--prior-a 1.0 --prior-b 1.0 --prior-k 1.0"
+    ),
+    "default_bocpdms": (
+        "source {execdir}/python/bocpdms/venv/bin/activate && "
+        "python {execdir}/python/cpdbench_bocpdms.py "
+        "-i {datadir}/{dataset}.json --intensity 100 --prior-a 1.0 "
+        "--prior-b 1.0 --threshold 0"
+    ),
+    "default_rbocpdms": (
+        "source {execdir}/python/rbocpdms/venv/bin/activate && "
+        "python {execdir}/python/cpdbench_rbocpdms.py "
+        "-i {datadir}/{dataset}.json --intensity 100 --prior-a 1.0 "
+        "--prior-b 1.0 --threshold 100 --alpha-param 0.5 --alpha-rld 0.5 "
+        "--timeout 240"
+    ),
+    "default_zero": (
+        "python {execdir}/python/cpdbench_zero.py "
+        "-i {datadir}/{dataset}.json"
+    ),
 }
 
 METRICS = {}

@@ -3,7 +3,7 @@
 	"dataset": "us_population",
 	"dataset_md5": "77037fc5ff0338516a56ae686aa4dcba",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -32,12 +32,10 @@
 		"cplocations": [
 			1,
 			2,
-			47,
-			410,
-			422,
-			592
+			81,
+			542
 		],
-		"runtime": 1428.1973264217377
+		"runtime": 2057.607542991638
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",

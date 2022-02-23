@@ -1,0 +1,50 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/ozone.json -p Manual -f meanvar -t Normal -m SegNeigh -Q max --pen.value 0.0060255958607435805",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepoint.R",
+	"script_md5" : "91e68c58b1c502525e324b10933fc656",
+	"hostname" : "nyx",
+	"dataset" : "ozone",
+	"dataset_md5" : "348b1f85c3ec3da3b8989afe04c33b80",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"Q" : 28,
+		"func" : "meanvar",
+		"max_cp" : "max",
+		"method" : "SegNeigh",
+		"pen.value" : 0.006025596,
+		"penalty" : "Manual",
+		"test_statistic" : "Normal"
+	},
+	"result" : {
+		"cplocations" : [
+			1,
+			3,
+			5,
+			7,
+			9,
+			11,
+			13,
+			15,
+			17,
+			20,
+			22,
+			24,
+			26,
+			28,
+			30,
+			32,
+			34,
+			36,
+			38,
+			40,
+			42,
+			44,
+			46,
+			48,
+			50,
+			53
+		],
+		"runtime" : 0.01030183
+	}
+} 

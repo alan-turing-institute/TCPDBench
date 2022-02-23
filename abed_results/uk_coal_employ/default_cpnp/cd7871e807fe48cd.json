@@ -1,9 +1,9 @@
 {
 	"error" : "NA/NaN/Inf in foreign function call (arg 2)",
-	"command" : "/usr/lib/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/deploy/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/deploy/cpdbench/datasets/uk_coal_employ.json -p MBIC -q 10",
-	"script" : "/home/deploy/cpdbench/execs/R/cpdbench_changepointnp.R",
-	"script_md5" : "0960dc48e5296b852678528c87d06b97",
-	"hostname" : "scw-blissful-wiles",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/uk_coal_employ.json -p MBIC -q 10",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
 	"dataset" : "uk_coal_employ",
 	"dataset_md5" : "a7c72746e46d6e09f516bd87e0e68bef",
 	"status" : "FAIL",

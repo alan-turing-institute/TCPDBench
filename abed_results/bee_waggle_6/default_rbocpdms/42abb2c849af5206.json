@@ -3,7 +3,7 @@
 	"dataset": "bee_waggle_6",
 	"dataset_md5": "4f03feafecb3be0b069b3cb0d6b17d4f",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 4,
 		"S2": 1,
@@ -32,13 +32,15 @@
 		"cplocations": [
 			1,
 			2,
-			78,
-			201,
-			277,
-			368,
-			465
+			59,
+			121,
+			204,
+			289,
+			338,
+			398,
+			489
 		],
-		"runtime": 8854.506964445114
+		"runtime": 4397.731206178665
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",

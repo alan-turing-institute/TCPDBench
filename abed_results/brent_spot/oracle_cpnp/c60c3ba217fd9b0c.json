@@ -1,0 +1,47 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/brent_spot.json -p Manual -q 20 --pen.value 9.120108393559097",
+	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_changepointnp.R",
+	"script_md5" : "109b53a40dbe86dab143c2ba02f58e97",
+	"hostname" : "nyx",
+	"dataset" : "brent_spot",
+	"dataset_md5" : "79892116ef8a0aa16e2450123655b31d",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"method" : "PELT",
+		"test.stat" : "empirical_distribution",
+		"minseglen" : 1,
+		"nquantiles" : 20,
+		"pen.value" : 9.120108,
+		"penalty" : "Manual"
+	},
+	"result" : {
+		"cplocations" : [
+			9,
+			23,
+			45,
+			55,
+			75,
+			117,
+			139,
+			188,
+			199,
+			213,
+			219,
+			224,
+			240,
+			273,
+			283,
+			294,
+			307,
+			313,
+			368,
+			378,
+			404,
+			412,
+			449,
+			499
+		],
+		"runtime" : 0.006889105
+	}
+} 

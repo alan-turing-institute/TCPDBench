@@ -3,7 +3,7 @@
 	"dataset": "brent_spot",
 	"dataset_md5": "79892116ef8a0aa16e2450123655b31d",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -34,7 +34,7 @@
 			2,
 			276
 		],
-		"runtime": 1812.4641816616058
+		"runtime": 3273.9652709960938
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",

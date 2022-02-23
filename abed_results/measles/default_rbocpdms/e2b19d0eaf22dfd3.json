@@ -3,7 +3,7 @@
 	"dataset": "measles",
 	"dataset_md5": "e42afd03be893fc7deb98514c94fa4c7",
 	"error": null,
-	"hostname": "archlinux",
+	"hostname": "hemera",
 	"parameters": {
 		"S1": 1,
 		"S2": 1,
@@ -32,21 +32,21 @@
 		"cplocations": [
 			1,
 			2,
-			70,
+			69,
 			367,
 			395,
-			470,
+			469,
 			499,
-			567,
-			601,
-			677,
+			570,
+			600,
+			678,
 			707,
 			779,
-			812,
+			811,
 			877,
 			911
 		],
-		"runtime": 1325.9603695869446
+		"runtime": 2310.7007954120636
 	},
 	"script": "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/python/cpdbench_rbocpdms.py",
 	"script_md5": "729c93e339280edf8cd7ad82d0e5e064",

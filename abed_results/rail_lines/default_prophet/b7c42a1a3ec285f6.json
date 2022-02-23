@@ -1,9 +1,9 @@
 {
 	"error" : null,
-	"command" : "/usr/lib64/R/bin/exec/R --slave --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/rail_lines.json -N default",
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R --args -i /home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/datasets/rail_lines.json -N default",
 	"script" : "/home/gertjan/share/work/turing/aida/research/projects/changepoint/experiments/cpdbench/execs/R/cpdbench_prophet.R",
-	"script_md5" : "6dfa8c33703f6b5b0624c4a686df148a",
-	"hostname" : "gertjan-arch",
+	"script_md5" : "c6a9f7404f11ab6108d72723fe5ff253",
+	"hostname" : "nyx",
 	"dataset" : "rail_lines",
 	"dataset_md5" : "fa7d19c61264f0d6b9d74cd145a50012",
 	"status" : "SUCCESS",
@@ -19,6 +19,6 @@
 		"cplocations" : [
 			16
 		],
-		"runtime" : 0.4719493
+		"runtime" : 0.1169393
 	}
 } 

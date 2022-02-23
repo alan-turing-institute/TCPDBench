@@ -40,6 +40,8 @@ For each dataset we want::
         }
     }
 
+We will only keep the results without errors.
+
 Basic cleanup on the change point locations will also be performed:
 
     - deduplication
@@ -60,7 +62,8 @@ import json
 import os
 import sys
 
-from metrics import f_measure, covering
+from metrics import covering
+from metrics import f_measure
 
 
 def parse_args():
@@ -163,7 +166,7 @@ def main():
                     "task_file": result_file,
                     "cplocations": locations,
                     "scores": scores,
-                    "status": result['status'],
+                    "status": result["status"],
                 }
             )
 

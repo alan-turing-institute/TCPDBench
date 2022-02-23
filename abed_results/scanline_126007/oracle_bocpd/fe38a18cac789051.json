@@ -1,0 +1,34 @@
+{
+	"error" : null,
+	"command" : "/usr/lib64/R/bin/exec/R --no-echo --no-restore --no-save --slave --file=/home/gertjan/tmp/tmp_cpdbench/execs/R/cpdbench_ocp.R --args -i /home/gertjan/tmp/tmp_cpdbench/datasets/scanline_126007.json -l 100 --prior-a 0.01 --prior-b 10 --prior-k 0.01",
+	"script" : "/home/gertjan/tmp/tmp_cpdbench/execs/R/cpdbench_ocp.R",
+	"script_md5" : "566236fe18f3e7c48a5f3b6e0c71c2af",
+	"hostname" : "nyx",
+	"dataset" : "scanline_126007",
+	"dataset_md5" : "057d5741b623308af00c42e2c8e525c3",
+	"status" : "SUCCESS",
+	"parameters" : {
+		"missPts" : "none",
+		"cpthreshold" : 0.5,
+		"truncRlim" : 0.0001,
+		"minRlength" : 1,
+		"maxRlength" : 10000,
+		"minsep" : 1,
+		"maxsep" : 10000,
+		"multivariate" : false,
+		"lambda" : 100,
+		"prior_a" : 0.01,
+		"prior_b" : 10,
+		"prior_k" : 0.01
+	},
+	"result" : {
+		"cplocations" : [
+			0,
+			292,
+			325,
+			376,
+			403
+		],
+		"runtime" : 0.291069
+	}
+} 
