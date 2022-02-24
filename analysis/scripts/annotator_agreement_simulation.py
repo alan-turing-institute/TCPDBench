@@ -24,8 +24,6 @@ from typing import Optional
 
 from scipy.stats import poisson
 
-from tqdm import trange
-
 from common import Dataset
 from common import Metric
 from common import load_summaries
@@ -92,7 +90,7 @@ def simulate(
     assert metric in [Metric.f1, Metric.cover]
 
     ovr_scores = []
-    for i in trange(repeats, leave=False):
+    for i in range(repeats):
         sim_anno = {}
         for j in range(num_annotators):
             sim_anno[j] = draw_cps(avg_cp, n_obs)
@@ -100,6 +98,8 @@ def simulate(
         sim_ovr = compute_ovr_metric(sim_anno, n_obs, metric)
         avg_ovr = sum(sim_ovr.values()) / num_annotators
         ovr_scores.append(avg_ovr)
+        if (i+1) % (repeats // 10) == 0:
+            print(f"Progress: {int((i+1) / repeats * 100)}%")
 
     return ovr_scores
 
