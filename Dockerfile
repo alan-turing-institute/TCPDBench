@@ -53,5 +53,8 @@ RUN mkdir -p /TCPDBench/datasets && cp TCPD/export/*.json /TCPDBench/datasets/
 # Install Python dependencies
 RUN pip install -r /TCPDBench/analysis/requirements.txt
 
+# Install R dependencies
+RUN Rscript -e "install.packages(c('argparse', 'exactRankTests'))"
+
 # Set the working directory
 WORKDIR TCPDBench
