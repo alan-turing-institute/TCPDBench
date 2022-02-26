@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 3.0
+
+* Expanded the grid search for some methods in the Oracle experiment
+* Changed from rank plots to critical-difference diagrams
+* Added additional analysis of annotator agreement
+* Various code changes and improvements
+
 ## Version 2.0
 
 * Added the "zero" baseline method
