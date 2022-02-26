@@ -87,8 +87,9 @@ $ pip install -r ./analysis/requirements.txt
 ```
 
 For R, we need the 
+[argparse](https://cran.r-project.org/web/packages/argparse/index.html) and
 [exactRankTests](https://cran.r-project.org/web/packages/exactRankTests/index.html) 
-package, which we can install as follows from the command line:
+packages, which we can install as follows from the command line:
 
 ```
 $ Rscript -e "install.packages(c('argparse', 'exactRankTests'))"
