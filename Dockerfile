@@ -19,7 +19,8 @@ RUN apt-get update && \
 		libssl-dev \
 		libopenblas-dev \
 		libfreetype6-dev \
-		libv8-dev
+		libv8-dev \
+		libfontconfig1-dev
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
