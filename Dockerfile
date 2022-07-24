@@ -20,7 +20,8 @@ RUN apt-get update && \
 		libopenblas-dev \
 		libfreetype6-dev \
 		libv8-dev \
-		libfontconfig1-dev
+		libfontconfig1-dev \
+		libharfbuzz0b
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
