@@ -21,7 +21,9 @@ RUN apt-get update && \
 		libfreetype6-dev \
 		libv8-dev \
 		libfontconfig1-dev \
-		libharfbuzz0b
+		libharfbuzz0b \
+		libharfbuzz-dev \
+		libfribidi-dev
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
