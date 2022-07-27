@@ -11,19 +11,22 @@ RUN apt-get update && \
 		r-cran-rcppeigen \
 		latexmk \
 		texlive-latex-extra \
-		libopenmpi-dev \
-		liblzma-dev \
-		libgit2-dev \
-		libxml2-dev \
 		libcurl4-openssl-dev \
-		libssl-dev \
-		libopenblas-dev \
-		libfreetype6-dev \
-		libv8-dev \
 		libfontconfig1-dev \
-		libharfbuzz0b \
+		libfreetype6-dev \
+		libfribidi-dev \
+		libgit2-dev \
 		libharfbuzz-dev \
-		libfribidi-dev
+		libharfbuzz0b \
+		libjpeg-dev \
+		liblzma-dev \
+		libopenblas-dev \
+		libopenmpi-dev \
+		libpng-dev \
+		libssl-dev \
+		libtiff5-dev \
+		libv8-dev \
+		libxml2-dev
 
 # Make sure python means python3
 RUN apt-get install -y --no-install-recommends \
