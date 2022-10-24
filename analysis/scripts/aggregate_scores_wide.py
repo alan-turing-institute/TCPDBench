@@ -239,9 +239,7 @@ def make_table(
                         row.append(score_str)
                         continue
 
-                    avg_str = tabulate._format(
-                        avg, tabulate._float_type, ".3f", ""
-                    )
+                    avg_str = tabulate._format(avg, float, ".3f", "")
 
                     avg_str = textbf(avg_str) if need_bold(method) else avg_str
                     if show_std:
