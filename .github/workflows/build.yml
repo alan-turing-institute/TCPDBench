@@ -20,10 +20,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install build-essential latexmk texlive-latex-extra
         shell: bash
 
-      - name: Install Python 3.8
-        uses: actions/setup-python@v2
+      - name: Install Python 3.12
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.8'
+          python-version: '3.12'
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2-branch
@@ -36,7 +36,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: true
 
@@ -73,7 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: TCPDBench docker check
         run: ./.github/scripts/test_docker.sh
