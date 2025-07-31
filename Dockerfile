@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 RUN apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata && \
@@ -35,12 +35,12 @@ RUN apt-get install -y --no-install-recommends \
 	python3-tk \
 	python3-venv \
 	python3-pip && \
-    pip3 install --no-cache-dir --upgrade setuptools && \
+    pip3 install --break-system-packages --no-cache-dir --upgrade setuptools && \
 	echo "alias python='python3'" >> /root/.bash_aliases && \
 	echo "alias pip='pip3'" >> /root/.bash_aliases && \
 	cd /usr/local/bin && ln -s /usr/bin/python3 python && \
 	cd /usr/local/bin && ln -s /usr/bin/pip3 pip && \
-    pip install virtualenv abed wheel
+    pip install --break-system-packages virtualenv abed wheel
 
 # Set the default shell to bash
 RUN mv /bin/sh /bin/sh.old && cp /bin/bash /bin/sh
@@ -58,7 +58,7 @@ RUN git clone --recurse-submodules https://github.com/alan-turing-institute/TCPD
 RUN mkdir -p /TCPDBench/datasets && cp TCPD/export/*.json /TCPDBench/datasets/
 
 # Install Python dependencies
-RUN pip install -r /TCPDBench/analysis/requirements.txt
+RUN pip install --break-system-packages -r /TCPDBench/analysis/requirements.txt
 
 # Install R dependencies
 RUN Rscript -e "install.packages(c('argparse', 'exactRankTests'))"
